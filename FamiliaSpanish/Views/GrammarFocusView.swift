@@ -13,5 +13,8 @@ struct GrammarFocusView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
+        .padding(AppTheme.contentPadding)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: AppTheme.cardCornerRadius))
     }
 }

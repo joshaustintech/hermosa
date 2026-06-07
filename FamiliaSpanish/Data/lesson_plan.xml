@@ -188,6 +188,10 @@
         <Word spanish="me gusta" english="I like" partOfSpeech="verb phrase"/>
         <Word spanish="quisiera" english="I would like" partOfSpeech="verb"/>
       </Vocabulary>
+      <ChicagoLocalization>
+        <Reference>Talking about eating a hot dog after a Cubs game.</Reference>
+        <Reference>Ordering food with relatives near a Chicago neighborhood restaurant.</Reference>
+      </ChicagoLocalization>
       <ModelSentences>
         <Sentence spanish="Me gusta la comida mexicana." english="I like Mexican food."/>
         <Sentence spanish="Quisiera agua, por favor." english="I would like water, please."/>
@@ -215,6 +219,361 @@
         </MultipleChoice>
       </Quiz>
     </Lesson>
+
+    <Lesson id="L05" title="Present-Tense Verbs for Conversation" level="beginner" estimatedMinutes="35">
+      <Context>Talking about daily life and habits.</Context>
+      <GrammarFocus>
+        <Item>-ar, -er, and -ir present-tense patterns</Item>
+        <Item>Verb stems and endings</Item>
+        <Item>Negation with no</Item>
+      </GrammarFocus>
+      <Vocabulary>
+        <Word spanish="hablar" english="to speak" partOfSpeech="verb"/>
+        <Word spanish="comer" english="to eat" partOfSpeech="verb"/>
+        <Word spanish="vivir" english="to live" partOfSpeech="verb"/>
+        <Word spanish="trabajar" english="to work" partOfSpeech="verb"/>
+        <Word spanish="aprender" english="to learn" partOfSpeech="verb"/>
+        <Word spanish="escribir" english="to write" partOfSpeech="verb"/>
+        <Word spanish="leer" english="to read" partOfSpeech="verb"/>
+        <Word spanish="escuchar" english="to listen" partOfSpeech="verb"/>
+      </Vocabulary>
+      <ModelSentences>
+        <Sentence spanish="Hablo un poco de español." english="I speak a little Spanish."/>
+        <Sentence spanish="Trabajo en software." english="I work in software."/>
+        <Sentence spanish="Vivo en Chicago." english="I live in Chicago."/>
+        <Sentence spanish="No entiendo todo." english="I do not understand everything."/>
+      </ModelSentences>
+      <Quiz>
+        <MultipleChoice prompt="Which form is 'yo' for 'hablar'?" answer="hablo">
+          <Option>hablo</Option>
+          <Option>habla</Option>
+          <Option>hablas</Option>
+          <Option>hablamos</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="Which form is 'yo' for 'vivir'?" answer="vivo">
+          <Option>vivo</Option>
+          <Option>vive</Option>
+          <Option>vives</Option>
+          <Option>vivimos</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="Complete: No ____ todo." answer="entiendo">
+          <Option>entiendo</Option>
+          <Option>hablo</Option>
+          <Option>como</Option>
+          <Option>vivo</Option>
+        </MultipleChoice>
+      </Quiz>
+    </Lesson>
+
+    <Lesson id="L06" title="Questions and Follow-Ups" level="beginner" estimatedMinutes="30">
+      <Context>Keeping a family conversation going.</Context>
+      <GrammarFocus>
+        <Item>Question words</Item>
+        <Item>Inversion and intonation</Item>
+        <Item>Follow-up questions</Item>
+      </GrammarFocus>
+      <Vocabulary>
+        <Word spanish="qué" english="what" partOfSpeech="interrogative"/>
+        <Word spanish="quién" english="who" partOfSpeech="interrogative"/>
+        <Word spanish="cuándo" english="when" partOfSpeech="interrogative"/>
+        <Word spanish="dónde" english="where" partOfSpeech="interrogative"/>
+        <Word spanish="por qué" english="why" partOfSpeech="interrogative"/>
+        <Word spanish="cómo" english="how" partOfSpeech="interrogative"/>
+        <Word spanish="cuánto" english="how much" partOfSpeech="interrogative"/>
+        <Word spanish="cuántos" english="how many" partOfSpeech="interrogative"/>
+      </Vocabulary>
+      <ModelSentences>
+        <Sentence spanish="¿Dónde vive usted?" english="Where do you live?"/>
+        <Sentence spanish="¿Qué le gusta hacer?" english="What do you like to do?"/>
+        <Sentence spanish="¿Cuándo viene su familia?" english="When is your family coming?"/>
+        <Sentence spanish="¿Cómo se dice esto en español?" english="How do you say this in Spanish?"/>
+      </ModelSentences>
+      <Quiz>
+        <MultipleChoice prompt="Which question word means 'where'?" answer="dónde">
+          <Option>qué</Option>
+          <Option>dónde</Option>
+          <Option>cuándo</Option>
+          <Option>quién</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="Which Spanish sentence means 'How do you say this in Spanish?'?" answer="¿Cómo se dice esto en español?">
+          <Option>¿Cómo se dice esto en español?</Option>
+          <Option>¿Qué le gusta hacer?</Option>
+          <Option>¿Dónde vive usted?</Option>
+          <Option>¿Cuándo viene su familia?</Option>
+        </MultipleChoice>
+      </Quiz>
+    </Lesson>
+
+    <Lesson id="L07" title="Chicago, Neighborhoods, Weather, and Transit" level="beginner-intermediate" estimatedMinutes="35">
+      <Context>Talking about life in Chicago.</Context>
+      <GrammarFocus>
+        <Item>Prepositions of location</Item>
+        <Item>Hay for there is / there are</Item>
+        <Item>Weather expressions with hace, está, and hay</Item>
+      </GrammarFocus>
+      <Vocabulary>
+        <Word spanish="la ciudad" english="city" partOfSpeech="noun"/>
+        <Word spanish="el barrio" english="neighborhood" partOfSpeech="noun"/>
+        <Word spanish="el tren" english="train" partOfSpeech="noun"/>
+        <Word spanish="el autobús" english="bus" partOfSpeech="noun"/>
+        <Word spanish="el lago" english="lake" partOfSpeech="noun"/>
+        <Word spanish="el invierno" english="winter" partOfSpeech="noun"/>
+        <Word spanish="hace frío" english="it is cold" partOfSpeech="phrase"/>
+        <Word spanish="hace calor" english="it is hot" partOfSpeech="phrase"/>
+        <Word spanish="hay nieve" english="there is snow" partOfSpeech="phrase"/>
+        <Word spanish="cerca de" english="near" partOfSpeech="preposition phrase"/>
+        <Word spanish="lejos de" english="far from" partOfSpeech="preposition phrase"/>
+      </Vocabulary>
+      <ChicagoLocalization>
+        <Reference>Talking about Lake Michigan.</Reference>
+        <Reference>Talking about taking the train to a Cubs game.</Reference>
+        <Reference>Talking about Chicago winter weather.</Reference>
+      </ChicagoLocalization>
+      <ModelSentences>
+        <Sentence spanish="Chicago es una ciudad grande." english="Chicago is a large city."/>
+        <Sentence spanish="Vivo cerca del lago." english="I live near the lake."/>
+        <Sentence spanish="Hace frío en el invierno." english="It is cold in the winter."/>
+        <Sentence spanish="Tomamos el tren para ir al partido." english="We take the train to go to the game."/>
+      </ModelSentences>
+      <Quiz>
+        <MultipleChoice prompt="What does 'hay nieve' mean?" answer="there is snow">
+          <Option>it is hot</Option>
+          <Option>there is snow</Option>
+          <Option>near the lake</Option>
+          <Option>we take the train</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="Complete: Vivo cerca ____ lago." answer="del">
+          <Option>del</Option>
+          <Option>con</Option>
+          <Option>por</Option>
+          <Option>sin</Option>
+        </MultipleChoice>
+      </Quiz>
+    </Lesson>
+
+    <Lesson id="L08" title="Church, Worship, and Protestant Vocabulary" level="beginner-intermediate" estimatedMinutes="40">
+      <Context>Attending church or talking with Spanish-speaking Protestant Christians.</Context>
+      <GrammarFocus>
+        <Item>Religious nouns</Item>
+        <Item>Using creer, orar, leer, cantar, predicar</Item>
+        <Item>Talking respectfully about belief</Item>
+      </GrammarFocus>
+      <Vocabulary>
+        <Word spanish="Dios" english="God" partOfSpeech="noun"/>
+        <Word spanish="Jesucristo" english="Jesus Christ" partOfSpeech="noun"/>
+        <Word spanish="el Espíritu Santo" english="the Holy Spirit" partOfSpeech="noun phrase"/>
+        <Word spanish="la Biblia" english="the Bible" partOfSpeech="noun"/>
+        <Word spanish="la iglesia" english="church" partOfSpeech="noun"/>
+        <Word spanish="el culto" english="worship service" partOfSpeech="noun"/>
+        <Word spanish="la oración" english="prayer" partOfSpeech="noun"/>
+        <Word spanish="orar" english="to pray" partOfSpeech="verb"/>
+        <Word spanish="el sermón" english="sermon" partOfSpeech="noun"/>
+        <Word spanish="el pastor" english="pastor" partOfSpeech="noun"/>
+        <Word spanish="la gracia" english="grace" partOfSpeech="noun"/>
+        <Word spanish="la fe" english="faith" partOfSpeech="noun"/>
+        <Word spanish="el pecado" english="sin" partOfSpeech="noun"/>
+        <Word spanish="el perdón" english="forgiveness" partOfSpeech="noun"/>
+        <Word spanish="la salvación" english="salvation" partOfSpeech="noun"/>
+        <Word spanish="el evangelio" english="the gospel" partOfSpeech="noun"/>
+        <Word spanish="la alabanza" english="praise/worship music" partOfSpeech="noun"/>
+        <Word spanish="el himno" english="hymn" partOfSpeech="noun"/>
+      </Vocabulary>
+      <ModelSentences>
+        <Sentence spanish="Voy a la iglesia los domingos." english="I go to church on Sundays."/>
+        <Sentence spanish="Leemos la Biblia en el culto." english="We read the Bible in the worship service."/>
+        <Sentence spanish="¿Puedo orar por usted?" english="May I pray for you?"/>
+        <Sentence spanish="Creo en Jesucristo." english="I believe in Jesus Christ."/>
+        <Sentence spanish="El sermón fue sobre la gracia de Dios." english="The sermon was about the grace of God."/>
+      </ModelSentences>
+      <Quiz>
+        <MultipleChoice prompt="What does 'el sermón' mean?" answer="sermon">
+          <Option>sermon</Option>
+          <Option>song</Option>
+          <Option>church building</Option>
+          <Option>family</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="Which Spanish sentence means 'May I pray for you?'?" answer="¿Puedo orar por usted?">
+          <Option>¿Puedo orar por usted?</Option>
+          <Option>Voy a la iglesia los domingos.</Option>
+          <Option>Creo en Jesucristo.</Option>
+          <Option>Leemos la Biblia en el culto.</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="What part of speech is 'orar'?" answer="verb">
+          <Option>verb</Option>
+          <Option>noun</Option>
+          <Option>adjective</Option>
+          <Option>article</Option>
+        </MultipleChoice>
+      </Quiz>
+    </Lesson>
+
+    <Lesson id="L09" title="Past Events: What Happened?" level="intermediate" estimatedMinutes="45">
+      <Context>Talking about what happened yesterday, last weekend, or at church.</Context>
+      <GrammarFocus>
+        <Item>Preterite tense for completed actions</Item>
+        <Item>Common irregular preterites: fui, tuve, hice, vine</Item>
+        <Item>Time markers: ayer, anoche, la semana pasada</Item>
+      </GrammarFocus>
+      <Vocabulary>
+        <Word spanish="ayer" english="yesterday" partOfSpeech="adverb"/>
+        <Word spanish="anoche" english="last night" partOfSpeech="adverb"/>
+        <Word spanish="la semana pasada" english="last week" partOfSpeech="phrase"/>
+        <Word spanish="fui" english="I went / I was" partOfSpeech="verb"/>
+        <Word spanish="tuve" english="I had" partOfSpeech="verb"/>
+        <Word spanish="hice" english="I did / I made" partOfSpeech="verb"/>
+        <Word spanish="vine" english="I came" partOfSpeech="verb"/>
+        <Word spanish="comí" english="I ate" partOfSpeech="verb"/>
+        <Word spanish="hablé" english="I spoke" partOfSpeech="verb"/>
+      </Vocabulary>
+      <ModelSentences>
+        <Sentence spanish="Ayer fui a la iglesia." english="Yesterday I went to church."/>
+        <Sentence spanish="Anoche comí con mi familia." english="Last night I ate with my family."/>
+        <Sentence spanish="Hablé con mi tío después del culto." english="I spoke with my uncle after the worship service."/>
+        <Sentence spanish="La semana pasada fuimos a un partido de los Cubs." english="Last week we went to a Cubs game."/>
+      </ModelSentences>
+      <Quiz>
+        <MultipleChoice prompt="What does 'ayer' mean?" answer="yesterday">
+          <Option>today</Option>
+          <Option>tomorrow</Option>
+          <Option>yesterday</Option>
+          <Option>next week</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="Which form is the 'yo' preterite of 'hablar'?" answer="hablé">
+          <Option>hablé</Option>
+          <Option>hablo</Option>
+          <Option>hablaré</Option>
+          <Option>hablaba</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="Which Spanish sentence means 'Yesterday I went to church.'?" answer="Ayer fui a la iglesia.">
+          <Option>Ayer fui a la iglesia.</Option>
+          <Option>Anoche comí con mi familia.</Option>
+          <Option>Vine a la iglesia mañana.</Option>
+          <Option>Voy a la iglesia los domingos.</Option>
+        </MultipleChoice>
+      </Quiz>
+    </Lesson>
+
+    <Lesson id="L10" title="Future Plans and Invitations" level="intermediate" estimatedMinutes="40">
+      <Context>Making plans with relatives.</Context>
+      <GrammarFocus>
+        <Item>Ir + a + infinitive for near future</Item>
+        <Item>Invitations with quieres, quiere, vamos</Item>
+        <Item>Polite acceptance and refusal</Item>
+      </GrammarFocus>
+      <Vocabulary>
+        <Word spanish="voy a" english="I am going to" partOfSpeech="verb phrase"/>
+        <Word spanish="vamos a" english="we are going to" partOfSpeech="verb phrase"/>
+        <Word spanish="mañana" english="tomorrow" partOfSpeech="adverb"/>
+        <Word spanish="el domingo" english="Sunday" partOfSpeech="noun"/>
+        <Word spanish="esta noche" english="tonight" partOfSpeech="phrase"/>
+        <Word spanish="¿Quiere venir?" english="Do you want to come?" partOfSpeech="phrase"/>
+        <Word spanish="claro" english="of course" partOfSpeech="adverb/interjection"/>
+        <Word spanish="lo siento" english="I am sorry" partOfSpeech="phrase"/>
+      </Vocabulary>
+      <ModelSentences>
+        <Sentence spanish="Mañana voy a visitar a mi familia." english="Tomorrow I am going to visit my family."/>
+        <Sentence spanish="El domingo vamos a la iglesia." english="On Sunday we are going to church."/>
+        <Sentence spanish="¿Quiere venir con nosotros?" english="Do you want to come with us?"/>
+        <Sentence spanish="Lo siento, no puedo esta noche." english="I am sorry, I cannot tonight."/>
+      </ModelSentences>
+      <Quiz>
+        <MultipleChoice prompt="Complete: Mañana voy ____ visitar a mi familia." answer="a">
+          <Option>a</Option>
+          <Option>de</Option>
+          <Option>con</Option>
+          <Option>sin</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="Which Spanish sentence means 'On Sunday we are going to church.'?" answer="El domingo vamos a la iglesia.">
+          <Option>El domingo vamos a la iglesia.</Option>
+          <Option>Mañana voy a visitar a mi familia.</Option>
+          <Option>Lo siento, no puedo esta noche.</Option>
+          <Option>¿Quiere venir con nosotros?</Option>
+        </MultipleChoice>
+      </Quiz>
+    </Lesson>
+
+    <Lesson id="L11" title="Conversation Repair and Clarification" level="intermediate" estimatedMinutes="35">
+      <Context>Handling real conversations when you miss something.</Context>
+      <GrammarFocus>
+        <Item>Useful meta-language</Item>
+        <Item>Requests for repetition</Item>
+        <Item>Asking for slower speech</Item>
+      </GrammarFocus>
+      <Vocabulary>
+        <Word spanish="No entiendo" english="I do not understand" partOfSpeech="sentence"/>
+        <Word spanish="Entiendo un poco" english="I understand a little" partOfSpeech="sentence"/>
+        <Word spanish="¿Puede repetir?" english="Can you repeat?" partOfSpeech="question"/>
+        <Word spanish="Más despacio, por favor" english="More slowly, please" partOfSpeech="phrase"/>
+        <Word spanish="¿Qué significa?" english="What does it mean?" partOfSpeech="question"/>
+        <Word spanish="¿Cómo se dice?" english="How do you say?" partOfSpeech="question"/>
+        <Word spanish="Estoy aprendiendo español" english="I am learning Spanish" partOfSpeech="sentence"/>
+      </Vocabulary>
+      <ModelSentences>
+        <Sentence spanish="Estoy aprendiendo español. ¿Puede repetir?" english="I am learning Spanish. Can you repeat?"/>
+        <Sentence spanish="Más despacio, por favor." english="More slowly, please."/>
+        <Sentence spanish="¿Qué significa esta palabra?" english="What does this word mean?"/>
+        <Sentence spanish="Entiendo un poco, pero necesito ayuda." english="I understand a little, but I need help."/>
+      </ModelSentences>
+      <Quiz>
+        <MultipleChoice prompt="Which Spanish sentence means 'More slowly, please.'?" answer="Más despacio, por favor.">
+          <Option>Más despacio, por favor.</Option>
+          <Option>No entiendo.</Option>
+          <Option>Estoy aprendiendo español.</Option>
+          <Option>¿Qué significa?</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="What should you say when you need repetition?" answer="¿Puede repetir?">
+          <Option>¿Puede repetir?</Option>
+          <Option>Me gusta comer.</Option>
+          <Option>Voy al tren.</Option>
+          <Option>Hace frío.</Option>
+        </MultipleChoice>
+      </Quiz>
+    </Lesson>
+
+    <Lesson id="L12" title="Capstone: Family, Chicago, and Church Conversation" level="intermediate" estimatedMinutes="60">
+      <Context>A realistic extended conversation with relatives.</Context>
+      <GrammarFocus>
+        <Item>Mixing present, past, and future</Item>
+        <Item>Asking follow-up questions</Item>
+        <Item>Using family, food, Chicago, and church vocabulary together</Item>
+      </GrammarFocus>
+      <Scenario>
+        <Prompt>You are visiting relatives. You talk about family, Chicago, food, church, and plans for Sunday.</Prompt>
+      </Scenario>
+      <ModelSentences>
+        <Sentence spanish="Estoy bien, gracias. Estoy aprendiendo español." english="I am well, thank you. I am learning Spanish."/>
+        <Sentence spanish="Sí, vivo en Chicago. Hace frío en el invierno, pero me gusta la ciudad." english="Yes, I live in Chicago. It is cold in the winter, but I like the city."/>
+        <Sentence spanish="Me gusta la comida mexicana y también comer después de un partido de los Cubs." english="I like Mexican food and also eating after a Cubs game."/>
+        <Sentence spanish="Sí, voy a la iglesia los domingos. Leemos la Biblia, cantamos himnos y escuchamos el sermón." english="Yes, I go to church on Sundays. We read the Bible, sing hymns, and listen to the sermon."/>
+        <Sentence spanish="Claro, gracias. ¿A qué hora empieza el culto?" english="Of course, thank you. What time does the worship service start?"/>
+      </ModelSentences>
+      <Quiz>
+        <MultipleChoice prompt="Which Spanish sentence means 'I live in Chicago and I am learning Spanish.'?" answer="Vivo en Chicago y estoy aprendiendo español.">
+          <Option>Vivo en Chicago y estoy aprendiendo español.</Option>
+          <Option>Voy a la iglesia y estoy aprendiendo inglés.</Option>
+          <Option>Vivo con mi familia y me gusta el lago.</Option>
+          <Option>Estoy en Chicago y quiero comer.</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="Which Spanish question means 'What time does the worship service start?'?" answer="¿A qué hora empieza el culto?">
+          <Option>¿A qué hora empieza el culto?</Option>
+          <Option>¿Dónde vive usted?</Option>
+          <Option>¿Quiere venir con nosotros?</Option>
+          <Option>¿Qué le gusta comer?</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="Which Spanish sentence means 'I like Mexican food.'?" answer="Me gusta la comida mexicana.">
+          <Option>Me gusta la comida mexicana.</Option>
+          <Option>Voy a comer con mi familia.</Option>
+          <Option>La comida está en la iglesia.</Option>
+          <Option>Quisiera agua, por favor.</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="Which Spanish sentence means 'Can you repeat more slowly, please?'?" answer="¿Puede repetir más despacio, por favor?">
+          <Option>¿Puede repetir más despacio, por favor?</Option>
+          <Option>¿Qué le gusta hacer con su familia?</Option>
+          <Option>Estoy aprendiendo español en Chicago.</Option>
+          <Option>¿A qué hora vamos a la iglesia?</Option>
+        </MultipleChoice>
+      </Quiz>
+    </Lesson>
   </Lessons>
 
   <ReviewSystem>
@@ -224,6 +583,12 @@
       <Activity>Answer 3 tap-based comprehension questions.</Activity>
       <Activity>Review 1 model sentence silently.</Activity>
     </DailyReview>
+
+    <QuizVariation>
+      <Rule>Shuffle the order of answer options each time a quiz question is shown.</Rule>
+      <Rule>Rotate incorrect answers between quiz attempts where suitable alternatives exist.</Rule>
+      <Rule>Prefer broader distractor pools so repeated reviews test recognition rather than fixed-position memory.</Rule>
+    </QuizVariation>
 
     <SpacedRepetition>
       <Interval afterCompletion="same-day"/>

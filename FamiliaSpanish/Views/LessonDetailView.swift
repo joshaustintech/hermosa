@@ -16,22 +16,22 @@ struct LessonDetailView: View {
                     Text(lesson.context)
                         .textSelection(.enabled)
                 }
+                .padding(AppTheme.contentPadding)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(.regularMaterial, in: RoundedRectangle(cornerRadius: AppTheme.cardCornerRadius))
 
                 GrammarFocusView(items: lesson.grammarFocus)
                 VocabularyView(words: lesson.vocabulary)
                 ModelSentencesView(sentences: lesson.modelSentences)
 
-                Button {
-                    onStartQuiz()
-                } label: {
-                    Label("Start Quiz", systemImage: "play.circle.fill")
-                        .frame(maxWidth: .infinity)
-                }
+                Button("Start Quiz", systemImage: "play.circle.fill", action: onStartQuiz)
+                    .frame(maxWidth: .infinity)
                 .buttonStyle(.borderedProminent)
                 .accessibilityHint("Opens the lesson quiz placeholder screen.")
             }
-            .padding()
+            .padding(AppTheme.contentPadding)
         }
+        .background(AuroraBackgroundView())
     }
 }
 

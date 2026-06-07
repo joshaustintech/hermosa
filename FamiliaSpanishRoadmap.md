@@ -433,6 +433,46 @@ Acceptance Criteria:
 - Dynamic Type does not break major screens.
 - Quiz controls have useful accessibility labels.
 
+### `P11` - Add Vocabulary Flashcards
+
+Goal: Add lightweight per-lesson vocabulary flashcards for focused review.
+
+Codex Prompt:
+
+> Add a vocabulary flashcard mode linked to each lesson.
+> Allow the learner to open flashcards from a lesson detail screen and from review surfaces.
+> Show Spanish on one side and English plus part of speech on the other side.
+> Keep interactions tap-based, with card flip or reveal behavior that respects Reduce Motion.
+> Track lightweight review activity in SwiftData only if needed for future scheduling.
+> Keep the implementation in small SwiftUI views without introducing MVVM.
+
+Acceptance Criteria:
+
+- Every lesson with vocabulary can launch a flashcard review flow.
+- Flashcards are readable in light mode and dark mode.
+- Flashcard interactions respect iOS accessibility motion settings.
+- Lesson-linked vocabulary review can be completed without typing or speaking.
+
+### `P12` - Add Short Phrase Flashcards
+
+Goal: Add lesson-linked short phrase flashcards for practical conversation review.
+
+Codex Prompt:
+
+> Add short phrase flashcards tied to each lesson using model sentences or curated short conversational phrases.
+> Show a Spanish prompt first, then reveal the English meaning or conversational use on tap.
+> Prefer short, high-frequency phrases that reinforce lesson grammar and context.
+> Let the learner review phrase cards from the lesson detail screen and from a broader review area.
+> Keep the implementation local-first and tap-only.
+> Avoid overengineering; use straightforward SwiftUI state and composition.
+
+Acceptance Criteria:
+
+- Each lesson can expose a short phrase flashcard set when phrase content exists.
+- Phrase cards reinforce the lesson context rather than duplicating only isolated vocabulary.
+- Phrase review remains usable with Dynamic Type and Reduce Motion enabled.
+- Phrase flashcards fit naturally into the existing lesson and review navigation.
+
 ## Suggested Implementation Order
 
 1. Create app shell and SwiftData container.
@@ -447,6 +487,8 @@ Acceptance Criteria:
 10. Add progress dashboard.
 11. Add review mode.
 12. Polish UI and accessibility.
+13. Add vocabulary flashcards.
+14. Add short phrase flashcards.
 
 ## Version 1 Definition of Done
 
@@ -467,3 +509,5 @@ Acceptance Criteria:
 - `F05`: Add church-service vocabulary pack.
 - `F06`: Add Chicago neighborhood conversation packs.
 - `F07`: Add spaced repetition scheduling per vocabulary word.
+- `F08`: Expand vocabulary flashcards with per-card familiarity tracking.
+- `F09`: Expand short phrase flashcards with phrase-level spaced repetition.

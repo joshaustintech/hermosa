@@ -62,6 +62,8 @@ When creating the app, prefer this structure:
 - `Views/QuizQuestionViews.swift`
 - `Views/ProgressView.swift`
 - `Views/SettingsView.swift`
+- `Views/VocabularyFlashcardsView.swift`
+- `Views/PhraseFlashcardsView.swift`
 
 ## Data Model Expectations
 
@@ -140,6 +142,22 @@ Preferred implementation order:
 10. Add the progress dashboard.
 11. Add review mode.
 12. Polish UI and accessibility.
+13. Add vocabulary flashcards tied to each lesson.
+14. Add short phrase flashcards tied to each lesson.
+
+## Planned Post-V1 Phases
+
+After the core milestones are complete, the roadmap also includes:
+
+- `P11`: vocabulary flashcards linked to each lesson’s vocabulary list.
+- `P12`: short phrase flashcards linked to lesson model sentences or curated phrases.
+
+Implementation expectations for those phases:
+
+- Keep flashcard interactions tap-only.
+- Respect `Reduce Motion` when revealing or flipping cards.
+- Prefer using lesson-linked bundled content before introducing new persistence needs.
+- Keep flashcard UI in small SwiftUI views rather than introducing a new architecture layer.
 
 ## Change Guidance For Agents
 

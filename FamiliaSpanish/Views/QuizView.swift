@@ -16,6 +16,8 @@ struct QuizView: View {
                 }
             }
         }
+        .scrollContentBackground(.hidden)
+        .background(Color.clear)
         .navigationTitle("Quiz")
     }
 }

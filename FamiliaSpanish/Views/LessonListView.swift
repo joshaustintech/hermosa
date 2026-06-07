@@ -9,15 +9,24 @@ struct LessonListView: View {
     var body: some View {
         List {
             Section {
-                VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading, spacing: 12) {
                     Text(curriculum.title)
-                        .font(.headline)
-                    Text("Milestone 1 placeholder content is rendering from in-memory lesson data until XML parsing is implemented.")
+                        .font(.title2.bold())
+                    Text(curriculum.goal)
+                        .font(.body)
+                        .foregroundStyle(.secondary)
+                        .textSelection(.enabled)
+                    Label("\(curriculum.lessons.count) bundled lessons", systemImage: "book.closed")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
-                .padding(.vertical, 4)
+                .padding(AppTheme.contentPadding)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(.regularMaterial, in: RoundedRectangle(cornerRadius: AppTheme.cardCornerRadius))
             }
+            .listRowInsets(EdgeInsets(top: 12, leading: 20, bottom: 8, trailing: 20))
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
 
             Section("Lessons") {
                 ForEach(curriculum.lessons) { lesson in
@@ -32,7 +41,7 @@ struct LessonListView: View {
                         )
                     } label: {
                         HStack(alignment: .top, spacing: 12) {
-                            VStack(alignment: .leading, spacing: 4) {
+                            VStack(alignment: .leading, spacing: 6) {
                                 Text(lesson.title)
                                     .font(.headline)
                                 Text("\(lesson.level.capitalized) • \(lesson.estimatedMinutes) min")
@@ -40,11 +49,12 @@ struct LessonListView: View {
                                     .foregroundStyle(.secondary)
                             }
 
-                            Spacer()
+                            Spacer(minLength: 12)
 
-                            VStack(alignment: .trailing, spacing: 6) {
+                            VStack(alignment: .trailing, spacing: 8) {
                                 if progress?.isCompleted == true {
                                     Label("Done", systemImage: "checkmark.circle.fill")
+                                        .font(.subheadline)
                                         .labelStyle(.iconOnly)
                                         .foregroundStyle(.green)
                                         .accessibilityLabel("Lesson completed")
@@ -52,20 +62,28 @@ struct LessonListView: View {
 
                                 if let bestScore = progress?.bestScore, bestScore > 0 {
                                     Text("\(bestScore.formatted(.percent.precision(.fractionLength(0))))")
-                                        .font(.caption)
+                                        .font(.subheadline)
                                         .foregroundStyle(.secondary)
                                 }
                             }
                         }
-                    }
-                    .simultaneousGesture(
-                        TapGesture().onEnded {
-                            selectedLessonID = lesson.id
+                        .padding(16)
+                        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: AppTheme.innerCornerRadius))
+                        .overlay {
+                            RoundedRectangle(cornerRadius: AppTheme.innerCornerRadius)
+                                .strokeBorder(.white.opacity(0.08))
                         }
-                    )
+                        .contentShape(RoundedRectangle(cornerRadius: AppTheme.innerCornerRadius))
+                    }
+                    .listRowInsets(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 20))
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
                 }
             }
         }
+        .listStyle(.insetGrouped)
+        .scrollContentBackground(.hidden)
+        .background(Color.clear)
         .navigationDestination(item: quizLessonBinding) { lesson in
             QuizView(lesson: lesson)
         }

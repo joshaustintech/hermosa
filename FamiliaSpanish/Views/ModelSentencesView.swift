@@ -18,8 +18,11 @@ struct ModelSentencesView: View {
                 }
                 .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 16))
+                .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16))
             }
         }
+        .padding(AppTheme.contentPadding)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: AppTheme.cardCornerRadius))
     }
 }

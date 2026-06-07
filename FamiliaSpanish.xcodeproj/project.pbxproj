@@ -22,6 +22,8 @@
 		A100000D0000000000000001 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001D0000000000000001 /* ProgressView.swift */; };
 		A100000E0000000000000001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001E0000000000000001 /* SettingsView.swift */; };
 		A100000F0000000000000001 /* lesson_plan.xml in Resources */ = {isa = PBXBuildFile; fileRef = A100001F0000000000000001 /* lesson_plan.xml */; };
+		A10000320000000000000001 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000330000000000000001 /* AppTheme.swift */; };
+		A10000340000000000000001 /* AuroraBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000350000000000000001 /* AuroraBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		A100001D0000000000000001 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		A100001E0000000000000001 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A100001F0000000000000001 /* lesson_plan.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = lesson_plan.xml; sourceTree = "<group>"; };
+		A10000330000000000000001 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		A10000350000000000000001 /* AuroraBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuroraBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 		A10000270000000000000001 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A10000330000000000000001 /* AppTheme.swift */,
+				A10000350000000000000001 /* AuroraBackgroundView.swift */,
 				A10000160000000000000001 /* LessonListView.swift */,
 				A10000170000000000000001 /* LessonDetailView.swift */,
 				A10000180000000000000001 /* VocabularyView.swift */,
@@ -206,6 +212,8 @@
 				A100000C0000000000000001 /* QuizQuestionViews.swift in Sources */,
 				A100000D0000000000000001 /* ProgressView.swift in Sources */,
 				A100000E0000000000000001 /* SettingsView.swift in Sources */,
+				A10000320000000000000001 /* AppTheme.swift in Sources */,
+				A10000340000000000000001 /* AuroraBackgroundView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +269,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Familia Spanish";
+				INFOPLIST_KEY_CFBundleDisplayName = Hermosa;
 				INFOPLIST_KEY_LSRequiresIPhoneOS = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -290,7 +298,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Familia Spanish";
+				INFOPLIST_KEY_CFBundleDisplayName = Hermosa;
 				INFOPLIST_KEY_LSRequiresIPhoneOS = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

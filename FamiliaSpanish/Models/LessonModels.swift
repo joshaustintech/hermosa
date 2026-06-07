@@ -3,6 +3,8 @@ import Foundation
 struct Curriculum: Identifiable, Equatable, Hashable {
     let id: String
     let title: String
+    let version: String
+    let goal: String
     let lessons: [Lesson]
 }
 
@@ -49,6 +51,8 @@ extension Curriculum {
     static let placeholder = Curriculum(
         id: "placeholder-curriculum",
         title: "Familia Spanish",
+        version: "preview",
+        goal: "Practice practical Spanish for family, food, Chicago, and church conversations.",
         lessons: [
             Lesson(
                 id: "L01",

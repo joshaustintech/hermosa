@@ -17,6 +17,8 @@ struct ProgressViewScreen: View {
                     .foregroundStyle(.secondary)
             }
         }
+        .scrollContentBackground(.hidden)
+        .background(Color.clear)
     }
 }
 

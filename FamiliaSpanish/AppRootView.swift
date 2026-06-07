@@ -9,48 +9,77 @@ struct AppRootView: View {
     @Query(sort: \LessonProgress.lessonID) private var lessonProgress: [LessonProgress]
 
     var body: some View {
-        TabView {
-            NavigationStack {
-                LessonListView(
-                    curriculum: curriculum ?? .placeholder,
-                    lessonProgress: lessonProgress,
-                    selectedLessonID: $selectedLessonID,
-                    quizInProgressLessonID: $quizInProgressLessonID
-                )
-                .navigationTitle("Familia Spanish")
-            }
-            .tabItem {
-                Label("Lessons", systemImage: "list.bullet.rectangle")
-            }
+        ZStack {
+            AuroraBackgroundView()
 
-            NavigationStack {
-                ProgressViewScreen(
-                    curriculum: curriculum ?? .placeholder,
-                    lessonProgress: lessonProgress
-                )
-                .navigationTitle("Progress")
-            }
-            .tabItem {
-                Label("Progress", systemImage: "chart.bar")
-            }
+            Group {
+                if let curriculum {
+                    TabView {
+                        NavigationStack {
+                            LessonListView(
+                                curriculum: curriculum,
+                                lessonProgress: lessonProgress,
+                                selectedLessonID: $selectedLessonID,
+                                quizInProgressLessonID: $quizInProgressLessonID
+                            )
+                            .navigationTitle("Familia Spanish")
+                        }
+                        .tabItem {
+                            Label("Lessons", systemImage: "list.bullet.rectangle")
+                        }
 
-            NavigationStack {
-                SettingsView()
-                    .navigationTitle("Settings")
-            }
-            .tabItem {
-                Label("Settings", systemImage: "gearshape")
+                        NavigationStack {
+                            ProgressViewScreen(
+                                curriculum: curriculum,
+                                lessonProgress: lessonProgress
+                            )
+                            .navigationTitle("Progress")
+                        }
+                        .tabItem {
+                            Label("Progress", systemImage: "chart.bar")
+                        }
+
+                        NavigationStack {
+                            SettingsView()
+                                .navigationTitle("Settings")
+                        }
+                        .tabItem {
+                            Label("Settings", systemImage: "gearshape")
+                        }
+                    }
+                }
+                else if let loadError {
+                    ContentUnavailableView(
+                        "Unable to Load Lessons",
+                        systemImage: "exclamationmark.triangle",
+                        description: Text(loadError)
+                    )
+                    .overlay(alignment: .bottom) {
+                        Button("Retry", systemImage: "arrow.clockwise", action: loadCurriculum)
+                            .buttonStyle(.borderedProminent)
+                            .padding()
+                    }
+                }
+                else {
+                    ProgressView("Loading Lessons…")
+                }
             }
         }
-        .alert("Lesson Loading Error", isPresented: Binding(
-            get: { loadError != nil },
-            set: { if !$0 { loadError = nil } }
-        )) {
-            Button("OK", role: .cancel) {
-                loadError = nil
-            }
-        } message: {
-            Text(loadError ?? "")
+        .toolbarBackground(.thinMaterial, for: .tabBar)
+        .toolbarBackground(.visible, for: .tabBar)
+        .task {
+            guard curriculum == nil, loadError == nil else { return }
+            loadCurriculum()
+        }
+    }
+
+    private func loadCurriculum() {
+        do {
+            curriculum = try LessonXMLParser.bundledCurriculum()
+            loadError = nil
+        } catch {
+            curriculum = nil
+            loadError = error.localizedDescription
         }
     }
 }
