@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SpanishLearningCurriculum
+    id="spanish-for-chicago-family-and-church"
+    version="1.0"
+    targetLearner="English-speaking adult with linguistics/humanities background"
+    goal="Become conversational with Spanish-speaking extended relatives, especially in family, food, Chicago, church, and daily-life contexts">
+
+  <DesignPrinciples>
+    <Principle id="P1">Teach sentence construction, not only memorized phrases.</Principle>
+    <Principle id="P2">Introduce grammar through useful conversations.</Principle>
+    <Principle id="P3">Use Chicago-local contexts to make lessons memorable.</Principle>
+    <Principle id="P4">Include Protestant Christian vocabulary without assuming denominational uniformity.</Principle>
+    <Principle id="P5">Favor high-frequency vocabulary and sentence patterns over exhaustive grammar.</Principle>
+  </DesignPrinciples>
+
+  <Milestones>
+    <Milestone id="M1" title="Survival Conversation">
+      <CanDo>I can greet relatives, introduce myself, ask simple questions, and say what I need.</CanDo>
+    </Milestone>
+    <Milestone id="M2" title="Family and Food Conversation">
+      <CanDo>I can talk about family, meals, preferences, and simple plans.</CanDo>
+    </Milestone>
+    <Milestone id="M3" title="Chicago Daily Life">
+      <CanDo>I can talk about neighborhoods, weather, transit, restaurants, and baseball.</CanDo>
+    </Milestone>
+    <Milestone id="M4" title="Church and Faith Conversation">
+      <CanDo>I can understand and use common Protestant Christian vocabulary.</CanDo>
+    </Milestone>
+    <Milestone id="M5" title="Conversational Confidence">
+      <CanDo>I can tell short stories, describe past events, make future plans, and ask follow-up questions.</CanDo>
+    </Milestone>
+  </Milestones>
+
+  <Lessons>
+    <Lesson id="L01" title="Greetings, Courtesy, and Introductions" level="beginner" estimatedMinutes="20">
+      <Context>Meeting extended relatives at a family gathering.</Context>
+      <GrammarFocus>
+        <Item>Subject pronouns</Item>
+        <Item>Formal vs informal address: tú and usted</Item>
+        <Item>Basic sentence pattern: subject + verb + complement</Item>
+      </GrammarFocus>
+      <Vocabulary>
+        <Word spanish="hola" english="hello" partOfSpeech="interjection"/>
+        <Word spanish="buenos días" english="good morning" partOfSpeech="phrase"/>
+        <Word spanish="buenas tardes" english="good afternoon" partOfSpeech="phrase"/>
+        <Word spanish="buenas noches" english="good evening / good night" partOfSpeech="phrase"/>
+        <Word spanish="por favor" english="please" partOfSpeech="phrase"/>
+        <Word spanish="gracias" english="thank you" partOfSpeech="interjection"/>
+        <Word spanish="de nada" english="you are welcome" partOfSpeech="phrase"/>
+        <Word spanish="perdón" english="excuse me / sorry" partOfSpeech="noun/interjection"/>
+        <Word spanish="me llamo" english="my name is" partOfSpeech="phrase"/>
+        <Word spanish="mucho gusto" english="nice to meet you" partOfSpeech="phrase"/>
+      </Vocabulary>
+      <ModelSentences>
+        <Sentence spanish="Hola, me llamo Josh." english="Hello, my name is Josh."/>
+        <Sentence spanish="Mucho gusto." english="Nice to meet you."/>
+        <Sentence spanish="¿Cómo se llama usted?" english="What is your name?"/>
+        <Sentence spanish="Gracias por recibirme." english="Thank you for welcoming me."/>
+      </ModelSentences>
+      <Quiz>
+        <MultipleChoice prompt="What does 'mucho gusto' mean?" answer="Nice to meet you">
+          <Option>Nice to meet you</Option>
+          <Option>Good night</Option>
+          <Option>Please</Option>
+          <Option>Excuse me</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="Complete: Hola, me ____ Josh." answer="llamo">
+          <Option>llamo</Option>
+          <Option>tengo</Option>
+          <Option>soy</Option>
+          <Option>vivo</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="Which Spanish word means 'Thank you'?" answer="Gracias">
+          <Option>Gracias</Option>
+          <Option>Perdón</Option>
+          <Option>Hola</Option>
+          <Option>De nada</Option>
+        </MultipleChoice>
+      </Quiz>
+    </Lesson>
+
+    <Lesson id="L02" title="Family Members and Relationships" level="beginner" estimatedMinutes="25">
+      <Context>Talking with extended relatives about family.</Context>
+      <GrammarFocus>
+        <Item>Nouns and gender</Item>
+        <Item>Definite articles: el, la, los, las</Item>
+        <Item>Possession with mi, tu, su, nuestro</Item>
+      </GrammarFocus>
+      <Vocabulary>
+        <Word spanish="la familia" english="family" partOfSpeech="noun"/>
+        <Word spanish="el padre" english="father" partOfSpeech="noun"/>
+        <Word spanish="la madre" english="mother" partOfSpeech="noun"/>
+        <Word spanish="el esposo" english="husband" partOfSpeech="noun"/>
+        <Word spanish="la esposa" english="wife" partOfSpeech="noun"/>
+        <Word spanish="el hijo" english="son" partOfSpeech="noun"/>
+        <Word spanish="la hija" english="daughter" partOfSpeech="noun"/>
+        <Word spanish="el tío" english="uncle" partOfSpeech="noun"/>
+        <Word spanish="la tía" english="aunt" partOfSpeech="noun"/>
+        <Word spanish="el primo" english="male cousin" partOfSpeech="noun"/>
+        <Word spanish="la prima" english="female cousin" partOfSpeech="noun"/>
+        <Word spanish="los abuelos" english="grandparents" partOfSpeech="noun"/>
+      </Vocabulary>
+      <ModelSentences>
+        <Sentence spanish="Esta es mi esposa." english="This is my wife."/>
+        <Sentence spanish="Mi hija se llama Summer." english="My daughter is named Summer."/>
+        <Sentence spanish="¿Cuántos hermanos tiene usted?" english="How many siblings do you have?"/>
+        <Sentence spanish="Tengo una familia grande." english="I have a large family."/>
+      </ModelSentences>
+      <Quiz>
+        <MultipleChoice prompt="Which word means 'daughter'?" answer="la hija">
+          <Option>el hijo</Option>
+          <Option>la hija</Option>
+          <Option>la tía</Option>
+          <Option>el primo</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="Complete: Esta es mi ____." answer="esposa">
+          <Option>esposa</Option>
+          <Option>madre</Option>
+          <Option>familia</Option>
+          <Option>prima</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="What part of speech is 'familia'?" answer="noun">
+          <Option>noun</Option>
+          <Option>verb</Option>
+          <Option>adjective</Option>
+          <Option>preposition</Option>
+        </MultipleChoice>
+      </Quiz>
+    </Lesson>
+
+    <Lesson id="L03" title="Ser, Estar, and Basic Descriptions" level="beginner" estimatedMinutes="30">
+      <Context>Describing people, places, and temporary states.</Context>
+      <GrammarFocus>
+        <Item>Ser for identity and permanent traits</Item>
+        <Item>Estar for location and temporary states</Item>
+        <Item>Adjective agreement</Item>
+      </GrammarFocus>
+      <Vocabulary>
+        <Word spanish="soy" english="I am" partOfSpeech="verb"/>
+        <Word spanish="eres" english="you are" partOfSpeech="verb"/>
+        <Word spanish="es" english="he/she/it is" partOfSpeech="verb"/>
+        <Word spanish="estoy" english="I am" partOfSpeech="verb"/>
+        <Word spanish="estás" english="you are" partOfSpeech="verb"/>
+        <Word spanish="está" english="he/she/it is" partOfSpeech="verb"/>
+        <Word spanish="cansado" english="tired" partOfSpeech="adjective"/>
+        <Word spanish="contento" english="happy" partOfSpeech="adjective"/>
+        <Word spanish="ocupado" english="busy" partOfSpeech="adjective"/>
+        <Word spanish="en Chicago" english="in Chicago" partOfSpeech="prepositional phrase"/>
+      </Vocabulary>
+      <ModelSentences>
+        <Sentence spanish="Soy de Chicago." english="I am from Chicago."/>
+        <Sentence spanish="Estoy en la casa." english="I am at the house."/>
+        <Sentence spanish="Mi hija está contenta." english="My daughter is happy."/>
+        <Sentence spanish="La iglesia es pequeña." english="The church is small."/>
+      </ModelSentences>
+      <Quiz>
+        <MultipleChoice prompt="Choose the best verb: Yo ____ de Chicago." answer="soy">
+          <Option>soy</Option>
+          <Option>estoy</Option>
+          <Option>tengo</Option>
+          <Option>voy</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="Choose the best preposition: Estoy ____ la iglesia." answer="en">
+          <Option>de</Option>
+          <Option>en</Option>
+          <Option>con</Option>
+          <Option>para</Option>
+        </MultipleChoice>
+      </Quiz>
+    </Lesson>
+
+    <Lesson id="L04" title="Food, Preferences, and Ordering" level="beginner" estimatedMinutes="30">
+      <Context>Eating with relatives or talking about Chicago food.</Context>
+      <GrammarFocus>
+        <Item>Gustar pattern: me gusta / me gustan</Item>
+        <Item>Direct objects in simple food sentences</Item>
+        <Item>Polite requests with quiero and quisiera</Item>
+      </GrammarFocus>
+      <Vocabulary>
+        <Word spanish="la comida" english="food" partOfSpeech="noun"/>
+        <Word spanish="el agua" english="water" partOfSpeech="noun"/>
+        <Word spanish="el café" english="coffee" partOfSpeech="noun"/>
+        <Word spanish="el pan" english="bread" partOfSpeech="noun"/>
+        <Word spanish="la carne" english="meat" partOfSpeech="noun"/>
+        <Word spanish="el pollo" english="chicken" partOfSpeech="noun"/>
+        <Word spanish="el arroz" english="rice" partOfSpeech="noun"/>
+        <Word spanish="los frijoles" english="beans" partOfSpeech="noun"/>
+        <Word spanish="me gusta" english="I like" partOfSpeech="verb phrase"/>
+        <Word spanish="quisiera" english="I would like" partOfSpeech="verb"/>
+      </Vocabulary>
+      <ModelSentences>
+        <Sentence spanish="Me gusta la comida mexicana." english="I like Mexican food."/>
+        <Sentence spanish="Quisiera agua, por favor." english="I would like water, please."/>
+        <Sentence spanish="Después del partido de los Cubs, quiero comer." english="After the Cubs game, I want to eat."/>
+        <Sentence spanish="¿Qué le gusta comer?" english="What do you like to eat?"/>
+      </ModelSentences>
+      <Quiz>
+        <MultipleChoice prompt="What does 'quisiera' mean?" answer="I would like">
+          <Option>I would like</Option>
+          <Option>I was</Option>
+          <Option>I went</Option>
+          <Option>I have</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="Complete: Me ____ la comida mexicana." answer="gusta">
+          <Option>gusta</Option>
+          <Option>soy</Option>
+          <Option>hace</Option>
+          <Option>vivo</Option>
+        </MultipleChoice>
+        <MultipleChoice prompt="Which Spanish sentence means 'I would like coffee, please.'?" answer="Quisiera café, por favor.">
+          <Option>Quisiera café, por favor.</Option>
+          <Option>Me gusta café, por favor.</Option>
+          <Option>Voy a café, por favor.</Option>
+          <Option>Tengo café, por favor.</Option>
+        </MultipleChoice>
+      </Quiz>
+    </Lesson>
+  </Lessons>
+
+  <ReviewSystem>
+    <DailyReview minutes="10">
+      <Activity>Review 10 vocabulary words.</Activity>
+      <Activity>Answer 5 grammar questions.</Activity>
+      <Activity>Answer 3 tap-based comprehension questions.</Activity>
+      <Activity>Review 1 model sentence silently.</Activity>
+    </DailyReview>
+
+    <SpacedRepetition>
+      <Interval afterCompletion="same-day"/>
+      <Interval afterCompletion="1-day"/>
+      <Interval afterCompletion="3-days"/>
+      <Interval afterCompletion="7-days"/>
+      <Interval afterCompletion="14-days"/>
+      <Interval afterCompletion="30-days"/>
+    </SpacedRepetition>
+  </ReviewSystem>
+
+  <ConversationalMinimum>
+    <Skill>I can introduce myself.</Skill>
+    <Skill>I can describe my family.</Skill>
+    <Skill>I can ask simple questions.</Skill>
+    <Skill>I can talk about food preferences.</Skill>
+    <Skill>I can talk about Chicago and daily life.</Skill>
+    <Skill>I can talk about church, worship, prayer, Scripture, and basic Christian belief.</Skill>
+    <Skill>I can ask someone to repeat, slow down, or explain a word.</Skill>
+    <Skill>I can describe what happened recently.</Skill>
+    <Skill>I can make simple future plans.</Skill>
+  </ConversationalMinimum>
+</SpanishLearningCurriculum>

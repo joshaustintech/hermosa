@@ -1,0 +1,337 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000010000000000000001 /* FamiliaSpanishApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000110000000000000001 /* FamiliaSpanishApp.swift */; };
+		A10000020000000000000001 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000120000000000000001 /* AppRootView.swift */; };
+		A10000030000000000000001 /* LessonModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000130000000000000001 /* LessonModels.swift */; };
+		A10000040000000000000001 /* ProgressModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000140000000000000001 /* ProgressModels.swift */; };
+		A10000050000000000000001 /* LessonXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000150000000000000001 /* LessonXMLParser.swift */; };
+		A10000060000000000000001 /* LessonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000160000000000000001 /* LessonListView.swift */; };
+		A10000070000000000000001 /* LessonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000170000000000000001 /* LessonDetailView.swift */; };
+		A10000080000000000000001 /* VocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000180000000000000001 /* VocabularyView.swift */; };
+		A10000090000000000000001 /* GrammarFocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000190000000000000001 /* GrammarFocusView.swift */; };
+		A100000A0000000000000001 /* ModelSentencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001A0000000000000001 /* ModelSentencesView.swift */; };
+		A100000B0000000000000001 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001B0000000000000001 /* QuizView.swift */; };
+		A100000C0000000000000001 /* QuizQuestionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001C0000000000000001 /* QuizQuestionViews.swift */; };
+		A100000D0000000000000001 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001D0000000000000001 /* ProgressView.swift */; };
+		A100000E0000000000000001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001E0000000000000001 /* SettingsView.swift */; };
+		A100000F0000000000000001 /* lesson_plan.xml in Resources */ = {isa = PBXBuildFile; fileRef = A100001F0000000000000001 /* lesson_plan.xml */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A10000100000000000000001 /* FamiliaSpanish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamiliaSpanish.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000110000000000000001 /* FamiliaSpanishApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamiliaSpanishApp.swift; sourceTree = "<group>"; };
+		A10000120000000000000001 /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
+		A10000130000000000000001 /* LessonModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonModels.swift; sourceTree = "<group>"; };
+		A10000140000000000000001 /* ProgressModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressModels.swift; sourceTree = "<group>"; };
+		A10000150000000000000001 /* LessonXMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonXMLParser.swift; sourceTree = "<group>"; };
+		A10000160000000000000001 /* LessonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonListView.swift; sourceTree = "<group>"; };
+		A10000170000000000000001 /* LessonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDetailView.swift; sourceTree = "<group>"; };
+		A10000180000000000000001 /* VocabularyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyView.swift; sourceTree = "<group>"; };
+		A10000190000000000000001 /* GrammarFocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarFocusView.swift; sourceTree = "<group>"; };
+		A100001A0000000000000001 /* ModelSentencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSentencesView.swift; sourceTree = "<group>"; };
+		A100001B0000000000000001 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		A100001C0000000000000001 /* QuizQuestionViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionViews.swift; sourceTree = "<group>"; };
+		A100001D0000000000000001 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		A100001E0000000000000001 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A100001F0000000000000001 /* lesson_plan.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = lesson_plan.xml; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A10000200000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A10000210000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A10000220000000000000001 /* FamiliaSpanish */,
+				A10000230000000000000001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A10000220000000000000001 /* FamiliaSpanish */ = {
+			isa = PBXGroup;
+			children = (
+				A10000110000000000000001 /* FamiliaSpanishApp.swift */,
+				A10000120000000000000001 /* AppRootView.swift */,
+				A10000240000000000000001 /* Models */,
+				A10000250000000000000001 /* Parsing */,
+				A10000260000000000000001 /* Data */,
+				A10000270000000000000001 /* Views */,
+			);
+			path = FamiliaSpanish;
+			sourceTree = "<group>";
+		};
+		A10000230000000000000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A10000100000000000000001 /* FamiliaSpanish.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A10000240000000000000001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A10000130000000000000001 /* LessonModels.swift */,
+				A10000140000000000000001 /* ProgressModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A10000250000000000000001 /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				A10000150000000000000001 /* LessonXMLParser.swift */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
+		A10000260000000000000001 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A100001F0000000000000001 /* lesson_plan.xml */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A10000270000000000000001 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A10000160000000000000001 /* LessonListView.swift */,
+				A10000170000000000000001 /* LessonDetailView.swift */,
+				A10000180000000000000001 /* VocabularyView.swift */,
+				A10000190000000000000001 /* GrammarFocusView.swift */,
+				A100001A0000000000000001 /* ModelSentencesView.swift */,
+				A100001B0000000000000001 /* QuizView.swift */,
+				A100001C0000000000000001 /* QuizQuestionViews.swift */,
+				A100001D0000000000000001 /* ProgressView.swift */,
+				A100001E0000000000000001 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A10000280000000000000001 /* FamiliaSpanish */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A100002B0000000000000001 /* Build configuration list for PBXNativeTarget "FamiliaSpanish" */;
+			buildPhases = (
+				A10000290000000000000001 /* Sources */,
+				A10000200000000000000001 /* Frameworks */,
+				A100002A0000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FamiliaSpanish;
+			productName = FamiliaSpanish;
+			productReference = A10000100000000000000001 /* FamiliaSpanish.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A100002C0000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					A10000280000000000000001 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+				};
+			};
+			buildConfigurationList = A100002F0000000000000001 /* Build configuration list for PBXProject "FamiliaSpanish" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A10000210000000000000001;
+			productRefGroup = A10000230000000000000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A10000280000000000000001 /* FamiliaSpanish */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A100002A0000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A100000F0000000000000001 /* lesson_plan.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A10000290000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000020000000000000001 /* AppRootView.swift in Sources */,
+				A10000010000000000000001 /* FamiliaSpanishApp.swift in Sources */,
+				A10000030000000000000001 /* LessonModels.swift in Sources */,
+				A10000040000000000000001 /* ProgressModels.swift in Sources */,
+				A10000050000000000000001 /* LessonXMLParser.swift in Sources */,
+				A10000060000000000000001 /* LessonListView.swift in Sources */,
+				A10000070000000000000001 /* LessonDetailView.swift in Sources */,
+				A10000080000000000000001 /* VocabularyView.swift in Sources */,
+				A10000090000000000000001 /* GrammarFocusView.swift in Sources */,
+				A100000A0000000000000001 /* ModelSentencesView.swift in Sources */,
+				A100000B0000000000000001 /* QuizView.swift in Sources */,
+				A100000C0000000000000001 /* QuizQuestionViews.swift in Sources */,
+				A100000D0000000000000001 /* ProgressView.swift in Sources */,
+				A100000E0000000000000001 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A100002D0000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+			};
+			name = Debug;
+		};
+		A100002E0000000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		A10000300000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Familia Spanish";
+				INFOPLIST_KEY_LSRequiresIPhoneOS = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.josh.hermosa.FamiliaSpanish;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A10000310000000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Familia Spanish";
+				INFOPLIST_KEY_LSRequiresIPhoneOS = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.josh.hermosa.FamiliaSpanish;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A100002B0000000000000001 /* Build configuration list for PBXNativeTarget "FamiliaSpanish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10000300000000000000001 /* Debug */,
+				A10000310000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A100002F0000000000000001 /* Build configuration list for PBXProject "FamiliaSpanish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A100002D0000000000000001 /* Debug */,
+				A100002E0000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A100002C0000000000000001 /* Project object */;
+}

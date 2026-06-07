@@ -1,0 +1,17 @@
+import SwiftUI
+
+struct GrammarFocusView: View {
+    let items: [String]
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Grammar Focus")
+                .font(.title3.bold())
+
+            ForEach(items, id: \.self) { item in
+                Label(item, systemImage: "text.book.closed")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+        }
+    }
+}
