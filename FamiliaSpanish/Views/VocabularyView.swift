@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct VocabularyView: View {
+    @Environment(\.colorScheme) private var colorScheme
     let words: [VocabularyWord]
 
     var body: some View {
@@ -21,10 +22,18 @@ struct VocabularyView: View {
                 .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 16)
+                        .strokeBorder(AppTheme.edgeGradient(for: colorScheme), lineWidth: 1)
+                }
             }
         }
         .padding(AppTheme.contentPadding)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.regularMaterial, in: RoundedRectangle(cornerRadius: AppTheme.cardCornerRadius))
+        .overlay {
+            RoundedRectangle(cornerRadius: AppTheme.cardCornerRadius)
+                .strokeBorder(AppTheme.edgeGradient(for: colorScheme), lineWidth: 1.1)
+        }
     }
 }

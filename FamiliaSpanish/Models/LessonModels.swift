@@ -50,7 +50,7 @@ enum QuizQuestion: Identifiable, Equatable, Hashable {
 extension Curriculum {
     static let placeholder = Curriculum(
         id: "placeholder-curriculum",
-        title: "Familia Spanish",
+        title: "Hermosa",
         version: "preview",
         goal: "Practice practical Spanish for family, food, Chicago, and church conversations.",
         lessons: [

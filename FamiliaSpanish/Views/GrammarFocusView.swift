@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct GrammarFocusView: View {
+    @Environment(\.colorScheme) private var colorScheme
     let items: [String]
 
     var body: some View {
@@ -16,5 +17,9 @@ struct GrammarFocusView: View {
         .padding(AppTheme.contentPadding)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.thinMaterial, in: RoundedRectangle(cornerRadius: AppTheme.cardCornerRadius))
+        .overlay {
+            RoundedRectangle(cornerRadius: AppTheme.cardCornerRadius)
+                .strokeBorder(AppTheme.edgeGradient(for: colorScheme), lineWidth: 1.1)
+        }
     }
 }

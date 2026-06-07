@@ -5,37 +5,37 @@ enum AppTheme {
     static let innerCornerRadius: CGFloat = 18
     static let contentPadding: CGFloat = 20
 
-    static func baseGradient(for colorScheme: ColorScheme) -> [Color] {
+    static func backgroundColor(for colorScheme: ColorScheme) -> Color {
         switch colorScheme {
         case .dark:
-            return [
-                Color(red: 0.05, green: 0.08, blue: 0.14),
-                Color(red: 0.09, green: 0.14, blue: 0.22),
-                Color(red: 0.16, green: 0.09, blue: 0.18)
-            ]
+            return Color(red: 0.03, green: 0.04, blue: 0.06)
         default:
-            return [
-                Color(red: 0.97, green: 0.98, blue: 1.0),
-                Color(red: 0.99, green: 0.96, blue: 0.91),
-                Color(red: 0.92, green: 0.96, blue: 0.96)
-            ]
+            return Color(red: 0.95, green: 0.96, blue: 0.98)
         }
     }
 
-    static func glowPalette(for colorScheme: ColorScheme) -> [Color] {
+    static func edgeGradient(for colorScheme: ColorScheme) -> LinearGradient {
         switch colorScheme {
         case .dark:
-            return [
-                Color(red: 0.22, green: 0.69, blue: 0.74).opacity(0.48),
-                Color(red: 0.30, green: 0.47, blue: 0.94).opacity(0.34),
-                Color(red: 0.94, green: 0.55, blue: 0.27).opacity(0.24)
-            ]
+            return LinearGradient(
+                colors: [
+                    Color(red: 0.24, green: 0.68, blue: 0.75).opacity(0.7),
+                    Color.white.opacity(0.08),
+                    Color(red: 0.92, green: 0.56, blue: 0.28).opacity(0.45)
+                ],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
         default:
-            return [
-                Color(red: 0.46, green: 0.77, blue: 0.82).opacity(0.34),
-                Color(red: 0.98, green: 0.73, blue: 0.45).opacity(0.24),
-                Color(red: 0.96, green: 0.56, blue: 0.61).opacity(0.18)
-            ]
+            return LinearGradient(
+                colors: [
+                    Color(red: 0.24, green: 0.62, blue: 0.72).opacity(0.6),
+                    Color.white.opacity(0.6),
+                    Color(red: 0.93, green: 0.63, blue: 0.28).opacity(0.55)
+                ],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
         }
     }
 

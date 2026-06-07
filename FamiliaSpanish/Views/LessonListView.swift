@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct LessonListView: View {
+    @Environment(\.colorScheme) private var colorScheme
     let curriculum: Curriculum
     let lessonProgress: [LessonProgress]
     @Binding var selectedLessonID: String?
@@ -8,26 +9,6 @@ struct LessonListView: View {
 
     var body: some View {
         List {
-            Section {
-                VStack(alignment: .leading, spacing: 12) {
-                    Text(curriculum.title)
-                        .font(.title2.bold())
-                    Text(curriculum.goal)
-                        .font(.body)
-                        .foregroundStyle(.secondary)
-                        .textSelection(.enabled)
-                    Label("\(curriculum.lessons.count) bundled lessons", systemImage: "book.closed")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
-                .padding(AppTheme.contentPadding)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(.regularMaterial, in: RoundedRectangle(cornerRadius: AppTheme.cardCornerRadius))
-            }
-            .listRowInsets(EdgeInsets(top: 12, leading: 20, bottom: 8, trailing: 20))
-            .listRowBackground(Color.clear)
-            .listRowSeparator(.hidden)
-
             Section("Lessons") {
                 ForEach(curriculum.lessons) { lesson in
                     let progress = lessonProgress.first { $0.lessonID == lesson.id }
@@ -71,7 +52,7 @@ struct LessonListView: View {
                         .background(.thinMaterial, in: RoundedRectangle(cornerRadius: AppTheme.innerCornerRadius))
                         .overlay {
                             RoundedRectangle(cornerRadius: AppTheme.innerCornerRadius)
-                                .strokeBorder(.white.opacity(0.08))
+                                .strokeBorder(AppTheme.edgeGradient(for: colorScheme), lineWidth: 1.2)
                         }
                         .contentShape(RoundedRectangle(cornerRadius: AppTheme.innerCornerRadius))
                     }

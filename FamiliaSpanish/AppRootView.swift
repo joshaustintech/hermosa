@@ -16,13 +16,13 @@ struct AppRootView: View {
                 if let curriculum {
                     TabView {
                         NavigationStack {
-                            LessonListView(
-                                curriculum: curriculum,
-                                lessonProgress: lessonProgress,
-                                selectedLessonID: $selectedLessonID,
-                                quizInProgressLessonID: $quizInProgressLessonID
-                            )
-                            .navigationTitle("Familia Spanish")
+                        LessonListView(
+                            curriculum: curriculum,
+                            lessonProgress: lessonProgress,
+                            selectedLessonID: $selectedLessonID,
+                            quizInProgressLessonID: $quizInProgressLessonID
+                        )
+                        .navigationTitle("Hermosa")
                         }
                         .tabItem {
                             Label("Lessons", systemImage: "list.bullet.rectangle")

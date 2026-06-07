@@ -281,7 +281,7 @@ private final class CurriculumParserDelegate: NSObject, XMLParserDelegate {
             case "SpanishLearningCurriculum":
                 curriculum = Curriculum(
                     id: curriculumID,
-                    title: "Familia Spanish",
+                    title: "Hermosa",
                     version: curriculumVersion,
                     goal: curriculumGoal,
                     lessons: lessons

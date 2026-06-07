@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct LessonDetailView: View {
+    @Environment(\.colorScheme) private var colorScheme
     let lesson: Lesson
     let onStartQuiz: () -> Void
 
@@ -19,6 +20,10 @@ struct LessonDetailView: View {
                 .padding(AppTheme.contentPadding)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .background(.regularMaterial, in: RoundedRectangle(cornerRadius: AppTheme.cardCornerRadius))
+                .overlay {
+                    RoundedRectangle(cornerRadius: AppTheme.cardCornerRadius)
+                        .strokeBorder(AppTheme.edgeGradient(for: colorScheme), lineWidth: 1.2)
+                }
 
                 GrammarFocusView(items: lesson.grammarFocus)
                 VocabularyView(words: lesson.vocabulary)
