@@ -31,8 +31,4 @@ struct SettingsView: View {
     }
 }
 
-#Preview {
-    NavigationStack {
-        SettingsView()
-    }
-}
+#Preview { NavigationStack { SettingsView() } }

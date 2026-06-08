@@ -54,7 +54,6 @@ enum FamiliaColors {
     static let surfaceInteractive = Color.familiaDynamic(light: "#FAF5EF", dark: "#30282C")
     static let surfaceInteractivePressed = Color.familiaDynamic(light: "#F3E7E6", dark: "#3A3035")
     static let surfaceFeature = Color.familiaDynamic(light: "#FFF9F4", dark: "#231E21")
-    static let surfaceInput = Color.familiaDynamic(light: "#F7EFE5", dark: "#2C2528")
 
     static let strokeSoft = Color.familiaDynamic(light: "#CFC4B8", dark: "#4A4144")
     static let strokeStrong = Color.familiaDynamic(light: "#A99788", dark: "#6A5D63")
@@ -72,7 +71,6 @@ enum FamiliaColors {
     static let accentSecondaryPressed = Color.familiaDynamic(light: "#245650", dark: "#5D8882")
 
     static let success = Color.familiaDynamic(light: "#5A7353", dark: "#90AD87")
-    static let warning = Color.familiaDynamic(light: "#9D6F28", dark: "#D2A25C")
     static let error = Color.familiaDynamic(light: "#A1463F", dark: "#D97E77")
 
     static let selectionFill = Color.familiaDynamic(light: "#EAD6DB", dark: "#4B2C35")

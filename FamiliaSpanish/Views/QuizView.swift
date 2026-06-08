@@ -32,8 +32,4 @@ struct QuizView: View {
     }
 }
 
-#Preview {
-    NavigationStack {
-        QuizView(lesson: Curriculum.placeholder.lessons[0])
-    }
-}
+#Preview { NavigationStack { QuizView(lesson: Curriculum.placeholder.lessons[0]) } }

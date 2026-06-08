@@ -61,8 +61,4 @@ struct ProgressViewScreen: View {
     }
 }
 
-#Preview {
-    NavigationStack {
-        ProgressViewScreen(curriculum: .placeholder, lessonProgress: [])
-    }
-}
+#Preview { NavigationStack { ProgressViewScreen(curriculum: .placeholder, lessonProgress: []) } }

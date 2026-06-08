@@ -77,46 +77,53 @@ private final class CurriculumParserDelegate: NSObject, XMLParserDelegate {
         var vocabulary: [VocabularyWord] = []
         var modelSentences: [ModelSentence] = []
         var quiz: [QuizQuestion] = []
+
+        func build(line: Int) throws -> Lesson {
+            guard !context.isEmpty else {
+                throw LessonXMLParser.ParserError.incompleteLesson(id: id, line: line)
+            }
+
+            return Lesson(
+                id: id,
+                title: title,
+                level: level,
+                estimatedMinutes: estimatedMinutes,
+                context: context,
+                grammarFocus: grammarFocus,
+                vocabulary: vocabulary,
+                modelSentences: modelSentences,
+                quiz: quiz
+            )
+        }
     }
 
-    private enum QuestionBuilder {
-        case multipleChoice(prompt: String, answer: String, options: [String])
-        case multipleSelect(prompt: String, answers: [String], options: [String])
+    private struct QuestionBuilder {
+        let prompt: String
+        let answer: String?
+        let answers: [String]
+        var options: [String] = []
 
-        var prompt: String {
-            switch self {
-            case let .multipleChoice(prompt, _, _):
-                return prompt
-            case let .multipleSelect(prompt, _, _):
-                return prompt
-            }
-        }
+        static func multipleChoice(prompt: String, answer: String) -> Self { .init(prompt: prompt, answer: answer, answers: []) }
+        static func multipleSelect(prompt: String, answers: [String]) -> Self { .init(prompt: prompt, answer: nil, answers: answers) }
 
         mutating func appendOption(_ option: String) {
-            switch self {
-            case let .multipleChoice(prompt, answer, options):
-                self = .multipleChoice(prompt: prompt, answer: answer, options: options + [option])
-            case let .multipleSelect(prompt, answers, options):
-                self = .multipleSelect(prompt: prompt, answers: answers, options: options + [option])
-            }
+            options.append(option)
         }
 
         func build(line: Int) throws -> QuizQuestion {
-            switch self {
-            case let .multipleChoice(prompt, answer, options):
+            if let answer {
                 guard !prompt.isEmpty, !answer.isEmpty, !options.isEmpty else {
                     throw LessonXMLParser.ParserError.incompleteQuestion(prompt: prompt, line: line)
                 }
 
                 return .multipleChoice(prompt: prompt, options: options, answer: answer)
-
-            case let .multipleSelect(prompt, answers, options):
-                guard !prompt.isEmpty, !answers.isEmpty, !options.isEmpty else {
-                    throw LessonXMLParser.ParserError.incompleteQuestion(prompt: prompt, line: line)
-                }
-
-                return .multipleSelect(prompt: prompt, options: options, answers: answers)
             }
+
+            guard !prompt.isEmpty, !answers.isEmpty, !options.isEmpty else {
+                throw LessonXMLParser.ParserError.incompleteQuestion(prompt: prompt, line: line)
+            }
+
+            return .multipleSelect(prompt: prompt, options: options, answers: answers)
         }
     }
 
@@ -140,7 +147,7 @@ private final class CurriculumParserDelegate: NSObject, XMLParserDelegate {
     ) {
         currentText = ""
 
-        do {
+        handle(parser) {
             switch elementName {
             case "SpanishLearningCurriculum":
                 curriculumID = try requiredAttribute("id", in: elementName, from: attributeDict, parser: parser)
@@ -168,56 +175,42 @@ private final class CurriculumParserDelegate: NSObject, XMLParserDelegate {
                 )
 
             case "Word":
-                guard var lesson = currentLesson else { return }
-
-                lesson.vocabulary.append(
+                try updateLesson {
+                    $0.vocabulary.append(
                     VocabularyWord(
                         spanish: try requiredAttribute("spanish", in: elementName, from: attributeDict, parser: parser),
                         english: try requiredAttribute("english", in: elementName, from: attributeDict, parser: parser),
                         partOfSpeech: try requiredAttribute("partOfSpeech", in: elementName, from: attributeDict, parser: parser)
                     )
-                )
-                currentLesson = lesson
+                    )
+                }
 
             case "Sentence":
-                guard var lesson = currentLesson else { return }
-
-                lesson.modelSentences.append(
+                try updateLesson {
+                    $0.modelSentences.append(
                     ModelSentence(
                         spanish: try requiredAttribute("spanish", in: elementName, from: attributeDict, parser: parser),
                         english: try requiredAttribute("english", in: elementName, from: attributeDict, parser: parser)
                     )
-                )
-                currentLesson = lesson
+                    )
+                }
 
             case "MultipleChoice":
                 currentQuestion = .multipleChoice(
                     prompt: try requiredAttribute("prompt", in: elementName, from: attributeDict, parser: parser),
-                    answer: try requiredAttribute("answer", in: elementName, from: attributeDict, parser: parser),
-                    options: []
+                    answer: try requiredAttribute("answer", in: elementName, from: attributeDict, parser: parser)
                 )
 
             case "MultipleSelect":
-                let answers = try requiredAttribute("answers", in: elementName, from: attributeDict, parser: parser)
-                    .split(separator: "|")
-                    .map { String($0).trimmingCharacters(in: .whitespacesAndNewlines) }
-                    .filter { !$0.isEmpty }
-
+                let answers = try splitAnswers(from: attributeDict, element: elementName, parser: parser)
                 currentQuestion = .multipleSelect(
                     prompt: try requiredAttribute("prompt", in: elementName, from: attributeDict, parser: parser),
-                    answers: answers,
-                    options: []
+                    answers: answers
                 )
 
             default:
                 break
             }
-        } catch let error as LessonXMLParser.ParserError {
-            parserError = error
-            parser.abortParsing()
-        } catch {
-            parserError = .parseFailed(line: parser.lineNumber, reason: error.localizedDescription)
-            parser.abortParsing()
         }
     }
 
@@ -233,17 +226,14 @@ private final class CurriculumParserDelegate: NSObject, XMLParserDelegate {
     ) {
         let text = currentText.trimmingCharacters(in: .whitespacesAndNewlines)
 
-        do {
+        handle(parser) {
             switch elementName {
             case "Context":
-                guard var lesson = currentLesson else { return }
-                lesson.context = text
-                currentLesson = lesson
+                updateLesson { $0.context = text }
 
             case "Item":
-                guard var lesson = currentLesson, !text.isEmpty else { return }
-                lesson.grammarFocus.append(text)
-                currentLesson = lesson
+                guard !text.isEmpty else { return }
+                updateLesson { $0.grammarFocus.append(text) }
 
             case "Option":
                 guard !text.isEmpty else { return }
@@ -257,23 +247,7 @@ private final class CurriculumParserDelegate: NSObject, XMLParserDelegate {
 
             case "Lesson":
                 guard let lessonBuilder = currentLesson else { return }
-                guard !lessonBuilder.context.isEmpty else {
-                    throw LessonXMLParser.ParserError.incompleteLesson(id: lessonBuilder.id, line: parser.lineNumber)
-                }
-
-                lessons.append(
-                    Lesson(
-                        id: lessonBuilder.id,
-                        title: lessonBuilder.title,
-                        level: lessonBuilder.level,
-                        estimatedMinutes: lessonBuilder.estimatedMinutes,
-                        context: lessonBuilder.context,
-                        grammarFocus: lessonBuilder.grammarFocus,
-                        vocabulary: lessonBuilder.vocabulary,
-                        modelSentences: lessonBuilder.modelSentences,
-                        quiz: lessonBuilder.quiz
-                    )
-                )
+                lessons.append(try lessonBuilder.build(line: parser.lineNumber))
                 currentLesson = nil
 
             case "SpanishLearningCurriculum":
@@ -286,6 +260,14 @@ private final class CurriculumParserDelegate: NSObject, XMLParserDelegate {
             default:
                 break
             }
+        }
+
+        currentText = ""
+    }
+
+    private func handle(_ parser: XMLParser, _ body: () throws -> Void) {
+        do {
+            try body()
         } catch let error as LessonXMLParser.ParserError {
             parserError = error
             parser.abortParsing()
@@ -293,8 +275,19 @@ private final class CurriculumParserDelegate: NSObject, XMLParserDelegate {
             parserError = .parseFailed(line: parser.lineNumber, reason: error.localizedDescription)
             parser.abortParsing()
         }
+    }
 
-        currentText = ""
+    private func updateLesson(_ update: (inout LessonBuilder) throws -> Void) rethrows {
+        guard var lesson = currentLesson else { return }
+        try update(&lesson)
+        currentLesson = lesson
+    }
+
+    private func splitAnswers(from attributes: [String: String], element: String, parser: XMLParser) throws -> [String] {
+        try requiredAttribute("answers", in: element, from: attributes, parser: parser)
+            .split(separator: "|")
+            .map { String($0).trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
     }
 
     private func requiredAttribute(

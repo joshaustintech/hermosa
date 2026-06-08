@@ -20,44 +20,6 @@ struct FamiliaPrimaryButtonStyle: ButtonStyle {
     }
 }
 
-struct FamiliaSecondaryButtonStyle: ButtonStyle {
-    @Environment(\.isEnabled) private var isEnabled
-
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .familiaTextStyle(.buttonLabel)
-            .foregroundStyle(FamiliaColors.textPrimary)
-            .frame(maxWidth: .infinity)
-            .frame(minHeight: FamiliaMetrics.buttonHeight)
-            .padding(.horizontal, FamiliaMetrics.space16)
-            .background(
-                RoundedRectangle(cornerRadius: FamiliaMetrics.buttonCornerRadius, style: .continuous)
-                    .fill(configuration.isPressed ? FamiliaColors.backgroundSubtle : Color.clear)
-            )
-            .overlay {
-                RoundedRectangle(cornerRadius: FamiliaMetrics.buttonCornerRadius, style: .continuous)
-                    .stroke(FamiliaColors.strokeStrong, lineWidth: FamiliaMetrics.standardBorderWidth)
-            }
-            .opacity(isEnabled ? 1 : 0.55)
-            .scaleEffect(configuration.isPressed ? 0.99 : 1)
-            .animation(.easeOut(duration: 0.12), value: configuration.isPressed)
-    }
-}
-
-struct FamiliaQuietButtonStyle: ButtonStyle {
-    @Environment(\.isEnabled) private var isEnabled
-
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .familiaTextStyle(.buttonLabel)
-            .foregroundStyle(configuration.isPressed ? FamiliaColors.accentSecondaryPressed : FamiliaColors.accentSecondary)
-            .padding(.vertical, FamiliaMetrics.space8)
-            .padding(.horizontal, FamiliaMetrics.space4)
-            .opacity(isEnabled ? 1 : 0.55)
-            .animation(.easeOut(duration: 0.12), value: configuration.isPressed)
-    }
-}
-
 struct FamiliaInteractiveRowButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label

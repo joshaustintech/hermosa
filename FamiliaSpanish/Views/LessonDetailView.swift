@@ -40,6 +40,4 @@ struct LessonDetailView: View {
     }
 }
 
-#Preview {
-    LessonDetailView(lesson: Curriculum.placeholder.lessons[0], onStartQuiz: {})
-}
+#Preview { LessonDetailView(lesson: Curriculum.placeholder.lessons[0], onStartQuiz: {}) }

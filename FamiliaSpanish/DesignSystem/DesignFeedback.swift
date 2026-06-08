@@ -2,21 +2,8 @@ import SwiftUI
 
 struct FamiliaQuizOptionRow: View {
     let title: String
-    let detail: String?
-    let state: FamiliaQuizOptionState
-    let action: (() -> Void)?
-
-    init(
-        title: String,
-        detail: String? = nil,
-        state: FamiliaQuizOptionState = .idle,
-        action: (() -> Void)? = nil
-    ) {
-        self.title = title
-        self.detail = detail
-        self.state = state
-        self.action = action
-    }
+    var state: FamiliaQuizOptionState = .idle
+    var action: (() -> Void)? = nil
 
     var body: some View {
         Group {
@@ -34,22 +21,16 @@ struct FamiliaQuizOptionRow: View {
 
     private var optionContent: some View {
         HStack(alignment: .top, spacing: FamiliaMetrics.space12) {
-            Image(systemName: indicatorSymbol)
+            Image(systemName: state.style.symbol)
                 .font(.system(size: 18, weight: .semibold))
-                .foregroundStyle(indicatorColor)
+                .foregroundStyle(state.style.indicator)
                 .frame(width: 24, height: 24)
                 .accessibilityHidden(true)
 
             VStack(alignment: .leading, spacing: FamiliaMetrics.space4) {
                 Text(title)
-                    .familiaTextStyle(state == .selected || state == .correct ? .bodyEmphasized : .body)
+                    .familiaTextStyle(state.style.isEmphasized ? .bodyEmphasized : .body)
                     .foregroundStyle(FamiliaColors.textPrimary)
-
-                if let detail, detail.isEmpty == false {
-                    Text(detail)
-                        .familiaTextStyle(.secondaryBody)
-                        .foregroundStyle(FamiliaColors.textSecondary)
-                }
             }
 
             Spacer(minLength: FamiliaMetrics.space12)
@@ -57,66 +38,14 @@ struct FamiliaQuizOptionRow: View {
         .padding(FamiliaMetrics.cardPadding)
         .background(
             RoundedRectangle(cornerRadius: FamiliaMetrics.cardCornerRadius, style: .continuous)
-                .fill(backgroundColor)
+                .fill(state.style.background)
         )
         .overlay {
             RoundedRectangle(cornerRadius: FamiliaMetrics.cardCornerRadius, style: .continuous)
-                .stroke(borderColor, lineWidth: FamiliaMetrics.standardBorderWidth)
+                .stroke(state.style.border, lineWidth: FamiliaMetrics.standardBorderWidth)
         }
         .opacity(state == .disabled ? 0.55 : 1)
         .contentShape(RoundedRectangle(cornerRadius: FamiliaMetrics.cardCornerRadius, style: .continuous))
-    }
-
-    private var indicatorSymbol: String {
-        switch state {
-        case .idle, .disabled:
-            return "circle"
-        case .selected:
-            return "largecircle.fill.circle"
-        case .correct:
-            return "checkmark.circle.fill"
-        case .incorrect:
-            return "xmark.circle.fill"
-        }
-    }
-
-    private var indicatorColor: Color {
-        switch state {
-        case .idle, .disabled:
-            return FamiliaColors.textTertiary
-        case .selected:
-            return FamiliaColors.selectionStroke
-        case .correct:
-            return FamiliaColors.success
-        case .incorrect:
-            return FamiliaColors.error
-        }
-    }
-
-    private var backgroundColor: Color {
-        switch state {
-        case .idle, .disabled:
-            return FamiliaColors.surfaceInteractive
-        case .selected:
-            return FamiliaColors.selectionFill
-        case .correct:
-            return FamiliaColors.success.opacity(0.18)
-        case .incorrect:
-            return FamiliaColors.error.opacity(0.16)
-        }
-    }
-
-    private var borderColor: Color {
-        switch state {
-        case .idle, .disabled:
-            return FamiliaColors.strokeInteractive.opacity(0.75)
-        case .selected:
-            return FamiliaColors.selectionStroke
-        case .correct:
-            return FamiliaColors.success
-        case .incorrect:
-            return FamiliaColors.error
-        }
     }
 }
 
@@ -127,43 +56,13 @@ struct FamiliaProgressBadge: View {
     var body: some View {
         Text(title)
             .familiaTextStyle(.metadata)
-            .foregroundStyle(foregroundColor)
+            .foregroundStyle(tone.foregroundColor)
             .padding(.horizontal, FamiliaMetrics.space8)
             .padding(.vertical, FamiliaMetrics.space4)
             .background(
                 Capsule(style: .continuous)
-                    .fill(backgroundColor)
+                    .fill(tone.backgroundColor)
             )
-    }
-
-    private var foregroundColor: Color {
-        switch tone {
-        case .neutral:
-            return FamiliaColors.textSecondary
-        case .progress:
-            return FamiliaColors.accentPrimary
-        case .success:
-            return FamiliaColors.success
-        case .warning:
-            return FamiliaColors.warning
-        case .error:
-            return FamiliaColors.error
-        }
-    }
-
-    private var backgroundColor: Color {
-        switch tone {
-        case .neutral:
-            return FamiliaColors.backgroundSubtle
-        case .progress:
-            return FamiliaColors.selectionFill
-        case .success:
-            return FamiliaColors.success.opacity(0.16)
-        case .warning:
-            return FamiliaColors.warning.opacity(0.16)
-        case .error:
-            return FamiliaColors.error.opacity(0.14)
-        }
     }
 }
 
@@ -180,27 +79,12 @@ struct FamiliaProgressBar: View {
                     .fill(FamiliaColors.backgroundSubtle)
 
                 Capsule(style: .continuous)
-                    .fill(fillColor)
+                    .fill(tone.barColor)
                     .frame(width: width)
             }
         }
         .frame(height: FamiliaMetrics.progressBarHeight)
         .accessibilityValue(progress.formatted(.percent))
-    }
-
-    private var fillColor: Color {
-        switch tone {
-        case .neutral:
-            return FamiliaColors.strokeStrong
-        case .progress:
-            return FamiliaColors.accentPrimary
-        case .success:
-            return FamiliaColors.success
-        case .warning:
-            return FamiliaColors.warning
-        case .error:
-            return FamiliaColors.error
-        }
     }
 }
 
@@ -231,32 +115,19 @@ struct FamiliaProgressSummaryCard: View {
     }
 }
 
-struct FamiliaEmptyStateView: View {
+struct FamiliaStatusCard: View {
     let title: String
     let message: String
     let systemImage: String
-    let actionTitle: String?
-    let action: (() -> Void)?
-
-    init(
-        title: String,
-        message: String,
-        systemImage: String,
-        actionTitle: String? = nil,
-        action: (() -> Void)? = nil
-    ) {
-        self.title = title
-        self.message = message
-        self.systemImage = systemImage
-        self.actionTitle = actionTitle
-        self.action = action
-    }
+    let imageColor: Color
+    var actionTitle: String? = nil
+    var action: (() -> Void)? = nil
 
     var body: some View {
         VStack(spacing: FamiliaMetrics.space16) {
             Image(systemName: systemImage)
                 .font(.system(size: 34, weight: .regular))
-                .foregroundStyle(FamiliaColors.accentSecondary)
+                .foregroundStyle(imageColor)
 
             Text(title)
                 .familiaTextStyle(.sectionTitle)
@@ -279,33 +150,43 @@ struct FamiliaEmptyStateView: View {
     }
 }
 
-struct FamiliaErrorStateView: View {
-    let title: String
-    let message: String
-    let actionTitle: String
-    let action: () -> Void
-
-    var body: some View {
-        VStack(spacing: FamiliaMetrics.space16) {
-            Image(systemName: "exclamationmark.triangle")
-                .font(.system(size: 34, weight: .regular))
-                .foregroundStyle(FamiliaColors.error)
-
-            Text(title)
-                .familiaTextStyle(.sectionTitle)
-                .foregroundStyle(FamiliaColors.textPrimary)
-                .multilineTextAlignment(.center)
-
-            Text(message)
-                .familiaTextStyle(.body)
-                .foregroundStyle(FamiliaColors.textSecondary)
-                .multilineTextAlignment(.center)
-
-            Button(actionTitle, action: action)
-                .buttonStyle(FamiliaPrimaryButtonStyle())
+private extension FamiliaProgressTone {
+    var foregroundColor: Color {
+        switch self {
+        case .neutral: FamiliaColors.textSecondary
+        case .progress: FamiliaColors.accentPrimary
+        case .success: FamiliaColors.success
         }
-        .frame(maxWidth: .infinity)
-        .padding(FamiliaMetrics.space24)
-        .familiaFeatureCard()
+    }
+
+    var backgroundColor: Color {
+        switch self {
+        case .neutral: FamiliaColors.backgroundSubtle
+        case .progress: FamiliaColors.selectionFill
+        case .success: FamiliaColors.success.opacity(0.16)
+        }
+    }
+
+    var barColor: Color {
+        switch self {
+        case .neutral: FamiliaColors.strokeStrong
+        case .progress: FamiliaColors.accentPrimary
+        case .success: FamiliaColors.success
+        }
+    }
+}
+
+private extension FamiliaQuizOptionState {
+    var style: (symbol: String, indicator: Color, background: Color, border: Color, isEmphasized: Bool) {
+        switch self {
+        case .idle, .disabled:
+            ("circle", FamiliaColors.textTertiary, FamiliaColors.surfaceInteractive, FamiliaColors.strokeInteractive.opacity(0.75), false)
+        case .selected:
+            ("largecircle.fill.circle", FamiliaColors.selectionStroke, FamiliaColors.selectionFill, FamiliaColors.selectionStroke, true)
+        case .correct:
+            ("checkmark.circle.fill", FamiliaColors.success, FamiliaColors.success.opacity(0.18), FamiliaColors.success, true)
+        case .incorrect:
+            ("xmark.circle.fill", FamiliaColors.error, FamiliaColors.error.opacity(0.16), FamiliaColors.error, false)
+        }
     }
 }

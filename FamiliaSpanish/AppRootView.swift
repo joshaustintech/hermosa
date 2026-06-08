@@ -14,46 +14,33 @@ struct AppRootView: View {
             Group {
                 if let curriculum {
                     TabView {
-                        NavigationStack {
+                        appTab("Lessons", systemImage: "list.bullet.rectangle") {
                             LessonListView(
                                 curriculum: curriculum,
                                 lessonProgress: lessonProgress,
                                 quizInProgressLessonID: $quizInProgressLessonID
                             )
-                            .navigationTitle("Lessons")
-                            .navigationBarTitleDisplayMode(.inline)
-                        }
-                        .tabItem {
-                            Label("Lessons", systemImage: "list.bullet.rectangle")
                         }
 
-                        NavigationStack {
+                        appTab("Progress", systemImage: "chart.bar") {
                             ProgressViewScreen(
                                 curriculum: curriculum,
                                 lessonProgress: lessonProgress
                             )
-                            .navigationTitle("Progress")
-                            .navigationBarTitleDisplayMode(.inline)
-                        }
-                        .tabItem {
-                            Label("Progress", systemImage: "chart.bar")
                         }
 
-                        NavigationStack {
+                        appTab("Settings", systemImage: "gearshape") {
                             SettingsView()
-                                .navigationTitle("Settings")
-                                .navigationBarTitleDisplayMode(.inline)
-                        }
-                        .tabItem {
-                            Label("Settings", systemImage: "gearshape")
                         }
                     }
                 }
                 else if let loadError {
                     FamiliaScreenScrollView {
-                        FamiliaErrorStateView(
+                        FamiliaStatusCard(
                             title: "Unable to Load Lessons",
                             message: loadError,
+                            systemImage: "exclamationmark.triangle",
+                            imageColor: FamiliaColors.error,
                             actionTitle: "Retry",
                             action: loadCurriculum
                         )
@@ -61,10 +48,11 @@ struct AppRootView: View {
                 }
                 else {
                     FamiliaScreenScrollView {
-                        FamiliaEmptyStateView(
+                        FamiliaStatusCard(
                             title: "Loading Lessons",
                             message: "Bundled lesson content is being prepared.",
-                            systemImage: "book.closed"
+                            systemImage: "book.closed",
+                            imageColor: FamiliaColors.accentSecondary
                         )
                     }
                 }
@@ -88,9 +76,19 @@ struct AppRootView: View {
             loadError = error.localizedDescription
         }
     }
+
+    private func appTab<Content: View>(
+        _ title: String,
+        systemImage: String,
+        @ViewBuilder content: () -> Content
+    ) -> some View {
+        NavigationStack {
+            content()
+                .navigationTitle(title)
+                .navigationBarTitleDisplayMode(.inline)
+        }
+        .tabItem { Label(title, systemImage: systemImage) }
+    }
 }
 
-#Preview {
-    AppRootView()
-        .modelContainer(for: [LessonProgress.self, QuizAttempt.self], inMemory: true)
-}
+#Preview { AppRootView().modelContainer(for: [LessonProgress.self, QuizAttempt.self], inMemory: true) }

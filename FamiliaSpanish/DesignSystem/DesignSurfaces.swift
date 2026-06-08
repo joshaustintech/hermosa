@@ -1,80 +1,58 @@
 import SwiftUI
 
-struct FamiliaStaticCardModifier: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(FamiliaMetrics.cardPadding)
-            .background(
-                RoundedRectangle(cornerRadius: FamiliaMetrics.cardCornerRadius, style: .continuous)
-                    .fill(FamiliaColors.surfaceStatic)
-            )
-            .overlay {
-                RoundedRectangle(cornerRadius: FamiliaMetrics.cardCornerRadius, style: .continuous)
-                    .stroke(FamiliaColors.strokeSoft, lineWidth: FamiliaMetrics.standardBorderWidth)
-            }
-    }
-}
-
-struct FamiliaFeatureCardModifier: ViewModifier {
+private struct FamiliaCardSurfaceModifier: ViewModifier {
     @Environment(\.colorScheme) private var colorScheme
+    let style: FamiliaCardSurfaceStyle
 
     func body(content: Content) -> some View {
         content
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(FamiliaMetrics.cardPadding)
             .background(
-                RoundedRectangle(cornerRadius: FamiliaMetrics.featureCornerRadius, style: .continuous)
-                    .fill(FamiliaColors.surfaceFeature)
+                RoundedRectangle(cornerRadius: style.cornerRadius, style: .continuous)
+                    .fill(style.fill)
             )
             .overlay {
-                RoundedRectangle(cornerRadius: FamiliaMetrics.featureCornerRadius, style: .continuous)
-                    .stroke(FamiliaColors.strokeSoft, lineWidth: FamiliaMetrics.standardBorderWidth)
+                RoundedRectangle(cornerRadius: style.cornerRadius, style: .continuous)
+                    .stroke(style.stroke, lineWidth: FamiliaMetrics.standardBorderWidth)
             }
             .shadow(
-                color: FamiliaColors.shadow(for: colorScheme),
-                radius: FamiliaMetrics.shadowRadius,
+                color: style.shadowColor(for: colorScheme),
+                radius: style.hasShadow ? FamiliaMetrics.shadowRadius : 0,
                 x: 0,
-                y: FamiliaMetrics.shadowY
+                y: style.hasShadow ? FamiliaMetrics.shadowY : 0
             )
     }
 }
 
-struct FamiliaInteractiveCardModifier: ViewModifier {
-    let isPressed: Bool
+private enum FamiliaCardSurfaceStyle: Equatable {
+    case staticCard
+    case feature
+    case interactive(isPressed: Bool)
 
-    func body(content: Content) -> some View {
-        content
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(FamiliaMetrics.cardPadding)
-            .background(
-                RoundedRectangle(cornerRadius: FamiliaMetrics.cardCornerRadius, style: .continuous)
-                    .fill(isPressed ? FamiliaColors.surfaceInteractivePressed : FamiliaColors.surfaceInteractive)
-            )
-            .overlay {
-                RoundedRectangle(cornerRadius: FamiliaMetrics.cardCornerRadius, style: .continuous)
-                    .stroke(
-                        isPressed ? FamiliaColors.strokeInteractivePressed : FamiliaColors.strokeInteractive.opacity(0.82),
-                        lineWidth: FamiliaMetrics.standardBorderWidth
-                    )
-            }
+    var cornerRadius: CGFloat {
+        self == .feature ? FamiliaMetrics.featureCornerRadius : FamiliaMetrics.cardCornerRadius
     }
-}
 
-struct FamiliaInputSurfaceModifier: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal, FamiliaMetrics.space16)
-            .padding(.vertical, FamiliaMetrics.space12)
-            .background(
-                RoundedRectangle(cornerRadius: FamiliaMetrics.smallCornerRadius, style: .continuous)
-                    .fill(FamiliaColors.surfaceInput)
-            )
-            .overlay {
-                RoundedRectangle(cornerRadius: FamiliaMetrics.smallCornerRadius, style: .continuous)
-                    .stroke(FamiliaColors.strokeSoft, lineWidth: FamiliaMetrics.standardBorderWidth)
-            }
+    var fill: Color {
+        switch self {
+        case .staticCard: FamiliaColors.surfaceStatic
+        case .feature: FamiliaColors.surfaceFeature
+        case let .interactive(isPressed): isPressed ? FamiliaColors.surfaceInteractivePressed : FamiliaColors.surfaceInteractive
+        }
+    }
+
+    var stroke: Color {
+        switch self {
+        case .staticCard, .feature: FamiliaColors.strokeSoft
+        case let .interactive(isPressed): isPressed ? FamiliaColors.strokeInteractivePressed : FamiliaColors.strokeInteractive.opacity(0.82)
+        }
+    }
+
+    var hasShadow: Bool { self == .feature }
+
+    func shadowColor(for colorScheme: ColorScheme) -> Color {
+        hasShadow ? FamiliaColors.shadow(for: colorScheme) : .clear
     }
 }
 
@@ -101,7 +79,7 @@ struct FamiliaScreenScrollView<Content: View>: View {
 struct FamiliaScreenSection<Content: View>: View {
     let title: String?
     let subtitle: String?
-    let content: Content
+    @ViewBuilder let content: Content
 
     init(
         title: String? = nil,
@@ -145,18 +123,14 @@ struct FamiliaStackedCardGroup<Content: View>: View {
 
 extension View {
     func familiaStaticCard() -> some View {
-        modifier(FamiliaStaticCardModifier())
+        modifier(FamiliaCardSurfaceModifier(style: .staticCard))
     }
 
     func familiaFeatureCard() -> some View {
-        modifier(FamiliaFeatureCardModifier())
-    }
-
-    func familiaInputSurface() -> some View {
-        modifier(FamiliaInputSurfaceModifier())
+        modifier(FamiliaCardSurfaceModifier(style: .feature))
     }
 
     func familiaInteractiveCard(isPressed: Bool = false) -> some View {
-        modifier(FamiliaInteractiveCardModifier(isPressed: isPressed))
+        modifier(FamiliaCardSurfaceModifier(style: .interactive(isPressed: isPressed)))
     }
 }

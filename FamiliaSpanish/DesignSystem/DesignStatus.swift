@@ -18,6 +18,4 @@ enum FamiliaProgressTone {
     case neutral
     case progress
     case success
-    case warning
-    case error
 }

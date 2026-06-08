@@ -74,12 +74,4 @@ struct LessonListView: View {
     }
 }
 
-#Preview {
-    NavigationStack {
-        LessonListView(
-            curriculum: .placeholder,
-            lessonProgress: [],
-            quizInProgressLessonID: .constant(nil)
-        )
-    }
-}
+#Preview { NavigationStack { LessonListView(curriculum: .placeholder, lessonProgress: [], quizInProgressLessonID: .constant(nil)) } }
