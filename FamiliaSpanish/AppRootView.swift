@@ -3,7 +3,6 @@ import SwiftData
 
 struct AppRootView: View {
     @State private var curriculum: Curriculum?
-    @State private var selectedLessonID: String?
     @State private var quizInProgressLessonID: String?
     @State private var loadError: String?
     @Query(sort: \LessonProgress.lessonID) private var lessonProgress: [LessonProgress]
@@ -16,13 +15,12 @@ struct AppRootView: View {
                 if let curriculum {
                     TabView {
                         NavigationStack {
-                        LessonListView(
-                            curriculum: curriculum,
-                            lessonProgress: lessonProgress,
-                            selectedLessonID: $selectedLessonID,
-                            quizInProgressLessonID: $quizInProgressLessonID
-                        )
-                        .navigationTitle("Hermosa")
+                            LessonListView(
+                                curriculum: curriculum,
+                                lessonProgress: lessonProgress,
+                                quizInProgressLessonID: $quizInProgressLessonID
+                            )
+                            .navigationTitle("Hermosa")
                         }
                         .tabItem {
                             Label("Lessons", systemImage: "list.bullet.rectangle")

@@ -4,14 +4,13 @@ struct LessonListView: View {
     @Environment(\.colorScheme) private var colorScheme
     let curriculum: Curriculum
     let lessonProgress: [LessonProgress]
-    @Binding var selectedLessonID: String?
     @Binding var quizInProgressLessonID: String?
 
     var body: some View {
         List {
             Section("Lessons") {
                 ForEach(curriculum.lessons) { lesson in
-                    let progress = lessonProgress.first { $0.lessonID == lesson.id }
+                    let progress = progressRecord(for: lesson.id)
 
                     NavigationLink {
                         LessonDetailView(
@@ -42,7 +41,7 @@ struct LessonListView: View {
                                 }
 
                                 if let bestScore = progress?.bestScore, bestScore > 0 {
-                                    Text("\(bestScore.formatted(.percent.precision(.fractionLength(0))))")
+                                    Text(bestScoreLabel(for: bestScore))
                                         .font(.subheadline)
                                         .foregroundStyle(.secondary)
                                 }
@@ -81,6 +80,14 @@ struct LessonListView: View {
             }
         )
     }
+
+    private func progressRecord(for lessonID: String) -> LessonProgress? {
+        lessonProgress.first { $0.lessonID == lessonID }
+    }
+
+    private func bestScoreLabel(for score: Double) -> String {
+        "Best \(score.formatted(.percent.precision(.fractionLength(0))))"
+    }
 }
 
 #Preview {
@@ -88,7 +95,6 @@ struct LessonListView: View {
         LessonListView(
             curriculum: .placeholder,
             lessonProgress: [],
-            selectedLessonID: .constant(nil),
             quizInProgressLessonID: .constant(nil)
         )
     }
