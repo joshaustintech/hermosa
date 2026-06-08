@@ -12,6 +12,7 @@ Current repo state:
 Primary references:
 - [FamiliaSpanishRoadmap.md](/Users/josh/hermosa/FamiliaSpanishRoadmap.md)
 - [FamiliaSpanishLessonPlan.md](/Users/josh/hermosa/FamiliaSpanishLessonPlan.md)
+- [DESIGN.md](/Users/josh/hermosa/DESIGN.md)
 
 ## Product Intent
 
@@ -27,6 +28,16 @@ Non-goals for v1:
 - No speech recognition.
 - No server-delivered lessons.
 - No heavy architecture such as MVVM, coordinators, repositories, or DI frameworks.
+
+## Copy Preservation Rule
+
+These rules are not optional unless the user explicitly changes them.
+
+- Do not reintroduce previously removed UI copy just because it still exists in the underlying data model or planning documents.
+- Treat product-approved on-screen copy as distinct from source curriculum metadata.
+- Before surfacing fields like curriculum title, goal, tagline, marketing summary, or descriptive paragraphs in the UI, confirm that the current screen is actually supposed to display them.
+- If a title, subtitle, paragraph, or label was intentionally removed earlier, do not add it back implicitly during refactors, design passes, or component migrations.
+- When in doubt, preserve the current visible UX copy rather than regenerating it from model data.
 
 ## Architecture Rules
 
@@ -102,6 +113,9 @@ If curriculum content is generated or transformed:
 
 The app should feel native and readable rather than heavily stylized.
 
+The design system reference is:
+- [DESIGN.md](/Users/josh/hermosa/DESIGN.md)
+
 - Follow Apple HIG principles for clarity, deference, feedback, consistency, and touch-friendly interaction.
 - Favor standard SwiftUI navigation and controls.
 - Use small, composable views.
@@ -112,6 +126,7 @@ The app should feel native and readable rather than heavily stylized.
 - Support Dynamic Type by avoiding rigid fixed-size layouts.
 - Add accessibility labels for quiz controls.
 - Keep lesson reading surfaces calm and easy to scan.
+- Make clickable and non-clickable elements visually distinct.
 
 ## Progress and Quiz Rules
 

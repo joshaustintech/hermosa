@@ -20,7 +20,8 @@ struct AppRootView: View {
                                 lessonProgress: lessonProgress,
                                 quizInProgressLessonID: $quizInProgressLessonID
                             )
-                            .navigationTitle("Hermosa")
+                            .navigationTitle("Lessons")
+                            .navigationBarTitleDisplayMode(.inline)
                         }
                         .tabItem {
                             Label("Lessons", systemImage: "list.bullet.rectangle")
@@ -32,6 +33,7 @@ struct AppRootView: View {
                                 lessonProgress: lessonProgress
                             )
                             .navigationTitle("Progress")
+                            .navigationBarTitleDisplayMode(.inline)
                         }
                         .tabItem {
                             Label("Progress", systemImage: "chart.bar")
@@ -40,6 +42,7 @@ struct AppRootView: View {
                         NavigationStack {
                             SettingsView()
                                 .navigationTitle("Settings")
+                                .navigationBarTitleDisplayMode(.inline)
                         }
                         .tabItem {
                             Label("Settings", systemImage: "gearshape")
@@ -47,23 +50,28 @@ struct AppRootView: View {
                     }
                 }
                 else if let loadError {
-                    ContentUnavailableView(
-                        "Unable to Load Lessons",
-                        systemImage: "exclamationmark.triangle",
-                        description: Text(loadError)
-                    )
-                    .overlay(alignment: .bottom) {
-                        Button("Retry", systemImage: "arrow.clockwise", action: loadCurriculum)
-                            .buttonStyle(.borderedProminent)
-                            .padding()
+                    FamiliaScreenScrollView {
+                        FamiliaErrorStateView(
+                            title: "Unable to Load Lessons",
+                            message: loadError,
+                            actionTitle: "Retry",
+                            action: loadCurriculum
+                        )
                     }
                 }
                 else {
-                    ProgressView("Loading Lessons…")
+                    FamiliaScreenScrollView {
+                        FamiliaEmptyStateView(
+                            title: "Loading Lessons",
+                            message: "Bundled lesson content is being prepared.",
+                            systemImage: "book.closed"
+                        )
+                    }
                 }
             }
         }
-        .toolbarBackground(.thinMaterial, for: .tabBar)
+        .tint(FamiliaColors.accentPrimary)
+        .toolbarBackground(FamiliaColors.backgroundElevated, for: .tabBar)
         .toolbarBackground(.visible, for: .tabBar)
         .task {
             guard curriculum == nil, loadError == nil else { return }

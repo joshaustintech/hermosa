@@ -1,37 +1,18 @@
 import SwiftUI
 
 struct ModelSentencesView: View {
-    @Environment(\.colorScheme) private var colorScheme
     let sentences: [ModelSentence]
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("Model Sentences")
-                .font(.title3.bold())
-
-            ForEach(sentences) { sentence in
-                VStack(alignment: .leading, spacing: 6) {
-                    Text(sentence.spanish)
-                        .font(.headline)
-                        .textSelection(.enabled)
-                    Text(sentence.english)
-                        .foregroundStyle(.secondary)
-                }
-                .padding()
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16))
-                .overlay {
-                    RoundedRectangle(cornerRadius: 16)
-                        .strokeBorder(AppTheme.edgeGradient(for: colorScheme), lineWidth: 1)
+        FamiliaScreenSection(
+            title: "Model Sentences",
+            subtitle: "Read the Spanish first, then check the translation."
+        ) {
+            FamiliaStackedCardGroup {
+                ForEach(sentences) { sentence in
+                    FamiliaModelSentenceBlock(sentence: sentence)
                 }
             }
-        }
-        .padding(AppTheme.contentPadding)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: AppTheme.cardCornerRadius))
-        .overlay {
-            RoundedRectangle(cornerRadius: AppTheme.cardCornerRadius)
-                .strokeBorder(AppTheme.edgeGradient(for: colorScheme), lineWidth: 1.1)
         }
     }
 }

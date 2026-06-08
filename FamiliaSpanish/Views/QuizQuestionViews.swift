@@ -4,16 +4,20 @@ struct QuizQuestionPlaceholderRow: View {
     let question: QuizQuestion
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: FamiliaMetrics.space12) {
             Text(prompt)
-                .font(.headline)
+                .familiaTextStyle(.cardTitle)
+                .foregroundStyle(FamiliaColors.textPrimary)
+                .fixedSize(horizontal: false, vertical: true)
 
             ForEach(options, id: \.self) { option in
-                Label(option, systemImage: "circle")
-                    .foregroundStyle(.secondary)
+                FamiliaQuizOptionRow(
+                    title: option,
+                    state: .idle
+                )
             }
         }
-        .padding(.vertical, 4)
+        .familiaStaticCard()
     }
 
     private var prompt: String {

@@ -2,8 +2,7 @@
 <SpanishLearningCurriculum
     id="spanish-for-chicago-family-and-church"
     version="1.0"
-    targetLearner="English-speaking adult with linguistics/humanities background"
-    goal="Become conversational with Spanish-speaking extended relatives, especially in family, food, Chicago, church, and daily-life contexts">
+    targetLearner="English-speaking adult with linguistics/humanities background">
 
   <DesignPrinciples>
     <Principle id="P1">Teach sentence construction, not only memorized phrases.</Principle>

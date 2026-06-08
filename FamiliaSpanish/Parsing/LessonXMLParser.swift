@@ -125,7 +125,6 @@ private final class CurriculumParserDelegate: NSObject, XMLParserDelegate {
 
     private var curriculumID = ""
     private var curriculumVersion = ""
-    private var curriculumGoal = ""
     private var lessons: [Lesson] = []
 
     private var currentLesson: LessonBuilder?
@@ -146,7 +145,6 @@ private final class CurriculumParserDelegate: NSObject, XMLParserDelegate {
             case "SpanishLearningCurriculum":
                 curriculumID = try requiredAttribute("id", in: elementName, from: attributeDict, parser: parser)
                 curriculumVersion = try requiredAttribute("version", in: elementName, from: attributeDict, parser: parser)
-                curriculumGoal = try requiredAttribute("goal", in: elementName, from: attributeDict, parser: parser)
 
             case "Lesson":
                 let id = try requiredAttribute("id", in: elementName, from: attributeDict, parser: parser)
@@ -281,9 +279,7 @@ private final class CurriculumParserDelegate: NSObject, XMLParserDelegate {
             case "SpanishLearningCurriculum":
                 curriculum = Curriculum(
                     id: curriculumID,
-                    title: "Hermosa",
                     version: curriculumVersion,
-                    goal: curriculumGoal,
                     lessons: lessons
                 )
 

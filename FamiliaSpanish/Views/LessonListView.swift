@@ -1,69 +1,39 @@
 import SwiftUI
 
 struct LessonListView: View {
-    @Environment(\.colorScheme) private var colorScheme
     let curriculum: Curriculum
     let lessonProgress: [LessonProgress]
     @Binding var quizInProgressLessonID: String?
 
     var body: some View {
-        List {
-            Section("Lessons") {
-                ForEach(curriculum.lessons) { lesson in
-                    let progress = progressRecord(for: lesson.id)
+        FamiliaScreenScrollView {
+            FamiliaScreenSection {
+                Text("Study practical Spanish through calm, readable lesson sets.")
+                    .familiaTextStyle(.body)
+                    .foregroundStyle(FamiliaColors.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
 
-                    NavigationLink {
-                        LessonDetailView(
-                            lesson: lesson,
-                            onStartQuiz: {
-                                quizInProgressLessonID = lesson.id
-                            }
-                        )
-                    } label: {
-                        HStack(alignment: .top, spacing: 12) {
-                            VStack(alignment: .leading, spacing: 6) {
-                                Text(lesson.title)
-                                    .font(.headline)
-                                Text("\(lesson.level.capitalized) • \(lesson.estimatedMinutes) min")
-                                    .font(.subheadline)
-                                    .foregroundStyle(.secondary)
-                            }
-
-                            Spacer(minLength: 12)
-
-                            VStack(alignment: .trailing, spacing: 8) {
-                                if progress?.isCompleted == true {
-                                    Label("Done", systemImage: "checkmark.circle.fill")
-                                        .font(.subheadline)
-                                        .labelStyle(.iconOnly)
-                                        .foregroundStyle(.green)
-                                        .accessibilityLabel("Lesson completed")
+                FamiliaStackedCardGroup {
+                    ForEach(curriculum.lessons) { lesson in
+                        NavigationLink {
+                            LessonDetailView(
+                                lesson: lesson,
+                                onStartQuiz: {
+                                    quizInProgressLessonID = lesson.id
                                 }
-
-                                if let bestScore = progress?.bestScore, bestScore > 0 {
-                                    Text(bestScoreLabel(for: bestScore))
-                                        .font(.subheadline)
-                                        .foregroundStyle(.secondary)
-                                }
-                            }
+                            )
+                        } label: {
+                            FamiliaLessonRow(
+                                title: lesson.title,
+                                metadata: "\(lesson.level.capitalized) • \(lesson.estimatedMinutes) min",
+                                progressState: progressState(for: lesson.id)
+                            )
                         }
-                        .padding(16)
-                        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: AppTheme.innerCornerRadius))
-                        .overlay {
-                            RoundedRectangle(cornerRadius: AppTheme.innerCornerRadius)
-                                .strokeBorder(AppTheme.edgeGradient(for: colorScheme), lineWidth: 1.2)
-                        }
-                        .contentShape(RoundedRectangle(cornerRadius: AppTheme.innerCornerRadius))
+                        .buttonStyle(.plain)
                     }
-                    .listRowInsets(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 20))
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
                 }
             }
         }
-        .listStyle(.insetGrouped)
-        .scrollContentBackground(.hidden)
-        .background(Color.clear)
         .navigationDestination(item: quizLessonBinding) { lesson in
             QuizView(lesson: lesson)
         }
@@ -85,8 +55,22 @@ struct LessonListView: View {
         lessonProgress.first { $0.lessonID == lessonID }
     }
 
-    private func bestScoreLabel(for score: Double) -> String {
-        "Best \(score.formatted(.percent.precision(.fractionLength(0))))"
+    private func progressState(for lessonID: String) -> FamiliaLessonProgressState {
+        guard let progress = progressRecord(for: lessonID) else {
+            return .notStarted
+        }
+
+        let bestScore = progress.bestScore > 0 ? progress.bestScore : nil
+
+        if progress.isCompleted {
+            return .completed(bestScore: bestScore)
+        }
+
+        if progress.lastScore > 0 || progress.timesReviewed > 0 || bestScore != nil {
+            return .inProgress(bestScore: bestScore)
+        }
+
+        return .notStarted
     }
 }
 

@@ -1,13 +1,23 @@
 import SwiftUI
 
 struct AuroraBackgroundView: View {
-    @Environment(\.colorScheme) private var colorScheme
-
     var body: some View {
         Rectangle()
-            .fill(AppTheme.backgroundColor(for: colorScheme))
-        .ignoresSafeArea()
-        .allowsHitTesting(false)
-        .accessibilityHidden(true)
+            .fill(FamiliaColors.backgroundBase)
+            .overlay(alignment: .top) {
+                LinearGradient(
+                    colors: [
+                        FamiliaColors.backgroundElevated.opacity(0.85),
+                        Color.clear
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .frame(height: 160)
+                .allowsHitTesting(false)
+            }
+            .ignoresSafeArea()
+            .allowsHitTesting(false)
+            .accessibilityHidden(true)
     }
 }

@@ -4,21 +4,31 @@ struct QuizView: View {
     let lesson: Lesson
 
     var body: some View {
-        List {
-            Section {
-                Text("Quiz engine is intentionally deferred to the next milestone. This screen exists so milestone 1 has the expected navigation surface.")
-                    .foregroundStyle(.secondary)
+        FamiliaScreenScrollView {
+            FamiliaScreenHeader(
+                title: "Quiz",
+                subtitle: "This milestone still uses a placeholder quiz surface, but the interaction model now matches the design system."
+            )
+
+            FamiliaStaticInfoCard(title: "Status") {
+                Text("Quiz engine is intentionally deferred to the next milestone. This screen exists so the current app has the expected navigation surface.")
+                    .familiaTextStyle(.body)
+                    .foregroundStyle(FamiliaColors.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
             }
 
-            Section("Planned Questions") {
+            FamiliaScreenSection(
+                title: "Planned Questions",
+                subtitle: "Answer rows now read as clearly selectable controls."
+            ) {
+                FamiliaStackedCardGroup {
                 ForEach(lesson.quiz) { question in
                     QuizQuestionPlaceholderRow(question: question)
                 }
             }
         }
-        .scrollContentBackground(.hidden)
-        .background(Color.clear)
-        .navigationTitle("Quiz")
+        }
+        .background(FamiliaColors.backgroundBase)
     }
 }
 

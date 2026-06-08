@@ -24,6 +24,16 @@
 		A100000F0000000000000001 /* lesson_plan.xml in Resources */ = {isa = PBXBuildFile; fileRef = A100001F0000000000000001 /* lesson_plan.xml */; };
 		A10000320000000000000001 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000330000000000000001 /* AppTheme.swift */; };
 		A10000340000000000000001 /* AuroraBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000350000000000000001 /* AuroraBackgroundView.swift */; };
+		A10000360000000000000001 /* DesignColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000460000000000000001 /* DesignColors.swift */; };
+		A10000370000000000000001 /* DesignMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000470000000000000001 /* DesignMetrics.swift */; };
+		A10000380000000000000001 /* DesignTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000480000000000000001 /* DesignTypography.swift */; };
+		A10000390000000000000001 /* DesignStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000490000000000000001 /* DesignStatus.swift */; };
+		A100003A0000000000000001 /* DesignButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100004A0000000000000001 /* DesignButtons.swift */; };
+		A100003B0000000000000001 /* DesignSurfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100004B0000000000000001 /* DesignSurfaces.swift */; };
+		A100003C0000000000000001 /* DesignHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100004C0000000000000001 /* DesignHeaders.swift */; };
+		A100003D0000000000000001 /* DesignRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100004D0000000000000001 /* DesignRows.swift */; };
+		A100003E0000000000000001 /* DesignCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100004E0000000000000001 /* DesignCards.swift */; };
+		A100003F0000000000000001 /* DesignFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100004F0000000000000001 /* DesignFeedback.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +55,16 @@
 		A100001F0000000000000001 /* lesson_plan.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = lesson_plan.xml; sourceTree = "<group>"; };
 		A10000330000000000000001 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		A10000350000000000000001 /* AuroraBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuroraBackgroundView.swift; sourceTree = "<group>"; };
+		A10000460000000000000001 /* DesignColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignColors.swift; sourceTree = "<group>"; };
+		A10000470000000000000001 /* DesignMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignMetrics.swift; sourceTree = "<group>"; };
+		A10000480000000000000001 /* DesignTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTypography.swift; sourceTree = "<group>"; };
+		A10000490000000000000001 /* DesignStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignStatus.swift; sourceTree = "<group>"; };
+		A100004A0000000000000001 /* DesignButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignButtons.swift; sourceTree = "<group>"; };
+		A100004B0000000000000001 /* DesignSurfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSurfaces.swift; sourceTree = "<group>"; };
+		A100004C0000000000000001 /* DesignHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignHeaders.swift; sourceTree = "<group>"; };
+		A100004D0000000000000001 /* DesignRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignRows.swift; sourceTree = "<group>"; };
+		A100004E0000000000000001 /* DesignCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCards.swift; sourceTree = "<group>"; };
+		A100004F0000000000000001 /* DesignFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignFeedback.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +91,7 @@
 			children = (
 				A10000110000000000000001 /* FamiliaSpanishApp.swift */,
 				A10000120000000000000001 /* AppRootView.swift */,
+				A10000500000000000000001 /* DesignSystem */,
 				A10000240000000000000001 /* Models */,
 				A10000250000000000000001 /* Parsing */,
 				A10000260000000000000001 /* Data */,
@@ -128,6 +149,23 @@
 				A100001E0000000000000001 /* SettingsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A10000500000000000000001 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				A10000460000000000000001 /* DesignColors.swift */,
+				A10000470000000000000001 /* DesignMetrics.swift */,
+				A10000480000000000000001 /* DesignTypography.swift */,
+				A10000490000000000000001 /* DesignStatus.swift */,
+				A100004A0000000000000001 /* DesignButtons.swift */,
+				A100004B0000000000000001 /* DesignSurfaces.swift */,
+				A100004C0000000000000001 /* DesignHeaders.swift */,
+				A100004D0000000000000001 /* DesignRows.swift */,
+				A100004E0000000000000001 /* DesignCards.swift */,
+				A100004F0000000000000001 /* DesignFeedback.swift */,
+			);
+			path = DesignSystem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +252,16 @@
 				A100000E0000000000000001 /* SettingsView.swift in Sources */,
 				A10000320000000000000001 /* AppTheme.swift in Sources */,
 				A10000340000000000000001 /* AuroraBackgroundView.swift in Sources */,
+				A10000360000000000000001 /* DesignColors.swift in Sources */,
+				A10000370000000000000001 /* DesignMetrics.swift in Sources */,
+				A10000380000000000000001 /* DesignTypography.swift in Sources */,
+				A10000390000000000000001 /* DesignStatus.swift in Sources */,
+				A100003A0000000000000001 /* DesignButtons.swift in Sources */,
+				A100003B0000000000000001 /* DesignSurfaces.swift in Sources */,
+				A100003C0000000000000001 /* DesignHeaders.swift in Sources */,
+				A100003D0000000000000001 /* DesignRows.swift in Sources */,
+				A100003E0000000000000001 /* DesignCards.swift in Sources */,
+				A100003F0000000000000001 /* DesignFeedback.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
