@@ -21,3 +21,15 @@ struct AuroraBackgroundView: View {
             .accessibilityHidden(true)
     }
 }
+
+#Preview("Aurora Background") {
+    ZStack {
+        AuroraBackgroundView()
+
+        HermosaScreenHeader(
+            title: "Preview Surface",
+            subtitle: "Background treatment for Hermosa screens."
+        )
+        .padding(HermosaMetrics.screenPadding)
+    }
+}

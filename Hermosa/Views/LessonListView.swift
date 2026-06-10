@@ -8,11 +8,6 @@ struct LessonListView: View {
     var body: some View {
         HermosaScreenScrollView {
             HermosaScreenSection {
-                Text("Study practical Spanish through calm, readable lesson sets.")
-                    .hermosaTextStyle(.body)
-                    .foregroundStyle(HermosaColors.textSecondary)
-                    .fixedSize(horizontal: false, vertical: true)
-
                 HermosaStackedCardGroup {
                     ForEach(curriculum.lessons) { lesson in
                         NavigationLink {

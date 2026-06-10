@@ -134,3 +134,26 @@ extension View {
         modifier(HermosaCardSurfaceModifier(style: .interactive(isPressed: isPressed)))
     }
 }
+
+#Preview("Surfaces") {
+    HermosaScreenScrollView {
+        HermosaScreenSection(
+            title: "Surface Styles",
+            subtitle: "Static, feature, and stacked group containers."
+        ) {
+            HermosaStackedCardGroup {
+                Text("Static card")
+                    .hermosaTextStyle(.body)
+                    .hermosaStaticCard()
+
+                Text("Feature card")
+                    .hermosaTextStyle(.body)
+                    .hermosaFeatureCard()
+
+                Text("Interactive card")
+                    .hermosaTextStyle(.body)
+                    .hermosaInteractiveCard()
+            }
+        }
+    }
+}

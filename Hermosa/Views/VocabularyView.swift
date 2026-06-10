@@ -16,3 +16,9 @@ struct VocabularyView: View {
         }
     }
 }
+
+#Preview("Vocabulary") {
+    HermosaScreenScrollView {
+        VocabularyView(words: Curriculum.placeholder.lessons[0].vocabulary)
+    }
+}

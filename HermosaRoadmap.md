@@ -60,6 +60,10 @@ Build a local-first iOS Spanish learning app that teaches practical conversation
 - `Views/QuizView.swift`: Quiz flow.
 - `Views/QuizQuestionViews.swift`: Tap-based quiz question views such as multiple-choice and multi-select.
 - `Views/ProgressView.swift`: Progress dashboard.
+- `Views/FlashcardDeckView.swift`: Reusable stacked flashcard deck view.
+- `Views/FlashcardsView.swift`: Top-level all-lessons flashcard hub.
+- `Views/VocabularyFlashcardsView.swift`: Vocabulary flashcard launcher wrapper.
+- `Views/PhraseFlashcardsView.swift`: Phrase flashcard launcher wrapper.
 - `Views/SettingsView.swift`: Reset progress and development utilities.
 
 ## Data Model
@@ -69,7 +73,7 @@ Build a local-first iOS Spanish learning app that teaches practical conversation
 #### `Curriculum`
 
 - `id: String`
-- `title: String`
+- `version: String`
 - `lessons: [Lesson]`
 
 #### `Lesson`
@@ -139,7 +143,6 @@ Quiz presentation rules:
 ### `AppRootView` State
 
 - `curriculum: Curriculum?`
-- `selectedLessonID: String?`
 - `quizInProgressLessonID: String?`
 - `loadError: String?`
 - `lessonProgress: [LessonProgress]`
@@ -216,6 +219,20 @@ Metrics:
 - Average best quiz score
 - Last reviewed lesson
 
+Current implementation status:
+
+- Implemented as an interim summary view.
+- Still missing the full recent-attempt and richer dashboard breakdown planned for `P07`.
+
+### `S05` - `FlashcardsView`
+
+Purpose: Launch all-lessons flashcard review from its own top-level tab.
+
+Sections:
+
+- All-lessons vocabulary deck
+- All-lessons phrase deck
+
 ### `S05` - `SettingsView`
 
 Purpose: Development and learner settings.
@@ -225,6 +242,11 @@ Actions:
 - Reset all SwiftData progress.
 - Show app version.
 - Show lesson XML version.
+
+Current implementation status:
+
+- Version and curriculum rows exist.
+- Reset-progress flow still needs implementation.
 
 ## Codex Build Roadmap
 
@@ -499,6 +521,12 @@ Acceptance Criteria:
 - Phrase review remains usable with Dynamic Type and Reduce Motion enabled.
 - Phrase flashcards fit naturally into the existing lesson and review navigation.
 
+## Current Milestone Status
+
+- Completed: `P01`, `P02`, `P03`, `P04`, `P05`, `P06`, `P11`, `P12`, `P13`
+- Partially completed: `P07`, `P10`
+- Not started: `P08`, `P09`
+
 ## Suggested Implementation Order
 
 1. Create app shell and SwiftData container.
@@ -510,12 +538,12 @@ Acceptance Criteria:
 7. Add SwiftData progress models.
 8. Build quiz engine.
 9. Save quiz results and lesson completion.
-10. Add progress dashboard.
-11. Add review mode.
-12. Polish UI and accessibility.
-13. Build the reusable 3D flashcard deck view.
-14. Add vocabulary flashcards.
-15. Add short phrase flashcards.
+10. Build the reusable 3D flashcard deck view.
+11. Add vocabulary flashcards.
+12. Add short phrase flashcards.
+13. Add progress dashboard.
+14. Add review mode.
+15. Polish UI and accessibility.
 
 ## Version 1 Definition of Done
 

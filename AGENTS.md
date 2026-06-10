@@ -2,12 +2,12 @@
 
 ## Project Overview
 
-This repository defines the plan for `Hermosa`, a local-first iOS app for learning practical Spanish in family, food, Chicago, church, and daily-life contexts.
+This repository contains `Hermosa`, a local-first SwiftUI iOS app for learning practical Spanish in family, food, Chicago, church, and daily-life contexts.
 
 Current repo state:
-- Planning documents exist.
-- The iOS app scaffold does not exist yet.
-- The roadmap and curriculum documents are the source of truth for initial implementation.
+- The iOS app scaffold exists and builds.
+- Bundled XML parsing, lesson reading, quizzes, progress persistence, and flashcards are implemented.
+- The roadmap, curriculum, and design documents remain the source of truth for unfinished work and future changes.
 
 Primary references:
 - [HermosaRoadmap.md](/Users/josh/hermosa/HermosaRoadmap.md)
@@ -154,24 +154,19 @@ Preferred implementation order:
 7. Add SwiftData progress models.
 8. Build the quiz engine.
 9. Save quiz results and lesson completion.
-10. Add the progress dashboard.
-11. Add review mode.
-12. Polish UI and accessibility.
-13. Add vocabulary flashcards tied to each lesson.
-14. Add short phrase flashcards tied to each lesson.
+10. Add the reusable flashcard deck.
+11. Add vocabulary flashcards tied to each lesson.
+12. Add short phrase flashcards tied to each lesson.
+13. Add the progress dashboard.
+14. Add review mode.
+15. Polish UI and accessibility.
 
-## Planned Post-V1 Phases
+## Flashcard Rules
 
-After the core milestones are complete, the roadmap also includes:
-
-- `P11`: vocabulary flashcards linked to each lesson’s vocabulary list.
-- `P12`: short phrase flashcards linked to lesson model sentences or curated phrases.
-
-Implementation expectations for those phases:
-
-- Keep flashcard interactions tap-only.
-- Respect `Reduce Motion` when revealing or flipping cards.
-- Prefer using lesson-linked bundled content before introducing new persistence needs.
+- Use the reusable flashcard deck for lesson-scoped and all-lessons review.
+- Keep vocabulary and phrase decks distinct; do not mix phrase-tagged cards into vocabulary decks.
+- Respect `Reduce Motion` when flipping or moving cards.
+- Prefer lesson-linked bundled content before introducing new persistence needs.
 - Keep flashcard UI in small SwiftUI views rather than introducing a new architecture layer.
 
 ## Change Guidance For Agents
@@ -184,8 +179,8 @@ When making changes in this repo:
 - Add comments only where the code would otherwise be hard to follow.
 - If the implementation diverges from this document, update this document or explain the reason clearly.
 
-When the codebase is still missing:
-- Create the minimal compiling app structure first.
+When adding new work:
+- Extend the existing compiling app structure rather than rebuilding it.
 - Do not invent unsupported features.
 - Do not add external dependencies unless the user explicitly requests them.
 

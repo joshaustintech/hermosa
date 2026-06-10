@@ -313,3 +313,17 @@ private struct HermosaFlashcardFace: View {
         case back
     }
 }
+
+#Preview("Flashcard Deck") {
+    HermosaFlashcardStudyView(
+        title: "Vocabulary Flashcards",
+        cards: Curriculum.placeholder.lessons[0].vocabularyFlashcards
+    )
+}
+
+#Preview("Empty Flashcard Deck") {
+    HermosaFlashcardStudyView(
+        title: "Vocabulary Flashcards",
+        cards: []
+    )
+}

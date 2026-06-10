@@ -45,39 +45,39 @@ extension Color {
 }
 
 enum HermosaColors {
-    static let backgroundBase = Color.hermosaDynamic(light: "#F4F0EA", dark: "#161315")
-    static let backgroundElevated = Color.hermosaDynamic(light: "#FCF8F2", dark: "#1E1A1D")
-    static let backgroundSubtle = Color.hermosaDynamic(light: "#E8E1D8", dark: "#292427")
+    static let backgroundBase = Color.hermosaDynamic(light: "#FFFFFF", dark: "#08101C")
+    static let backgroundElevated = Color.hermosaDynamic(light: "#F8FBFF", dark: "#0D1626")
+    static let backgroundSubtle = Color.hermosaDynamic(light: "#F3F4F6", dark: "#122033")
 
-    static let surfaceStatic = Color.hermosaDynamic(light: "#F1E8DD", dark: "#262124")
-    static let surfaceStaticMuted = Color.hermosaDynamic(light: "#ECE3D8", dark: "#221D20")
-    static let surfaceInteractive = Color.hermosaDynamic(light: "#FAF5EF", dark: "#30282C")
-    static let surfaceInteractivePressed = Color.hermosaDynamic(light: "#F3E7E6", dark: "#3A3035")
-    static let surfaceFeature = Color.hermosaDynamic(light: "#FFF9F4", dark: "#231E21")
+    static let surfaceStatic = Color.hermosaDynamic(light: "#FFFFFF", dark: "#101B2C")
+    static let surfaceStaticMuted = Color.hermosaDynamic(light: "#F3F4F6", dark: "#142133")
+    static let surfaceInteractive = Color.hermosaDynamic(light: "#F9FBFF", dark: "#172538")
+    static let surfaceInteractivePressed = Color.hermosaDynamic(light: "#EDF4FF", dark: "#1B2D45")
+    static let surfaceFeature = Color.hermosaDynamic(light: "#F6FAFF", dark: "#122238")
 
-    static let strokeSoft = Color.hermosaDynamic(light: "#CFC4B8", dark: "#4A4144")
-    static let strokeStrong = Color.hermosaDynamic(light: "#A99788", dark: "#6A5D63")
-    static let strokeInteractive = Color.hermosaDynamic(light: "#8C3B4A", dark: "#C56A78")
-    static let strokeInteractivePressed = Color.hermosaDynamic(light: "#6F2D39", dark: "#9E5360")
-    static let divider = Color.hermosaDynamic(light: "#D7CDC2", dark: "#3A3337")
+    static let strokeSoft = Color.hermosaDynamic(light: "#D7DCE2", dark: "#2A3B54")
+    static let strokeStrong = Color.hermosaDynamic(light: "#B8C3D1", dark: "#3B5275")
+    static let strokeInteractive = Color.hermosaDynamic(light: "#005FD6", dark: "#4CA3E8")
+    static let strokeInteractivePressed = Color.hermosaDynamic(light: "#0B2F6B", dark: "#7DAFE8")
+    static let divider = Color.hermosaDynamic(light: "#D7DCE2", dark: "#24344B")
 
-    static let textPrimary = Color.hermosaDynamic(light: "#221A1C", dark: "#F6EDEE")
-    static let textSecondary = Color.hermosaDynamic(light: "#5B4F52", dark: "#D6C7CB")
-    static let textTertiary = Color.hermosaDynamic(light: "#85767A", dark: "#AA999F")
+    static let textPrimary = Color.hermosaDynamic(light: "#111111", dark: "#F6F9FE")
+    static let textSecondary = Color.hermosaDynamic(light: "#4E5B6B", dark: "#C5D2E3")
+    static let textTertiary = Color.hermosaDynamic(light: "#6B7280", dark: "#95A5BC")
 
-    static let accentPrimary = Color.hermosaDynamic(light: "#8C3B4A", dark: "#C56A78")
-    static let accentPrimaryPressed = Color.hermosaDynamic(light: "#6F2D39", dark: "#9E5360")
-    static let accentSecondary = Color.hermosaDynamic(light: "#2F6D67", dark: "#79AAA4")
-    static let accentSecondaryPressed = Color.hermosaDynamic(light: "#245650", dark: "#5D8882")
+    static let accentPrimary = Color.hermosaDynamic(light: "#005FD6", dark: "#4CA3E8")
+    static let accentPrimaryPressed = Color.hermosaDynamic(light: "#0B2F6B", dark: "#7DAFE8")
+    static let accentSecondary = Color.hermosaDynamic(light: "#1F5FAE", dark: "#7DAFE8")
+    static let accentSecondaryPressed = Color.hermosaDynamic(light: "#0B2F6B", dark: "#4CA3E8")
 
-    static let success = Color.hermosaDynamic(light: "#5A7353", dark: "#90AD87")
-    static let error = Color.hermosaDynamic(light: "#A1463F", dark: "#D97E77")
+    static let success = Color.hermosaDynamic(light: "#7AC943", dark: "#9DDF6D")
+    static let error = Color.hermosaDynamic(light: "#FF7A1A", dark: "#FF9A4F")
 
-    static let selectionFill = Color.hermosaDynamic(light: "#EAD6DB", dark: "#4B2C35")
-    static let selectionStroke = Color.hermosaDynamic(light: "#8C3B4A", dark: "#C56A78")
+    static let selectionFill = Color.hermosaDynamic(light: "#DDEBFF", dark: "#173359")
+    static let selectionStroke = Color.hermosaDynamic(light: "#005FD6", dark: "#7DAFE8")
 
-    static let shadowLight = Color(hermosaHex: "#00000014")
-    static let shadowDark = Color(hermosaHex: "#00000033")
+    static let shadowLight = Color(hermosaHex: "#0B2F6B14")
+    static let shadowDark = Color(hermosaHex: "#00000040")
 
     static func shadow(for colorScheme: ColorScheme) -> Color {
         colorScheme == .dark ? shadowDark : shadowLight

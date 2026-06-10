@@ -159,3 +159,30 @@ private extension View {
         contentShape(RoundedRectangle(cornerRadius: HermosaMetrics.cardCornerRadius, style: .continuous))
     }
 }
+
+#Preview("Rows") {
+    HermosaScreenScrollView {
+        VStack(alignment: .leading, spacing: HermosaMetrics.sectionSpacing) {
+            HermosaLessonRow(
+                title: Curriculum.placeholder.lessons[0].title,
+                metadata: "Beginner • 20 min",
+                progressState: .completed(bestScore: 1)
+            )
+
+            HermosaVocabularyRow(word: Curriculum.placeholder.lessons[0].vocabulary[0])
+
+            HermosaSettingsRow(
+                title: "Reset Progress",
+                subtitle: "Clear quiz attempts and lesson completion.",
+                value: "Off"
+            )
+
+            HermosaNavigationRow(
+                title: "Vocabulary Deck",
+                subtitle: "Spanish on the front, English and part of speech on the back.",
+                badge: "10 cards",
+                systemImage: "rectangle.stack"
+            )
+        }
+    }
+}

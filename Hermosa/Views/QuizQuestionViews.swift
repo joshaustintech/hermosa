@@ -150,3 +150,57 @@ struct QuizAnswerFeedbackCard: View {
         }
     }
 }
+
+#Preview("Quiz Question Card") {
+    let options = [
+        PresentedQuizOption(title: "Nice to meet you"),
+        PresentedQuizOption(title: "Good night"),
+        PresentedQuizOption(title: "Please"),
+        PresentedQuizOption(title: "Thank you")
+    ]
+    let selectedID = options[0].id
+    let question = PresentedQuizQuestion(
+        prompt: "What does \"mucho gusto\" mean?",
+        kind: .multipleChoice,
+        options: options,
+        correctOptionIDs: [selectedID]
+    )
+
+    return HermosaScreenScrollView {
+        QuizQuestionCard(
+            question: question,
+            selection: [selectedID],
+            onToggleOption: { _ in }
+        )
+    }
+}
+
+#Preview("Quiz Review Card") {
+    HermosaScreenScrollView {
+        QuizReviewCard(
+            item: QuizReviewItem(
+                prompt: "What does \"mucho gusto\" mean?",
+                wasCorrect: false,
+                correctAnswerText: "Nice to meet you",
+                selectedAnswerText: "Thank you"
+            )
+        )
+    }
+}
+
+#Preview("Quiz Feedback Card") {
+    HermosaScreenScrollView {
+        QuizAnswerFeedbackCard(
+            title: "Not Quite",
+            message: "Review the highlighted answer, then continue.",
+            systemImage: "xmark.circle.fill",
+            imageColor: HermosaColors.error,
+            outcome: QuizOutcomeSnapshot(
+                prompt: "What does \"mucho gusto\" mean?",
+                wasCorrect: false,
+                correctAnswerText: "Nice to meet you",
+                selectedAnswerText: "Thank you"
+            )
+        )
+    }
+}

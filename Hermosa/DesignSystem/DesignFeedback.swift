@@ -190,3 +190,34 @@ private extension HermosaQuizOptionState {
         }
     }
 }
+
+#Preview("Feedback Components") {
+    HermosaScreenScrollView {
+        VStack(alignment: .leading, spacing: HermosaMetrics.sectionSpacing) {
+            HermosaQuizOptionRow(
+                title: "Nice to meet you",
+                state: .selected
+            )
+
+            HermosaProgressBadge(title: "Done 100%", tone: .success)
+
+            HermosaProgressBar(progress: 0.72, tone: .progress)
+                .frame(height: HermosaMetrics.progressBarHeight)
+
+            HermosaProgressSummaryCard(
+                title: "Lesson Passed",
+                value: "72%",
+                detail: "8 of 11 correct",
+                progress: 0.72,
+                tone: .success
+            )
+
+            HermosaStatusCard(
+                title: "No Cards Yet",
+                message: "This deck will appear once lesson-linked flashcard content is available.",
+                systemImage: "rectangle.stack.badge.minus",
+                imageColor: HermosaColors.accentSecondary
+            )
+        }
+    }
+}

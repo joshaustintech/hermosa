@@ -41,3 +41,19 @@ struct HermosaSectionHeader: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
+
+#Preview("Headers") {
+    HermosaScreenScrollView {
+        VStack(alignment: .leading, spacing: HermosaMetrics.sectionSpacing) {
+            HermosaScreenHeader(
+                title: "Lessons",
+                subtitle: "Study practical Spanish through calm, readable lesson sets."
+            )
+
+            HermosaSectionHeader(
+                title: "Vocabulary",
+                subtitle: "High-frequency words tied to this lesson."
+            )
+        }
+    }
+}

@@ -16,3 +16,9 @@ struct ModelSentencesView: View {
         }
     }
 }
+
+#Preview("Model Sentences") {
+    HermosaScreenScrollView {
+        ModelSentencesView(sentences: Curriculum.placeholder.lessons[0].modelSentences)
+    }
+}

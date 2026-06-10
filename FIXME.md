@@ -1,20 +1,16 @@
 # FIXME.md
 
-## Known Issues
+## Current Open Work
+
+- `ProgressView` is still an interim summary screen rather than the full `P07` dashboard.
+- `SettingsView` still needs reset-progress behavior and confirmation flow from `P09`.
+- `P08` review mode is not implemented yet.
+
+## Recently Resolved
 
 ### 1. Removed marketing copy was accidentally reintroduced
 
 Status: resolved on 2026-06-08
-
-Problem:
-
-- The unnecessary `Hermosa` subtitle and the “Become conversational with Spanish-speaking extended relatives...” paragraph were supposed to stay removed.
-- They were reintroduced during the design-system screen refactor by binding the lesson list header to `curriculum.title` and `curriculum.goal` instead of preserving the intended on-screen copy decisions.
-
-Root cause:
-
-- The implementation reused curriculum metadata as UI header content without checking whether that content was still product-approved for display.
-- The agent followed the data model too literally and failed to preserve prior UX copy removals.
 
 Resolution:
 
@@ -23,71 +19,40 @@ Resolution:
 - Removed the unused `goal` attribute from the bundled lesson XML resource.
 - Added copy-preservation guardrails to `AGENTS.md`.
 
-Files likely involved:
-
-- `Hermosa/Views/LessonListView.swift`
-- `AGENTS.md`
-
-### 2. Serif/sans font pairing is specified but not visibly applied across screens
+### 2. Serif/sans font pairing was not visibly applied across screens
 
 Status: resolved on 2026-06-08
-
-Problem:
-
-- `DESIGN.md` specifies serif titles and sans-serif body text.
-- The current UI still does not reliably present that pairing in a clear, intentional way across the app.
 
 Resolution:
 
 - Audited title/body usage across the screen layer.
-- Updated typography helpers so title roles use an unmistakable serif system face and body roles use sans-serif system text.
+- Updated typography helpers so title roles use a serif system face and body roles use sans-serif system text.
 - Kept Dynamic Type support intact.
 
-Files likely involved:
-
-- `Hermosa/DesignSystem/DesignTypography.swift`
-- screen views under `Hermosa/Views/`
-
-### 3. Clickable and non-clickable surfaces are still too visually similar
+### 3. Clickable and non-clickable surfaces were too visually similar
 
 Status: resolved on 2026-06-08
 
-Problem:
-
-- Clickable cards and non-clickable list/content items still share too much of the same color and border treatment.
-- This makes some non-clickable content look tappable.
-
 Resolution:
 
-- Re-reviewed and updated `DESIGN.md`.
 - Added distinct interactive surface and border tokens.
 - Updated interactive rows and quiz choices to use dedicated interactive fills and borders.
 - Kept static information cards on quieter neutral surfaces.
 
-Files likely involved:
+### 4. Debug previews were blocked by optimized builds
 
-- `DESIGN.md`
-- `Hermosa/DesignSystem/DesignRows.swift`
-- `Hermosa/DesignSystem/DesignCards.swift`
-- `Hermosa/DesignSystem/DesignSurfaces.swift`
-- affected screen views
-
-### 4. The current warm palette feels too common and too Claude-like
-
-Status: resolved on 2026-06-08
-
-Problem:
-
-- The palette is warm, but it reads like a generic AI-generated editorial palette rather than something more distinct and authored.
+Status: resolved on 2026-06-10
 
 Resolution:
 
-- Replaced the old terracotta/lake-blue palette with a more authored currant/patina/mineral-parchment palette.
-- Updated both light and dark mode token sets together.
-- Propagated the new token names and values into the SwiftUI design-system layer.
+- Set `SWIFT_OPTIMIZATION_LEVEL = "-Onone"` for both Debug configuration blocks in `Hermosa.xcodeproj/project.pbxproj`.
+- Verified Debug builds now compile with `-Onone`, restoring SwiftUI preview compatibility.
 
-Files likely involved:
+### 5. The palette direction changed from the earlier warm editorial scheme
 
-- `DESIGN.md`
-- `Hermosa/DesignSystem/DesignColors.swift`
-- any derived component styling
+Status: resolved on 2026-06-10
+
+Resolution:
+
+- Updated the shipped design tokens to a clearer blue-led light/dark palette with white and blue-gray surfaces.
+- Brought `DESIGN.md` back in sync with the colors actually used by `Hermosa/DesignSystem/DesignColors.swift`.

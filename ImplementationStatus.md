@@ -8,6 +8,9 @@
 - Milestone `P04` SwiftData progress models implemented and wired into app state.
 - Milestone `P05` lesson reading experience implemented.
 - Milestone `P06` tap-only quiz engine implemented.
+- Milestone `P11` reusable flashcard deck implemented.
+- Milestone `P12` vocabulary flashcards implemented.
+- Milestone `P13` short phrase flashcards implemented.
 - `Hermosa.xcodeproj` added to the repo.
 - SwiftData container configured in `HermosaApp`.
 - Bundled `lesson_plan.xml` resource wired into the target.
@@ -21,6 +24,11 @@
 - Lesson completion now updates from quiz runs using the `70%` pass threshold.
 - Quiz answer feedback now replaces the question block after submission and uses animated result icon feedback.
 - Top-level `AppRootView` added with tab-based navigation and SwiftData query wiring.
+- Top-level `Flashcards` tab added for all-lessons vocabulary and phrase review.
+- Lesson detail screens can launch lesson-scoped vocabulary and phrase decks.
+- Flashcard decks separate vocabulary cards from phrase cards instead of mixing them.
+- Static `#Preview` coverage now exists for every SwiftUI view file under `Hermosa/Views` and `Hermosa/DesignSystem`.
+- Debug builds now explicitly use `-Onone`, so SwiftUI previews can render in Xcode.
 - Plain Swift lesson models and SwiftData progress models are in active use for bundled lessons and learner progress.
 - Simulator build passes.
 - App launches on iOS Simulator with parser-backed bundled lesson data.
@@ -29,11 +37,12 @@
 
 - Milestone `P07` progress dashboard is partially implemented.
 - `ProgressView` still uses interim summary content instead of the full milestone dashboard.
-- `SettingsView` still needs reset-progress behavior and runtime metadata display.
+- Milestone `P10` polish/accessibility is partially implemented through the shared design system and preview coverage.
+- `SettingsView` still needs reset-progress behavior.
 
 ## Not Started Yet
 
 - Finish the full progress dashboard.
-- Add reset-progress behavior in settings.
 - Add review mode.
-- Final UI polish and accessibility pass.
+- Add reset-progress behavior in settings.
+- Complete the remaining final UI and accessibility polish pass.

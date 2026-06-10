@@ -15,3 +15,9 @@ struct GrammarFocusView: View {
         }
     }
 }
+
+#Preview("Grammar Focus") {
+    HermosaScreenScrollView {
+        GrammarFocusView(items: Curriculum.placeholder.lessons[0].grammarFocus)
+    }
+}

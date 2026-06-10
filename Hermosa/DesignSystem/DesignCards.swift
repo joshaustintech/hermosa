@@ -79,6 +79,7 @@ struct HermosaGrammarCallout: View {
                         HermosaBulletText(text: item)
                     }
                 }
+                Spacer(minLength: HermosaMetrics.space12)
             }
         }
         .padding(HermosaMetrics.cardPadding)
@@ -122,5 +123,33 @@ struct HermosaModelSentenceBlock: View {
             }
         }
         .textSelection(.enabled)
+    }
+}
+
+#Preview("Cards") {
+    HermosaScreenScrollView {
+        VStack(alignment: .leading, spacing: HermosaMetrics.sectionSpacing) {
+            HermosaStaticInfoCard(title: "Lesson") {
+                Text("Meeting extended relatives at a family gathering.")
+                    .hermosaTextStyle(.body)
+                    .foregroundStyle(HermosaColors.textSecondary)
+            }
+
+            HermosaStudyCard(
+                primaryText: "hola",
+                secondaryText: "hello"
+            ) {
+                Text("interjection")
+                    .hermosaTextStyle(.metadata)
+                    .foregroundStyle(HermosaColors.accentSecondary)
+            }
+
+            HermosaGrammarCallout(
+                title: "What to practice",
+                items: Curriculum.placeholder.lessons[0].grammarFocus
+            )
+
+            HermosaModelSentenceBlock(sentence: Curriculum.placeholder.lessons[0].modelSentences[0])
+        }
     }
 }

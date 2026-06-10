@@ -8,24 +8,26 @@ It overrides current ad hoc styling choices and should be treated as the source 
 This is a SwiftUI-first design system for a calm, native-feeling, adult-oriented language app.
 The intended mood is:
 
-- warm
-- editorial
-- quiet
+- calm
+- clear
+- native
 - trustworthy
 - practical
 
-It should feel closer to a well-designed prayer journal, cookbook margin note, or neighborhood guide than a gamified children’s app or a flashy startup dashboard.
+It should feel closer to a carefully designed iOS reference app than a gamified children’s product or a flashy startup dashboard.
 
 ## Core Design Direction
 
 ### Design concept
 
-Use a restrained editorial system built from:
+Use a restrained, legible system built from:
 
-- mineral parchment backgrounds
-- dark plum-ink text
-- one confident currant action color
-- one patina-green support color
+- white and blue-gray backgrounds
+- near-black text in light mode and near-white text in dark mode
+- one confident cobalt primary action color
+- one lighter blue secondary accent
+- orange for destructive/error emphasis
+- green for success/progress
 - serif titles
 - sans-serif body copy
 - simple, obvious interactive affordances
@@ -38,7 +40,7 @@ Use a restrained editorial system built from:
 - Prefer one strong accent color for actions rather than many competing accents.
 - Use color to communicate meaning, not to decorate neutral surfaces.
 - Preserve a native iOS feel even when using a custom palette.
-- Avoid glassy, aurora, neon, or highly atmospheric backgrounds for primary reading surfaces.
+- Avoid neon or highly atmospheric backgrounds for primary reading surfaces.
 
 ## Interaction Rule: Clickable Must Look Clickable
 
@@ -125,70 +127,67 @@ Use named semantic colors in implementation later. These hex values define the p
 
 ### Brand palette intent
 
-- `Currant` is the action color.
-- `Patina Green` is the informational/support color.
-- `Moss` is used sparingly for success/progress.
-- Mineral parchment neutrals carry most of the interface.
+- `Cobalt Blue` is the primary action color.
+- `Sky Blue` is the informational/support accent.
+- `Orange` is reserved for destructive/error emphasis.
+- `Green` is used for success/progress.
+- White and blue-gray neutrals carry most of the interface.
 
 ### Light Mode palette
 
-- `bg.base`: `#F4F0EA`
-- `bg.elevated`: `#FCF8F2`
-- `bg.subtle`: `#E8E1D8`
-- `surface.static`: `#F1E8DD`
-- `surface.staticMuted`: `#ECE3D8`
-- `surface.interactive`: `#FAF5EF`
-- `surface.interactivePressed`: `#F3E7E6`
-- `surface.feature`: `#FFF9F4`
-- `surface.input`: `#F7EFE5`
-- `stroke.soft`: `#CFC4B8`
-- `stroke.strong`: `#A99788`
-- `stroke.interactive`: `#8C3B4A`
-- `stroke.interactivePressed`: `#6F2D39`
-- `text.primary`: `#221A1C`
-- `text.secondary`: `#5B4F52`
-- `text.tertiary`: `#85767A`
-- `accent.primary`: `#8C3B4A`
-- `accent.primaryPressed`: `#6F2D39`
-- `accent.secondary`: `#2F6D67`
-- `accent.secondaryPressed`: `#245650`
-- `success`: `#5A7353`
-- `warning`: `#9D6F28`
-- `error`: `#A1463F`
-- `selection.fill`: `#EAD6DB`
-- `selection.stroke`: `#8C3B4A`
-- `divider`: `#D7CDC2`
-- `shadow`: `#00000014`
+- `bg.base`: `#FFFFFF`
+- `bg.elevated`: `#F8FBFF`
+- `bg.subtle`: `#F3F4F6`
+- `surface.static`: `#FFFFFF`
+- `surface.staticMuted`: `#F3F4F6`
+- `surface.interactive`: `#F9FBFF`
+- `surface.interactivePressed`: `#EDF4FF`
+- `surface.feature`: `#F6FAFF`
+- `stroke.soft`: `#D7DCE2`
+- `stroke.strong`: `#B8C3D1`
+- `stroke.interactive`: `#005FD6`
+- `stroke.interactivePressed`: `#0B2F6B`
+- `text.primary`: `#111111`
+- `text.secondary`: `#4E5B6B`
+- `text.tertiary`: `#6B7280`
+- `accent.primary`: `#005FD6`
+- `accent.primaryPressed`: `#0B2F6B`
+- `accent.secondary`: `#1F5FAE`
+- `accent.secondaryPressed`: `#0B2F6B`
+- `success`: `#7AC943`
+- `error`: `#FF7A1A`
+- `selection.fill`: `#DDEBFF`
+- `selection.stroke`: `#005FD6`
+- `divider`: `#D7DCE2`
+- `shadow`: `#0B2F6B14`
 
 ### Dark Mode palette
 
-- `bg.base`: `#161315`
-- `bg.elevated`: `#1E1A1D`
-- `bg.subtle`: `#292427`
-- `surface.static`: `#262124`
-- `surface.staticMuted`: `#221D20`
-- `surface.interactive`: `#30282C`
-- `surface.interactivePressed`: `#3A3035`
-- `surface.feature`: `#231E21`
-- `surface.input`: `#2C2528`
-- `stroke.soft`: `#4A4144`
-- `stroke.strong`: `#6A5D63`
-- `stroke.interactive`: `#C56A78`
-- `stroke.interactivePressed`: `#9E5360`
-- `text.primary`: `#F6EDEE`
-- `text.secondary`: `#D6C7CB`
-- `text.tertiary`: `#AA999F`
-- `accent.primary`: `#C56A78`
-- `accent.primaryPressed`: `#9E5360`
-- `accent.secondary`: `#79AAA4`
-- `accent.secondaryPressed`: `#5D8882`
-- `success`: `#90AD87`
-- `warning`: `#D2A25C`
-- `error`: `#D97E77`
-- `selection.fill`: `#4B2C35`
-- `selection.stroke`: `#C56A78`
-- `divider`: `#3A3337`
-- `shadow`: `#00000033`
+- `bg.base`: `#08101C`
+- `bg.elevated`: `#0D1626`
+- `bg.subtle`: `#122033`
+- `surface.static`: `#101B2C`
+- `surface.staticMuted`: `#142133`
+- `surface.interactive`: `#172538`
+- `surface.interactivePressed`: `#1B2D45`
+- `surface.feature`: `#122238`
+- `stroke.soft`: `#2A3B54`
+- `stroke.strong`: `#3B5275`
+- `stroke.interactive`: `#4CA3E8`
+- `stroke.interactivePressed`: `#7DAFE8`
+- `text.primary`: `#F6F9FE`
+- `text.secondary`: `#C5D2E3`
+- `text.tertiary`: `#95A5BC`
+- `accent.primary`: `#4CA3E8`
+- `accent.primaryPressed`: `#7DAFE8`
+- `accent.secondary`: `#7DAFE8`
+- `accent.secondaryPressed`: `#4CA3E8`
+- `success`: `#9DDF6D`
+- `error`: `#FF9A4F`
+- `selection.fill`: `#173359`
+- `selection.stroke`: `#7DAFE8`
+- `divider`: `#24344B`
+- `shadow`: `#00000040`
 
 ### Color usage rules
 
@@ -504,4 +503,4 @@ Do not do the following unless the user explicitly asks for it:
 
 If a future contributor needs a one-sentence brief:
 
-Build `Hermosa` like a calm editorial iPhone app with serif headlines, SF Pro body text, currant actions, patina-green support accents, mineral parchment surfaces, and unmistakably tappable controls.
+Build `Hermosa` like a calm, native-feeling iPhone app with serif headlines, SF Pro body text, cobalt primary actions, blue-gray surfaces, restrained success/error accents, and unmistakably tappable controls.
