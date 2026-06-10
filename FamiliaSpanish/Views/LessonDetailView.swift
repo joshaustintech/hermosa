@@ -34,7 +34,7 @@ struct LessonDetailView: View {
 
             Button("Start Quiz", systemImage: "play.circle.fill", action: onStartQuiz)
                 .buttonStyle(FamiliaPrimaryButtonStyle())
-                .accessibilityHint("Opens the lesson quiz placeholder screen.")
+                .accessibilityHint("Opens the lesson quiz.")
         }
         .background(FamiliaColors.backgroundBase)
     }
