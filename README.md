@@ -4,8 +4,8 @@
 
 ## App Preview
 
-![Hermosa lessons beauty shot](Docs/Images/hermosa-product-lessons.png)
-![Hermosa vocabulary beauty shot](Docs/Images/hermosa-product-vocabulary.png)
+![Hermosa lessons screenshot](Docs/Images/hermosa-screenshot-lessons.jpg)
+![Hermosa vocabulary screenshot](Docs/Images/hermosa-screenshot-vocabulary.jpg)
 
 ## Current Status
 
