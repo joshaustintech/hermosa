@@ -39,4 +39,5 @@
 - Finish the full `P07` progress dashboard
 - Implement `P08` review mode
 - Add reset-progress behavior in settings
+- Build a reusable stacked 3D flashcard deck for lesson-level and all-lessons vocabulary and short-phrase review
 - Complete final accessibility and UI polish

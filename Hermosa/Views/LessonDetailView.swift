@@ -32,6 +32,43 @@ struct LessonDetailView: View {
             VocabularyView(words: lesson.vocabulary)
             ModelSentencesView(sentences: lesson.modelSentences)
 
+            if lesson.vocabularyFlashcards.isEmpty == false || lesson.phraseFlashcards.isEmpty == false {
+                HermosaScreenSection(
+                    title: "Flashcards",
+                    subtitle: "Review this lesson with a stacked deck that flips vertically and cycles horizontally."
+                ) {
+                    HermosaStackedCardGroup {
+                        if lesson.vocabularyFlashcards.isEmpty == false {
+                            NavigationLink {
+                                VocabularyFlashcardsView(lesson: lesson)
+                            } label: {
+                                HermosaNavigationRow(
+                                    title: "Vocabulary Deck",
+                                    subtitle: "Spanish on the front, English and part of speech on the back.",
+                                    badge: "\(lesson.vocabularyFlashcards.count) cards",
+                                    systemImage: "rectangle.stack"
+                                )
+                            }
+                            .buttonStyle(.plain)
+                        }
+
+                        if lesson.phraseFlashcards.isEmpty == false {
+                            NavigationLink {
+                                PhraseFlashcardsView(lesson: lesson)
+                            } label: {
+                                HermosaNavigationRow(
+                                    title: "Phrase Deck",
+                                    subtitle: "Short conversational phrases from this lesson’s model sentences.",
+                                    badge: "\(lesson.phraseFlashcards.count) cards",
+                                    systemImage: "quote.bubble"
+                                )
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                }
+            }
+
             Button("Start Quiz", systemImage: "play.circle.fill", action: onStartQuiz)
                 .buttonStyle(HermosaPrimaryButtonStyle())
                 .accessibilityHint("Opens the lesson quiz.")

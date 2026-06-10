@@ -29,6 +29,10 @@ struct AppRootView: View {
                             )
                         }
 
+                        appTab("Flashcards", systemImage: "rectangle.stack") {
+                            FlashcardsView(curriculum: curriculum)
+                        }
+
                         appTab("Settings", systemImage: "gearshape") {
                             SettingsView()
                         }

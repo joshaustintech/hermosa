@@ -85,6 +85,58 @@ struct HermosaSettingsRow: View {
     }
 }
 
+struct HermosaNavigationRow: View {
+    let title: String
+    let subtitle: String
+    let badge: String
+    let systemImage: String
+
+    var body: some View {
+        HStack(alignment: .top, spacing: HermosaMetrics.space12) {
+            Image(systemName: systemImage)
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(HermosaColors.accentPrimary)
+                .frame(width: 32, height: 32)
+                .background(
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .fill(HermosaColors.selectionFill)
+                )
+
+            VStack(alignment: .leading, spacing: HermosaMetrics.space8) {
+                Text(title)
+                    .hermosaTextStyle(.bodyEmphasized)
+                    .foregroundStyle(HermosaColors.textPrimary)
+
+                Text(subtitle)
+                    .hermosaTextStyle(.secondaryBody)
+                    .foregroundStyle(HermosaColors.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
+            Spacer(minLength: HermosaMetrics.space12)
+
+            VStack(alignment: .trailing, spacing: HermosaMetrics.space8) {
+                Text(badge)
+                    .hermosaTextStyle(.metadata)
+                    .foregroundStyle(HermosaColors.accentSecondary)
+                    .padding(.horizontal, HermosaMetrics.space8)
+                    .padding(.vertical, HermosaMetrics.space4)
+                    .background(
+                        Capsule(style: .continuous)
+                            .fill(HermosaColors.surfaceStaticMuted)
+                    )
+
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundStyle(HermosaColors.textTertiary)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .hermosaInteractiveCard()
+        .contentShape(RoundedRectangle(cornerRadius: HermosaMetrics.cardCornerRadius, style: .continuous))
+    }
+}
+
 private extension HermosaLessonProgressState {
     var badge: (title: String, tone: HermosaProgressTone) {
         switch self {

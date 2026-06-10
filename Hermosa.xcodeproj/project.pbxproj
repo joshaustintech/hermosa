@@ -33,6 +33,10 @@
 		A100003D0000000000000001 /* DesignRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100004D0000000000000001 /* DesignRows.swift */; };
 		A100003E0000000000000001 /* DesignCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100004E0000000000000001 /* DesignCards.swift */; };
 		A100003F0000000000000001 /* DesignFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100004F0000000000000001 /* DesignFeedback.swift */; };
+		A10000510000000000000001 /* FlashcardDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000540000000000000001 /* FlashcardDeckView.swift */; };
+		A10000520000000000000001 /* VocabularyFlashcardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000550000000000000001 /* VocabularyFlashcardsView.swift */; };
+		A10000530000000000000001 /* PhraseFlashcardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000560000000000000001 /* PhraseFlashcardsView.swift */; };
+		A10000570000000000000001 /* FlashcardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000580000000000000001 /* FlashcardsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +67,10 @@
 		A100004D0000000000000001 /* DesignRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignRows.swift; sourceTree = "<group>"; };
 		A100004E0000000000000001 /* DesignCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCards.swift; sourceTree = "<group>"; };
 		A100004F0000000000000001 /* DesignFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignFeedback.swift; sourceTree = "<group>"; };
+		A10000540000000000000001 /* FlashcardDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardDeckView.swift; sourceTree = "<group>"; };
+		A10000550000000000000001 /* VocabularyFlashcardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyFlashcardsView.swift; sourceTree = "<group>"; };
+		A10000560000000000000001 /* PhraseFlashcardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseFlashcardsView.swift; sourceTree = "<group>"; };
+		A10000580000000000000001 /* FlashcardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +152,10 @@
 				A100001C0000000000000001 /* QuizQuestionViews.swift */,
 				A100001D0000000000000001 /* ProgressView.swift */,
 				A100001E0000000000000001 /* SettingsView.swift */,
+				A10000540000000000000001 /* FlashcardDeckView.swift */,
+				A10000550000000000000001 /* VocabularyFlashcardsView.swift */,
+				A10000560000000000000001 /* PhraseFlashcardsView.swift */,
+				A10000580000000000000001 /* FlashcardsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,6 +270,10 @@
 				A100003D0000000000000001 /* DesignRows.swift in Sources */,
 				A100003E0000000000000001 /* DesignCards.swift in Sources */,
 				A100003F0000000000000001 /* DesignFeedback.swift in Sources */,
+				A10000510000000000000001 /* FlashcardDeckView.swift in Sources */,
+				A10000520000000000000001 /* VocabularyFlashcardsView.swift in Sources */,
+				A10000530000000000000001 /* PhraseFlashcardsView.swift in Sources */,
+				A10000570000000000000001 /* FlashcardsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -433,7 +433,33 @@ Acceptance Criteria:
 - Dynamic Type does not break major screens.
 - Quiz controls have useful accessibility labels.
 
-### `P11` - Add Vocabulary Flashcards
+### `P11` - Build Reusable 3D Flashcard Deck View
+
+Goal: Create one simple reusable flashcard deck component that supports vocabulary and short-phrase review for a single lesson or across all lessons.
+
+Codex Prompt:
+
+> Build a reusable SwiftUI flashcard deck view that can present cards for one lesson or for all lessons.
+> The deck should look visually stacked, similar to a compact pile of images in iMessage.
+> Support vocabulary cards and short phrase cards with the same deck component.
+> A vertical swipe flips the current card to reveal the other side.
+> A left swipe sends the current card to the bottom of the deck and brings the next top card forward.
+> A right swipe sends the current card to the top of the deck and brings the bottom card forward.
+> Animate both the flip and the card movement within the stack.
+> If the user reverses direction before completing a swipe, cancel the action and return the card to its prior position and face.
+> Respect Reduce Motion with simpler transitions while preserving the same interaction model.
+> Keep the implementation in small SwiftUI views without introducing MVVM or a separate architecture layer.
+
+Acceptance Criteria:
+
+- One reusable deck view can render lesson-scoped and all-lessons flashcard sets.
+- The deck visually reads as a stacked set of cards rather than a flat pager.
+- Vertical swipes flip cards only when the gesture completes.
+- Left and right swipes reorder cards only when the gesture completes.
+- Releasing a partial or reversed swipe restores the card cleanly with no accidental flip or reorder.
+- Reduce Motion users still get clear state changes without heavy 3D animation.
+
+### `P12` - Add Vocabulary Flashcards
 
 Goal: Add lightweight per-lesson vocabulary flashcards for focused review.
 
@@ -453,7 +479,7 @@ Acceptance Criteria:
 - Flashcard interactions respect iOS accessibility motion settings.
 - Lesson-linked vocabulary review can be completed without typing or speaking.
 
-### `P12` - Add Short Phrase Flashcards
+### `P13` - Add Short Phrase Flashcards
 
 Goal: Add lesson-linked short phrase flashcards for practical conversation review.
 
@@ -487,8 +513,9 @@ Acceptance Criteria:
 10. Add progress dashboard.
 11. Add review mode.
 12. Polish UI and accessibility.
-13. Add vocabulary flashcards.
-14. Add short phrase flashcards.
+13. Build the reusable 3D flashcard deck view.
+14. Add vocabulary flashcards.
+15. Add short phrase flashcards.
 
 ## Version 1 Definition of Done
 
