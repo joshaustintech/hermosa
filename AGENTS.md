@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This repository defines the plan for `Familia Spanish`, a local-first iOS app for learning practical Spanish in family, food, Chicago, church, and daily-life contexts.
+This repository defines the plan for `Hermosa`, a local-first iOS app for learning practical Spanish in family, food, Chicago, church, and daily-life contexts.
 
 Current repo state:
 - Planning documents exist.
@@ -10,8 +10,8 @@ Current repo state:
 - The roadmap and curriculum documents are the source of truth for initial implementation.
 
 Primary references:
-- [FamiliaSpanishRoadmap.md](/Users/josh/hermosa/FamiliaSpanishRoadmap.md)
-- [FamiliaSpanishLessonPlan.md](/Users/josh/hermosa/FamiliaSpanishLessonPlan.md)
+- [HermosaRoadmap.md](/Users/josh/hermosa/HermosaRoadmap.md)
+- [HermosaLessonPlan.md](/Users/josh/hermosa/HermosaLessonPlan.md)
 - [DESIGN.md](/Users/josh/hermosa/DESIGN.md)
 
 ## Product Intent
@@ -58,7 +58,7 @@ These rules are not optional unless the user explicitly changes the plan.
 
 When creating the app, prefer this structure:
 
-- `FamiliaSpanishApp.swift`
+- `HermosaApp.swift`
 - `AppRootView.swift`
 - `Models/LessonModels.swift`
 - `Models/ProgressModels.swift`

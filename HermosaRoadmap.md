@@ -1,8 +1,8 @@
-# Familia Spanish Roadmap
+# Hermosa Roadmap
 
 - Roadmap ID: `spanish-learning-swiftui-roadmap`
 - Version: `1.0`
-- App Name: `Familia Spanish`
+- App Name: `Hermosa`
 - Language: `Swift 6`
 - UI Framework: `SwiftUI`
 - Persistence: `SwiftData`
@@ -46,7 +46,7 @@ Build a local-first iOS Spanish learning app that teaches practical conversation
 
 ### Suggested File Structure
 
-- `FamiliaSpanishApp.swift`: SwiftData container and app entry point.
+- `HermosaApp.swift`: SwiftData container and app entry point.
 - `AppRootView.swift`: Top-level navigation and app state.
 - `Models/LessonModels.swift`: Plain Swift structs for parsed lesson XML.
 - `Models/ProgressModels.swift`: SwiftData `@Model` classes for progress.
@@ -234,7 +234,7 @@ Goal: Create a compiling SwiftUI iOS app with bundled lesson XML.
 
 Codex Prompt:
 
-> Create a new Swift 6 SwiftUI iOS app named FamiliaSpanish. Use SwiftData.
+> Create a new Swift 6 SwiftUI iOS app named Hermosa. Use SwiftData.
 > Add a bundled resource file named lesson_plan.xml.
 > Do not use MVVM. Keep state in AppRootView and pass data into small composable views.
 > Create placeholder views for LessonListView, LessonDetailView, QuizView, ProgressView, and SettingsView.
@@ -298,7 +298,7 @@ Codex Prompt:
 > Create SwiftData `@Model` classes LessonProgress and QuizAttempt.
 > LessonProgress should store lessonID, isCompleted, bestScore, lastScore, timesReviewed, completedAt, and lastReviewedAt.
 > QuizAttempt should store lessonID, score, correctCount, totalCount, and attemptedAt.
-> Wire the model container into FamiliaSpanishApp.
+> Wire the model container into HermosaApp.
 > In AppRootView, query progress records and pass them into LessonListView.
 
 Acceptance Criteria:

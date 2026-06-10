@@ -8,8 +8,8 @@
 - Milestone `P04` SwiftData progress models implemented and wired into app state.
 - Milestone `P05` lesson reading experience implemented.
 - Milestone `P06` tap-only quiz engine implemented.
-- `FamiliaSpanish.xcodeproj` added to the repo.
-- SwiftData container configured in `FamiliaSpanishApp`.
+- `Hermosa.xcodeproj` added to the repo.
+- SwiftData container configured in `HermosaApp`.
 - Bundled `lesson_plan.xml` resource wired into the target.
 - Bundled `lesson_plan.xml` expanded to the full tap-only curriculum set for v1.
 - `LessonXMLParser` now converts bundled XML into plain Swift lesson structs using `XMLParser`.

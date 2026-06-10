@@ -35,31 +35,31 @@ struct AppRootView: View {
                     }
                 }
                 else if let loadError {
-                    FamiliaScreenScrollView {
-                        FamiliaStatusCard(
+                    HermosaScreenScrollView {
+                        HermosaStatusCard(
                             title: "Unable to Load Lessons",
                             message: loadError,
                             systemImage: "exclamationmark.triangle",
-                            imageColor: FamiliaColors.error,
+                            imageColor: HermosaColors.error,
                             actionTitle: "Retry",
                             action: loadCurriculum
                         )
                     }
                 }
                 else {
-                    FamiliaScreenScrollView {
-                        FamiliaStatusCard(
+                    HermosaScreenScrollView {
+                        HermosaStatusCard(
                             title: "Loading Lessons",
                             message: "Bundled lesson content is being prepared.",
                             systemImage: "book.closed",
-                            imageColor: FamiliaColors.accentSecondary
+                            imageColor: HermosaColors.accentSecondary
                         )
                     }
                 }
             }
         }
-        .tint(FamiliaColors.accentPrimary)
-        .toolbarBackground(FamiliaColors.backgroundElevated, for: .tabBar)
+        .tint(HermosaColors.accentPrimary)
+        .toolbarBackground(HermosaColors.backgroundElevated, for: .tabBar)
         .toolbarBackground(.visible, for: .tabBar)
         .task {
             guard curriculum == nil, loadError == nil else { return }
@@ -91,4 +91,9 @@ struct AppRootView: View {
     }
 }
 
-#Preview { AppRootView().modelContainer(for: [LessonProgress.self, QuizAttempt.self], inMemory: true) }
+struct AppRootView_Previews: PreviewProvider {
+    static var previews: some View {
+        AppRootView()
+            .modelContainer(for: [LessonProgress.self, QuizAttempt.self], inMemory: true)
+    }
+}

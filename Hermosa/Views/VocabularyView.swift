@@ -4,13 +4,13 @@ struct VocabularyView: View {
     let words: [VocabularyWord]
 
     var body: some View {
-        FamiliaScreenSection(
+        HermosaScreenSection(
             title: "Vocabulary",
             subtitle: "High-frequency words tied to this lesson."
         ) {
-            FamiliaStackedCardGroup {
+            HermosaStackedCardGroup {
                 ForEach(words) { word in
-                    FamiliaVocabularyRow(word: word)
+                    HermosaVocabularyRow(word: word)
                 }
             }
         }

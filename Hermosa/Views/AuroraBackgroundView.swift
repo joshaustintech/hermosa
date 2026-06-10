@@ -3,11 +3,11 @@ import SwiftUI
 struct AuroraBackgroundView: View {
     var body: some View {
         Rectangle()
-            .fill(FamiliaColors.backgroundBase)
+            .fill(HermosaColors.backgroundBase)
             .overlay(alignment: .top) {
                 LinearGradient(
                     colors: [
-                        FamiliaColors.backgroundElevated.opacity(0.85),
+                        HermosaColors.backgroundElevated.opacity(0.85),
                         Color.clear
                     ],
                     startPoint: .top,

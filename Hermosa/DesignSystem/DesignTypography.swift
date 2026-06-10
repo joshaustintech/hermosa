@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum FamiliaTextRole {
+enum HermosaTextRole {
     case display
     case screenTitle
     case sectionTitle
@@ -26,7 +26,7 @@ enum FamiliaTextRole {
 }
 
 extension View {
-    func familiaTextStyle(_ role: FamiliaTextRole) -> some View {
+    func hermosaTextStyle(_ role: HermosaTextRole) -> some View {
         font(role.font)
             .dynamicTypeSize(.small ... .accessibility3)
     }

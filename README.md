@@ -1,6 +1,11 @@
 # hermosa
 
-`Familia Spanish` is a local-first SwiftUI iOS app for learning practical Spanish in family, food, Chicago, church, and everyday-life contexts.
+`Hermosa` is a local-first SwiftUI iOS app for learning practical Spanish in family, food, Chicago, church, and everyday-life contexts.
+
+## App Preview
+
+![Hermosa lessons beauty shot](Docs/Images/hermosa-product-lessons.png)
+![Hermosa vocabulary beauty shot](Docs/Images/hermosa-product-vocabulary.png)
 
 ## Current Status
 
@@ -14,20 +19,20 @@
 ## Project References
 
 - [AGENTS.md](/Users/josh/hermosa/AGENTS.md)
-- [FamiliaSpanishRoadmap.md](/Users/josh/hermosa/FamiliaSpanishRoadmap.md)
-- [FamiliaSpanishLessonPlan.md](/Users/josh/hermosa/FamiliaSpanishLessonPlan.md)
+- [HermosaRoadmap.md](/Users/josh/hermosa/HermosaRoadmap.md)
+- [HermosaLessonPlan.md](/Users/josh/hermosa/HermosaLessonPlan.md)
 - [ImplementationStatus.md](/Users/josh/hermosa/ImplementationStatus.md)
 
 ## Current App Shape
 
-- `FamiliaSpanishApp.swift`: app entry and SwiftData container
+- `HermosaApp.swift`: app entry and SwiftData container
 - `AppRootView.swift`: top-level app state and tab navigation
-- `FamiliaSpanish/Data/lesson_plan.xml`: bundled curriculum source
-- `FamiliaSpanish/Parsing/LessonXMLParser.swift`: XML parsing into plain Swift models
-- `FamiliaSpanish/Views/LessonDetailView.swift`: lesson reading experience
-- `FamiliaSpanish/Views/QuizView.swift`: quiz flow and result persistence
-- `FamiliaSpanish/Views/ProgressView.swift`: interim progress summary
-- `FamiliaSpanish/Views/SettingsView.swift`: pending milestone expansion
+- `Hermosa/Data/lesson_plan.xml`: bundled curriculum source
+- `Hermosa/Parsing/LessonXMLParser.swift`: XML parsing into plain Swift models
+- `Hermosa/Views/LessonDetailView.swift`: lesson reading experience
+- `Hermosa/Views/QuizView.swift`: quiz flow and result persistence
+- `Hermosa/Views/ProgressView.swift`: interim progress summary
+- `Hermosa/Views/SettingsView.swift`: pending milestone expansion
 
 ## Remaining Milestones
 

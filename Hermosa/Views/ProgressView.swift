@@ -5,13 +5,13 @@ struct ProgressViewScreen: View {
     let lessonProgress: [LessonProgress]
 
     var body: some View {
-        FamiliaScreenScrollView {
-            FamiliaScreenHeader(
+        HermosaScreenScrollView {
+            HermosaScreenHeader(
                 title: "Progress",
                 subtitle: "Track completed lessons and stay oriented as quiz persistence expands."
             )
 
-            FamiliaProgressSummaryCard(
+            HermosaProgressSummaryCard(
                 title: "Completed Lessons",
                 value: "\(completedCount)",
                 detail: "\(curriculum.lessons.count) total lessons in the bundled curriculum.",
@@ -19,7 +19,7 @@ struct ProgressViewScreen: View {
                 tone: completedCount == 0 ? .neutral : .success
             )
 
-            FamiliaProgressSummaryCard(
+            HermosaProgressSummaryCard(
                 title: "Best Scores Saved",
                 value: "\(lessonsWithScores)",
                 detail: "Lessons with at least one saved score in local progress data.",
@@ -27,19 +27,19 @@ struct ProgressViewScreen: View {
                 tone: lessonsWithScores == 0 ? .neutral : .progress
             )
 
-            FamiliaScreenSection(
+            HermosaScreenSection(
                 title: "Current Status",
                 subtitle: "The full dashboard arrives after quizzes and persisted attempts are connected."
             ) {
-                FamiliaStaticInfoCard {
+                HermosaStaticInfoCard {
                     Text("This screen already reflects persisted completion records, but richer breakdowns and review insights will come in a later milestone.")
-                        .familiaTextStyle(.body)
-                        .foregroundStyle(FamiliaColors.textSecondary)
+                        .hermosaTextStyle(.body)
+                        .foregroundStyle(HermosaColors.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
         }
-        .background(FamiliaColors.backgroundBase)
+        .background(HermosaColors.backgroundBase)
     }
 
     private var completedCount: Int {
@@ -61,4 +61,10 @@ struct ProgressViewScreen: View {
     }
 }
 
-#Preview { NavigationStack { ProgressViewScreen(curriculum: .placeholder, lessonProgress: []) } }
+struct ProgressView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            ProgressViewScreen(curriculum: .placeholder, lessonProgress: [])
+        }
+    }
+}

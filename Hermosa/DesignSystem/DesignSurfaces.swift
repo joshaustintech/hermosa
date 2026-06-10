@@ -1,62 +1,62 @@
 import SwiftUI
 
-private struct FamiliaCardSurfaceModifier: ViewModifier {
+private struct HermosaCardSurfaceModifier: ViewModifier {
     @Environment(\.colorScheme) private var colorScheme
-    let style: FamiliaCardSurfaceStyle
+    let style: HermosaCardSurfaceStyle
 
     func body(content: Content) -> some View {
         content
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(FamiliaMetrics.cardPadding)
+            .padding(HermosaMetrics.cardPadding)
             .background(
                 RoundedRectangle(cornerRadius: style.cornerRadius, style: .continuous)
                     .fill(style.fill)
             )
             .overlay {
                 RoundedRectangle(cornerRadius: style.cornerRadius, style: .continuous)
-                    .stroke(style.stroke, lineWidth: FamiliaMetrics.standardBorderWidth)
+                    .stroke(style.stroke, lineWidth: HermosaMetrics.standardBorderWidth)
             }
             .shadow(
                 color: style.shadowColor(for: colorScheme),
-                radius: style.hasShadow ? FamiliaMetrics.shadowRadius : 0,
+                radius: style.hasShadow ? HermosaMetrics.shadowRadius : 0,
                 x: 0,
-                y: style.hasShadow ? FamiliaMetrics.shadowY : 0
+                y: style.hasShadow ? HermosaMetrics.shadowY : 0
             )
     }
 }
 
-private enum FamiliaCardSurfaceStyle: Equatable {
+private enum HermosaCardSurfaceStyle: Equatable {
     case staticCard
     case feature
     case interactive(isPressed: Bool)
 
     var cornerRadius: CGFloat {
-        self == .feature ? FamiliaMetrics.featureCornerRadius : FamiliaMetrics.cardCornerRadius
+        self == .feature ? HermosaMetrics.featureCornerRadius : HermosaMetrics.cardCornerRadius
     }
 
     var fill: Color {
         switch self {
-        case .staticCard: FamiliaColors.surfaceStatic
-        case .feature: FamiliaColors.surfaceFeature
-        case let .interactive(isPressed): isPressed ? FamiliaColors.surfaceInteractivePressed : FamiliaColors.surfaceInteractive
+        case .staticCard: HermosaColors.surfaceStatic
+        case .feature: HermosaColors.surfaceFeature
+        case let .interactive(isPressed): isPressed ? HermosaColors.surfaceInteractivePressed : HermosaColors.surfaceInteractive
         }
     }
 
     var stroke: Color {
         switch self {
-        case .staticCard, .feature: FamiliaColors.strokeSoft
-        case let .interactive(isPressed): isPressed ? FamiliaColors.strokeInteractivePressed : FamiliaColors.strokeInteractive.opacity(0.82)
+        case .staticCard, .feature: HermosaColors.strokeSoft
+        case let .interactive(isPressed): isPressed ? HermosaColors.strokeInteractivePressed : HermosaColors.strokeInteractive.opacity(0.82)
         }
     }
 
     var hasShadow: Bool { self == .feature }
 
     func shadowColor(for colorScheme: ColorScheme) -> Color {
-        hasShadow ? FamiliaColors.shadow(for: colorScheme) : .clear
+        hasShadow ? HermosaColors.shadow(for: colorScheme) : .clear
     }
 }
 
-struct FamiliaScreenScrollView<Content: View>: View {
+struct HermosaScreenScrollView<Content: View>: View {
     let content: Content
 
     init(@ViewBuilder content: () -> Content) {
@@ -65,18 +65,18 @@ struct FamiliaScreenScrollView<Content: View>: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: FamiliaMetrics.sectionSpacing) {
+            VStack(alignment: .leading, spacing: HermosaMetrics.sectionSpacing) {
                 content
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(FamiliaMetrics.screenPadding)
+            .padding(HermosaMetrics.screenPadding)
         }
         .scrollIndicators(.hidden)
-        .background(FamiliaColors.backgroundBase)
+        .background(HermosaColors.backgroundBase)
     }
 }
 
-struct FamiliaScreenSection<Content: View>: View {
+struct HermosaScreenSection<Content: View>: View {
     let title: String?
     let subtitle: String?
     @ViewBuilder let content: Content
@@ -92,9 +92,9 @@ struct FamiliaScreenSection<Content: View>: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: FamiliaMetrics.contentSpacing) {
+        VStack(alignment: .leading, spacing: HermosaMetrics.contentSpacing) {
             if title != nil || subtitle != nil {
-                FamiliaSectionHeader(
+                HermosaSectionHeader(
                     title: title ?? "",
                     subtitle: subtitle
                 )
@@ -106,7 +106,7 @@ struct FamiliaScreenSection<Content: View>: View {
     }
 }
 
-struct FamiliaStackedCardGroup<Content: View>: View {
+struct HermosaStackedCardGroup<Content: View>: View {
     let content: Content
 
     init(@ViewBuilder content: () -> Content) {
@@ -114,7 +114,7 @@ struct FamiliaStackedCardGroup<Content: View>: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: FamiliaMetrics.contentSpacing) {
+        VStack(alignment: .leading, spacing: HermosaMetrics.contentSpacing) {
             content
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -122,15 +122,15 @@ struct FamiliaStackedCardGroup<Content: View>: View {
 }
 
 extension View {
-    func familiaStaticCard() -> some View {
-        modifier(FamiliaCardSurfaceModifier(style: .staticCard))
+    func hermosaStaticCard() -> some View {
+        modifier(HermosaCardSurfaceModifier(style: .staticCard))
     }
 
-    func familiaFeatureCard() -> some View {
-        modifier(FamiliaCardSurfaceModifier(style: .feature))
+    func hermosaFeatureCard() -> some View {
+        modifier(HermosaCardSurfaceModifier(style: .feature))
     }
 
-    func familiaInteractiveCard(isPressed: Bool = false) -> some View {
-        modifier(FamiliaCardSurfaceModifier(style: .interactive(isPressed: isPressed)))
+    func hermosaInteractiveCard(isPressed: Bool = false) -> some View {
+        modifier(HermosaCardSurfaceModifier(style: .interactive(isPressed: isPressed)))
     }
 }

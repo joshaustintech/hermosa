@@ -6,19 +6,19 @@ struct QuizQuestionCard: View {
     let onToggleOption: (UUID) -> Void
 
     var body: some View {
-        FamiliaScreenSection(
+        HermosaScreenSection(
             title: question.kind.title,
             subtitle: question.kind.subtitle
         ) {
-            VStack(alignment: .leading, spacing: FamiliaMetrics.space16) {
+            VStack(alignment: .leading, spacing: HermosaMetrics.space16) {
                 Text(question.prompt)
-                    .familiaTextStyle(.cardTitle)
-                    .foregroundStyle(FamiliaColors.textPrimary)
+                    .hermosaTextStyle(.cardTitle)
+                    .foregroundStyle(HermosaColors.textPrimary)
                     .fixedSize(horizontal: false, vertical: true)
 
-                FamiliaStackedCardGroup {
+                HermosaStackedCardGroup {
                     ForEach(question.options) { option in
-                        FamiliaQuizOptionRow(
+                        HermosaQuizOptionRow(
                             title: option.title,
                             state: selection.contains(option.id) ? .selected : .idle,
                             action: {
@@ -48,26 +48,26 @@ struct QuizReviewCard: View {
     let item: QuizReviewItem
 
     var body: some View {
-        FamiliaStaticInfoCard {
-            VStack(alignment: .leading, spacing: FamiliaMetrics.space12) {
+        HermosaStaticInfoCard {
+            VStack(alignment: .leading, spacing: HermosaMetrics.space12) {
                 Text(item.prompt)
-                    .familiaTextStyle(.cardTitle)
-                    .foregroundStyle(FamiliaColors.textPrimary)
+                    .hermosaTextStyle(.cardTitle)
+                    .foregroundStyle(HermosaColors.textPrimary)
                     .fixedSize(horizontal: false, vertical: true)
 
                 Text(item.statusText)
-                    .familiaTextStyle(.secondaryBody)
-                    .foregroundStyle(item.wasCorrect ? FamiliaColors.success : FamiliaColors.error)
+                    .hermosaTextStyle(.secondaryBody)
+                    .foregroundStyle(item.wasCorrect ? HermosaColors.success : HermosaColors.error)
 
                 Text("Correct answer: \(item.correctAnswerText)")
-                    .familiaTextStyle(.body)
-                    .foregroundStyle(FamiliaColors.textSecondary)
+                    .hermosaTextStyle(.body)
+                    .foregroundStyle(HermosaColors.textSecondary)
                     .fixedSize(horizontal: false, vertical: true)
 
                 if let selectedAnswerText = item.selectedAnswerText {
                     Text("Your answer: \(selectedAnswerText)")
-                        .familiaTextStyle(.secondaryBody)
-                        .foregroundStyle(FamiliaColors.textTertiary)
+                        .hermosaTextStyle(.secondaryBody)
+                        .foregroundStyle(HermosaColors.textTertiary)
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
@@ -86,8 +86,8 @@ struct QuizAnswerFeedbackCard: View {
     @State private var showsIcon = false
 
     var body: some View {
-        FamiliaStaticInfoCard {
-            VStack(alignment: .center, spacing: FamiliaMetrics.space16) {
+        HermosaStaticInfoCard {
+            VStack(alignment: .center, spacing: HermosaMetrics.space16) {
                 Image(systemName: systemImage)
                     .font(.system(size: 42, weight: .semibold))
                     .foregroundStyle(imageColor)
@@ -100,40 +100,40 @@ struct QuizAnswerFeedbackCard: View {
                     )
                     .accessibilityHidden(true)
 
-                VStack(alignment: .center, spacing: FamiliaMetrics.space8) {
+                VStack(alignment: .center, spacing: HermosaMetrics.space8) {
                     Text(title)
-                        .familiaTextStyle(.sectionTitle)
-                        .foregroundStyle(FamiliaColors.textPrimary)
+                        .hermosaTextStyle(.sectionTitle)
+                        .foregroundStyle(HermosaColors.textPrimary)
                         .multilineTextAlignment(.center)
 
                     Text(message)
-                        .familiaTextStyle(.body)
-                        .foregroundStyle(FamiliaColors.textSecondary)
+                        .hermosaTextStyle(.body)
+                        .foregroundStyle(HermosaColors.textSecondary)
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
                 }
 
-                VStack(alignment: .leading, spacing: FamiliaMetrics.space8) {
+                VStack(alignment: .leading, spacing: HermosaMetrics.space8) {
                     Text(outcome.prompt)
-                        .familiaTextStyle(.bodyEmphasized)
-                        .foregroundStyle(FamiliaColors.textPrimary)
+                        .hermosaTextStyle(.bodyEmphasized)
+                        .foregroundStyle(HermosaColors.textPrimary)
                         .fixedSize(horizontal: false, vertical: true)
 
                     if outcome.wasCorrect {
                         Text("Answer: \(outcome.correctAnswerText)")
-                            .familiaTextStyle(.secondaryBody)
-                            .foregroundStyle(FamiliaColors.textSecondary)
+                            .hermosaTextStyle(.secondaryBody)
+                            .foregroundStyle(HermosaColors.textSecondary)
                             .fixedSize(horizontal: false, vertical: true)
                     } else {
                         if let selectedAnswerText = outcome.selectedAnswerText {
                             Text("Your answer: \(selectedAnswerText)")
-                                .familiaTextStyle(.secondaryBody)
-                                .foregroundStyle(FamiliaColors.textSecondary)
+                                .hermosaTextStyle(.secondaryBody)
+                                .foregroundStyle(HermosaColors.textSecondary)
                                 .fixedSize(horizontal: false, vertical: true)
                         }
 
                         Text("Correct answer: \(outcome.correctAnswerText)")
-                            .familiaTextStyle(.secondaryBody)
+                            .hermosaTextStyle(.secondaryBody)
                             .foregroundStyle(imageColor)
                             .fixedSize(horizontal: false, vertical: true)
                     }

@@ -1,12 +1,12 @@
 import Foundation
 
-enum FamiliaLessonProgressState: Equatable {
+enum HermosaLessonProgressState: Equatable {
     case notStarted
     case inProgress(bestScore: Double?)
     case completed(bestScore: Double?)
 }
 
-enum FamiliaQuizOptionState: Equatable {
+enum HermosaQuizOptionState: Equatable {
     case idle
     case selected
     case correct
@@ -14,7 +14,7 @@ enum FamiliaQuizOptionState: Equatable {
     case disabled
 }
 
-enum FamiliaProgressTone {
+enum HermosaProgressTone {
     case neutral
     case progress
     case success

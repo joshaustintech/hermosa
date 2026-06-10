@@ -18,14 +18,14 @@ struct QuizView: View {
     }
 
     var body: some View {
-        FamiliaScreenScrollView {
+        HermosaScreenScrollView {
             if let result = session.result {
                 resultView(result: result)
             } else {
                 activeQuestionView
             }
         }
-        .background(FamiliaColors.backgroundBase)
+        .background(HermosaColors.backgroundBase)
         .navigationTitle("Quiz")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
@@ -44,8 +44,8 @@ struct QuizView: View {
     private var activeQuestionView: some View {
         let question = session.questions[session.currentQuestionIndex]
 
-        return VStack(alignment: .leading, spacing: FamiliaMetrics.space24) {
-            FamiliaScreenHeader(
+        return VStack(alignment: .leading, spacing: HermosaMetrics.space24) {
+            HermosaScreenHeader(
                 title: lesson.title,
                 subtitle: "Question \(session.currentQuestionIndex + 1) of \(session.questions.count)"
             )
@@ -76,12 +76,12 @@ struct QuizView: View {
                         session.advanceToNextQuestion()
                     }
                 )
-                .buttonStyle(FamiliaPrimaryButtonStyle())
+                .buttonStyle(HermosaPrimaryButtonStyle())
             } else {
                 Button("Check Answer", systemImage: "checkmark.circle") {
                     session.submitCurrentAnswer()
                 }
-                    .buttonStyle(FamiliaPrimaryButtonStyle())
+                    .buttonStyle(HermosaPrimaryButtonStyle())
                     .disabled(!session.canSubmitCurrentAnswer)
                     .accessibilityHint("Checks the selected answer for this question.")
             }
@@ -89,13 +89,13 @@ struct QuizView: View {
     }
 
     private func resultView(result: QuizResult) -> some View {
-        VStack(alignment: .leading, spacing: FamiliaMetrics.space24) {
-            FamiliaScreenHeader(
+        VStack(alignment: .leading, spacing: HermosaMetrics.space24) {
+            HermosaScreenHeader(
                 title: "Quiz Complete",
                 subtitle: lesson.title
             )
 
-            FamiliaProgressSummaryCard(
+            HermosaProgressSummaryCard(
                 title: result.passed ? "Lesson Passed" : "Keep Practicing",
                 value: result.score.formatted(.percent.precision(.fractionLength(0))),
                 detail: "\(result.correctCount) of \(result.totalCount) correct",
@@ -103,24 +103,24 @@ struct QuizView: View {
                 tone: result.passed ? .success : .progress
             )
 
-            FamiliaStaticInfoCard(title: "Result") {
-                VStack(alignment: .leading, spacing: FamiliaMetrics.space8) {
+            HermosaStaticInfoCard(title: "Result") {
+                VStack(alignment: .leading, spacing: HermosaMetrics.space8) {
                     Text(result.passed ? "This lesson now counts as completed." : "A score of 70% or higher marks the lesson complete.")
-                        .familiaTextStyle(.body)
-                        .foregroundStyle(FamiliaColors.textSecondary)
+                        .hermosaTextStyle(.body)
+                        .foregroundStyle(HermosaColors.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
 
                     Text(savedAttempt ? "Your progress was saved locally." : "Saving progress...")
-                        .familiaTextStyle(.secondaryBody)
-                        .foregroundStyle(FamiliaColors.textTertiary)
+                        .hermosaTextStyle(.secondaryBody)
+                        .foregroundStyle(HermosaColors.textTertiary)
                 }
             }
 
-            FamiliaScreenSection(
+            HermosaScreenSection(
                 title: "Question Review",
                 subtitle: "Correct answers are highlighted for quick review."
             ) {
-                FamiliaStackedCardGroup {
+                HermosaStackedCardGroup {
                     ForEach(result.reviewItems) { item in
                         QuizReviewCard(item: item)
                     }
@@ -131,10 +131,10 @@ struct QuizView: View {
                 session = QuizSession(lesson: lesson)
                 savedAttempt = false
             }
-            .buttonStyle(FamiliaPrimaryButtonStyle())
+            .buttonStyle(HermosaPrimaryButtonStyle())
 
             Button("Back to Lesson", systemImage: "chevron.left", action: dismiss.callAsFunction)
-                .buttonStyle(FamiliaPrimaryButtonStyle())
+                .buttonStyle(HermosaPrimaryButtonStyle())
         }
     }
 
@@ -427,7 +427,7 @@ struct QuizFeedback {
     }
 
     var color: Color {
-        wasCorrect ? FamiliaColors.success : FamiliaColors.error
+        wasCorrect ? HermosaColors.success : HermosaColors.error
     }
 }
 
@@ -454,9 +454,11 @@ struct QuizReviewItem: Identifiable {
     }
 }
 
-#Preview {
-    NavigationStack {
-        QuizView(lesson: Curriculum.placeholder.lessons[0])
+struct QuizView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            QuizView(lesson: Curriculum.placeholder.lessons[0])
+        }
+        .modelContainer(for: [LessonProgress.self, QuizAttempt.self], inMemory: true)
     }
-    .modelContainer(for: [LessonProgress.self, QuizAttempt.self], inMemory: true)
 }

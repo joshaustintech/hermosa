@@ -6,14 +6,14 @@ struct LessonListView: View {
     @Binding var quizInProgressLessonID: String?
 
     var body: some View {
-        FamiliaScreenScrollView {
-            FamiliaScreenSection {
+        HermosaScreenScrollView {
+            HermosaScreenSection {
                 Text("Study practical Spanish through calm, readable lesson sets.")
-                    .familiaTextStyle(.body)
-                    .foregroundStyle(FamiliaColors.textSecondary)
+                    .hermosaTextStyle(.body)
+                    .foregroundStyle(HermosaColors.textSecondary)
                     .fixedSize(horizontal: false, vertical: true)
 
-                FamiliaStackedCardGroup {
+                HermosaStackedCardGroup {
                     ForEach(curriculum.lessons) { lesson in
                         NavigationLink {
                             LessonDetailView(
@@ -23,7 +23,7 @@ struct LessonListView: View {
                                 }
                             )
                         } label: {
-                            FamiliaLessonRow(
+                            HermosaLessonRow(
                                 title: lesson.title,
                                 metadata: "\(lesson.level.capitalized) • \(lesson.estimatedMinutes) min",
                                 progressState: progressState(for: lesson.id)
@@ -55,7 +55,7 @@ struct LessonListView: View {
         lessonProgress.first { $0.lessonID == lessonID }
     }
 
-    private func progressState(for lessonID: String) -> FamiliaLessonProgressState {
+    private func progressState(for lessonID: String) -> HermosaLessonProgressState {
         guard let progress = progressRecord(for: lessonID) else {
             return .notStarted
         }
@@ -74,4 +74,14 @@ struct LessonListView: View {
     }
 }
 
-#Preview { NavigationStack { LessonListView(curriculum: .placeholder, lessonProgress: [], quizInProgressLessonID: .constant(nil)) } }
+struct LessonListView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            LessonListView(
+                curriculum: .placeholder,
+                lessonProgress: [],
+                quizInProgressLessonID: .constant(nil)
+            )
+        }
+    }
+}

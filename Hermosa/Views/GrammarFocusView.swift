@@ -4,11 +4,11 @@ struct GrammarFocusView: View {
     let items: [String]
 
     var body: some View {
-        FamiliaScreenSection(
+        HermosaScreenSection(
             title: "Grammar Focus",
             subtitle: "Useful patterns to notice while speaking."
         ) {
-            FamiliaGrammarCallout(
+            HermosaGrammarCallout(
                 title: "What to practice",
                 items: items
             )

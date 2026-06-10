@@ -4,13 +4,13 @@ struct ModelSentencesView: View {
     let sentences: [ModelSentence]
 
     var body: some View {
-        FamiliaScreenSection(
+        HermosaScreenSection(
             title: "Model Sentences",
             subtitle: "Read the Spanish first, then check the translation."
         ) {
-            FamiliaStackedCardGroup {
+            HermosaStackedCardGroup {
                 ForEach(sentences) { sentence in
-                    FamiliaModelSentenceBlock(sentence: sentence)
+                    HermosaModelSentenceBlock(sentence: sentence)
                 }
             }
         }

@@ -25,7 +25,7 @@ Resolution:
 
 Files likely involved:
 
-- `FamiliaSpanish/Views/LessonListView.swift`
+- `Hermosa/Views/LessonListView.swift`
 - `AGENTS.md`
 
 ### 2. Serif/sans font pairing is specified but not visibly applied across screens
@@ -45,8 +45,8 @@ Resolution:
 
 Files likely involved:
 
-- `FamiliaSpanish/DesignSystem/DesignTypography.swift`
-- screen views under `FamiliaSpanish/Views/`
+- `Hermosa/DesignSystem/DesignTypography.swift`
+- screen views under `Hermosa/Views/`
 
 ### 3. Clickable and non-clickable surfaces are still too visually similar
 
@@ -67,9 +67,9 @@ Resolution:
 Files likely involved:
 
 - `DESIGN.md`
-- `FamiliaSpanish/DesignSystem/DesignRows.swift`
-- `FamiliaSpanish/DesignSystem/DesignCards.swift`
-- `FamiliaSpanish/DesignSystem/DesignSurfaces.swift`
+- `Hermosa/DesignSystem/DesignRows.swift`
+- `Hermosa/DesignSystem/DesignCards.swift`
+- `Hermosa/DesignSystem/DesignSurfaces.swift`
 - affected screen views
 
 ### 4. The current warm palette feels too common and too Claude-like
@@ -89,5 +89,5 @@ Resolution:
 Files likely involved:
 
 - `DESIGN.md`
-- `FamiliaSpanish/DesignSystem/DesignColors.swift`
+- `Hermosa/DesignSystem/DesignColors.swift`
 - any derived component styling

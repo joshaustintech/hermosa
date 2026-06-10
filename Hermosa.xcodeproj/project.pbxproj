@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A10000010000000000000001 /* FamiliaSpanishApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000110000000000000001 /* FamiliaSpanishApp.swift */; };
+		A10000010000000000000001 /* HermosaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000110000000000000001 /* HermosaApp.swift */; };
 		A10000020000000000000001 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000120000000000000001 /* AppRootView.swift */; };
 		A10000030000000000000001 /* LessonModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000130000000000000001 /* LessonModels.swift */; };
 		A10000040000000000000001 /* ProgressModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000140000000000000001 /* ProgressModels.swift */; };
@@ -36,8 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A10000100000000000000001 /* FamiliaSpanish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamiliaSpanish.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A10000110000000000000001 /* FamiliaSpanishApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamiliaSpanishApp.swift; sourceTree = "<group>"; };
+		A10000100000000000000001 /* Hermosa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hermosa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000110000000000000001 /* HermosaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HermosaApp.swift; sourceTree = "<group>"; };
 		A10000120000000000000001 /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
 		A10000130000000000000001 /* LessonModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonModels.swift; sourceTree = "<group>"; };
 		A10000140000000000000001 /* ProgressModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressModels.swift; sourceTree = "<group>"; };
@@ -79,15 +79,15 @@
 		A10000210000000000000001 = {
 			isa = PBXGroup;
 			children = (
-				A10000220000000000000001 /* FamiliaSpanish */,
+				A10000220000000000000001 /* Hermosa */,
 				A10000230000000000000001 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A10000220000000000000001 /* FamiliaSpanish */ = {
+		A10000220000000000000001 /* Hermosa */ = {
 			isa = PBXGroup;
 			children = (
-				A10000110000000000000001 /* FamiliaSpanishApp.swift */,
+				A10000110000000000000001 /* HermosaApp.swift */,
 				A10000120000000000000001 /* AppRootView.swift */,
 				A10000500000000000000001 /* DesignSystem */,
 				A10000240000000000000001 /* Models */,
@@ -95,13 +95,13 @@
 				A10000260000000000000001 /* Data */,
 				A10000270000000000000001 /* Views */,
 			);
-			path = FamiliaSpanish;
+			path = Hermosa;
 			sourceTree = "<group>";
 		};
 		A10000230000000000000001 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A10000100000000000000001 /* FamiliaSpanish.app */,
+				A10000100000000000000001 /* Hermosa.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,9 +168,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A10000280000000000000001 /* FamiliaSpanish */ = {
+		A10000280000000000000001 /* Hermosa */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A100002B0000000000000001 /* Build configuration list for PBXNativeTarget "FamiliaSpanish" */;
+			buildConfigurationList = A100002B0000000000000001 /* Build configuration list for PBXNativeTarget "Hermosa" */;
 			buildPhases = (
 				A10000290000000000000001 /* Sources */,
 				A10000200000000000000001 /* Frameworks */,
@@ -180,9 +180,9 @@
 			);
 			dependencies = (
 			);
-			name = FamiliaSpanish;
-			productName = FamiliaSpanish;
-			productReference = A10000100000000000000001 /* FamiliaSpanish.app */;
+			name = Hermosa;
+			productName = Hermosa;
+			productReference = A10000100000000000000001 /* Hermosa.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -200,7 +200,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A100002F0000000000000001 /* Build configuration list for PBXProject "FamiliaSpanish" */;
+			buildConfigurationList = A100002F0000000000000001 /* Build configuration list for PBXProject "Hermosa" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -212,7 +212,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A10000280000000000000001 /* FamiliaSpanish */,
+				A10000280000000000000001 /* Hermosa */,
 			);
 		};
 /* End PBXProject section */
@@ -234,7 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A10000020000000000000001 /* AppRootView.swift in Sources */,
-				A10000010000000000000001 /* FamiliaSpanishApp.swift in Sources */,
+				A10000010000000000000001 /* HermosaApp.swift in Sources */,
 				A10000030000000000000001 /* LessonModels.swift in Sources */,
 				A10000040000000000000001 /* ProgressModels.swift in Sources */,
 				A10000050000000000000001 /* LessonXMLParser.swift in Sources */,
@@ -365,7 +365,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A100002B0000000000000001 /* Build configuration list for PBXNativeTarget "FamiliaSpanish" */ = {
+		A100002B0000000000000001 /* Build configuration list for PBXNativeTarget "Hermosa" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A10000300000000000000001 /* Debug */,
@@ -374,7 +374,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A100002F0000000000000001 /* Build configuration list for PBXProject "FamiliaSpanish" */ = {
+		A100002F0000000000000001 /* Build configuration list for PBXProject "Hermosa" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A100002D0000000000000001 /* Debug */,

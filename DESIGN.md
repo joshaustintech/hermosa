@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document defines the visual and interaction system for `Familia Spanish`.
+This document defines the visual and interaction system for `Hermosa`.
 It overrides current ad hoc styling choices and should be treated as the source of truth for future UI implementation unless the user explicitly changes it.
 
 This is a SwiftUI-first design system for a calm, native-feeling, adult-oriented language app.
@@ -504,4 +504,4 @@ Do not do the following unless the user explicitly asks for it:
 
 If a future contributor needs a one-sentence brief:
 
-Build `Familia Spanish` like a calm editorial iPhone app with serif headlines, SF Pro body text, currant actions, patina-green support accents, mineral parchment surfaces, and unmistakably tappable controls.
+Build `Hermosa` like a calm editorial iPhone app with serif headlines, SF Pro body text, currant actions, patina-green support accents, mineral parchment surfaces, and unmistakably tappable controls.
