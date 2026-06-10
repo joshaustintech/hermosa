@@ -5,7 +5,7 @@
 ## App Preview
 
 ![Hermosa lessons screenshot](Docs/Images/hermosa-screenshot-lessons.jpg)
-![Hermosa vocabulary screenshot](Docs/Images/hermosa-screenshot-vocabulary.jpg)
+![Hermosa flashcards screenshot](Docs/Images/hermosa-screenshot-flashcards.jpg)
 
 ## Current Status
 
@@ -14,7 +14,7 @@
 - Tap-only quiz flow is implemented for bundled `multipleChoice` and `multipleSelect` questions.
 - Quiz attempts and lesson progress save locally with SwiftData.
 - Lesson completion is awarded at `70%` or higher.
-- Lesson-level and all-lessons flashcard review is implemented with a reusable stacked deck.
+- Lesson-level and all-lessons flashcard review is implemented with a reusable stacked deck, vertical flip gestures, and horizontal deck cycling.
 - A top-level `Flashcards` tab is live alongside `Lessons`, `Progress`, and `Settings`.
 - Progress and settings screens still need their remaining milestone work.
 

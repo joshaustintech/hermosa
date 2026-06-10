@@ -27,6 +27,7 @@
 - Top-level `Flashcards` tab added for all-lessons vocabulary and phrase review.
 - Lesson detail screens can launch lesson-scoped vocabulary and phrase decks.
 - Flashcard decks separate vocabulary cards from phrase cards instead of mixing them.
+- Flashcard decks support partial vertical flip dragging, committed/canceled flip behavior, and left/right stack cycling without fade-based transitions.
 - Static `#Preview` coverage now exists for every SwiftUI view file under `Hermosa/Views` and `Hermosa/DesignSystem`.
 - Debug builds now explicitly use `-Onone`, so SwiftUI previews can render in Xcode.
 - Plain Swift lesson models and SwiftData progress models are in active use for bundled lessons and learner progress.

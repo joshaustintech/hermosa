@@ -464,9 +464,9 @@ Codex Prompt:
 > Build a reusable SwiftUI flashcard deck view that can present cards for one lesson or for all lessons.
 > The deck should look visually stacked, similar to a compact pile of images in iMessage.
 > Support vocabulary cards and short phrase cards with the same deck component.
-> A vertical swipe flips the current card to reveal the other side.
-> A left swipe sends the current card to the bottom of the deck and brings the next top card forward.
-> A right swipe sends the current card to the top of the deck and brings the bottom card forward.
+> A vertical swipe partially follows the learner's drag and flips the current card to reveal the other side only when committed.
+> A left swipe sends the current top card to the bottom of the deck and brings the next top card forward.
+> A right swipe surfaces the bottom card, brings it to the top z-index only after commit, and places it on top of the stack.
 > Animate both the flip and the card movement within the stack.
 > If the user reverses direction before completing a swipe, cancel the action and return the card to its prior position and face.
 > Respect Reduce Motion with simpler transitions while preserving the same interaction model.
@@ -476,8 +476,8 @@ Acceptance Criteria:
 
 - One reusable deck view can render lesson-scoped and all-lessons flashcard sets.
 - The deck visually reads as a stacked set of cards rather than a flat pager.
-- Vertical swipes flip cards only when the gesture completes.
-- Left and right swipes reorder cards only when the gesture completes.
+- Vertical swipes can be canceled by dragging the card back before release.
+- Left and right swipes reorder cards only when the gesture commits.
 - Releasing a partial or reversed swipe restores the card cleanly with no accidental flip or reorder.
 - Reduce Motion users still get clear state changes without heavy 3D animation.
 
@@ -490,7 +490,7 @@ Codex Prompt:
 > Add a vocabulary flashcard mode linked to each lesson.
 > Allow the learner to open flashcards from a lesson detail screen and from review surfaces.
 > Show Spanish on one side and English plus part of speech on the other side.
-> Keep interactions tap-based, with card flip or reveal behavior that respects Reduce Motion.
+> Use the shared stacked flashcard deck with swipe-based flip and deck cycling behavior that respects Reduce Motion.
 > Track lightweight review activity in SwiftData only if needed for future scheduling.
 > Keep the implementation in small SwiftUI views without introducing MVVM.
 
@@ -508,10 +508,10 @@ Goal: Add lesson-linked short phrase flashcards for practical conversation revie
 Codex Prompt:
 
 > Add short phrase flashcards tied to each lesson using model sentences or curated short conversational phrases.
-> Show a Spanish prompt first, then reveal the English meaning or conversational use on tap.
+> Show a Spanish prompt first, then reveal the English meaning or conversational use with the shared vertical flip gesture.
 > Prefer short, high-frequency phrases that reinforce lesson grammar and context.
 > Let the learner review phrase cards from the lesson detail screen and from a broader review area.
-> Keep the implementation local-first and tap-only.
+> Keep the implementation local-first and accessible without typing or speaking.
 > Avoid overengineering; use straightforward SwiftUI state and composition.
 
 Acceptance Criteria:

@@ -429,11 +429,13 @@ Never make static and interactive settings rows visually identical.
 
 ### 19. Flashcard
 
-For later milestones.
-
 - quiet card face
 - strong title hierarchy
-- obvious tap affordance
+- visibly stacked deck treatment
+- vertical drag previews the flip and can be canceled before release
+- committed vertical swipe reveals the other side without fade-based transitions
+- left/right swipes cycle cards through the stack only when committed
+- long card text must scale or wrap inside the card bounds
 - reveal state change must be clear even with Reduce Motion enabled
 
 ### 20. Confirmation Dialog Actions

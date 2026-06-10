@@ -445,9 +445,9 @@ Quiz variation guidance:
 
 ## Future Learning Phases
 
-- Add lesson-linked vocabulary flashcards so learners can review each lesson’s core words in a focused card flow.
-- Add lesson-linked short phrase flashcards so learners can review compact conversational phrases and model-sentence fragments tied to each lesson.
-- Keep future flashcard interactions tap-only and compatible with Reduce Motion.
+- Lesson-linked vocabulary flashcards now let learners review each lesson’s core words in a focused stacked deck.
+- Lesson-linked short phrase flashcards now let learners review compact conversational phrases and model-sentence fragments tied to each lesson.
+- Flashcard interactions use swipe-based flipping and deck cycling while remaining compatible with Reduce Motion.
 
 ## Conversational Minimum
 
