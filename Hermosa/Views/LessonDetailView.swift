@@ -1,8 +1,11 @@
 import SwiftUI
+import SwiftData
 
 struct LessonDetailView: View {
     let lesson: Lesson
     let onStartQuiz: () -> Void
+
+    @Environment(\.modelContext) private var modelContext
 
     var body: some View {
         HermosaScreenScrollView {
@@ -40,7 +43,9 @@ struct LessonDetailView: View {
                     HermosaStackedCardGroup {
                         if lesson.vocabularyFlashcards.isEmpty == false {
                             NavigationLink {
-                                VocabularyFlashcardsView(lesson: lesson)
+                                VocabularyFlashcardsView(lesson: lesson) {
+                                    incrementTimesReviewed(for: lesson.id)
+                                }
                             } label: {
                                 HermosaNavigationRow(
                                     title: "Vocabulary Deck",
@@ -54,7 +59,9 @@ struct LessonDetailView: View {
 
                         if lesson.phraseFlashcards.isEmpty == false {
                             NavigationLink {
-                                PhraseFlashcardsView(lesson: lesson)
+                                PhraseFlashcardsView(lesson: lesson) {
+                                    incrementTimesReviewed(for: lesson.id)
+                                }
                             } label: {
                                 HermosaNavigationRow(
                                     title: "Phrase Deck",
@@ -74,6 +81,23 @@ struct LessonDetailView: View {
                 .accessibilityHint("Opens the lesson quiz.")
         }
         .background(HermosaColors.backgroundBase)
+    }
+
+    private func incrementTimesReviewed(for lessonID: String) {
+        let descriptor = FetchDescriptor<LessonProgress>(
+            predicate: #Predicate { $0.lessonID == lessonID }
+        )
+        do {
+            let progress = try modelContext.fetch(descriptor).first ?? LessonProgress(lessonID: lessonID)
+            if progress.modelContext == nil {
+                modelContext.insert(progress)
+            }
+            progress.timesReviewed += 1
+            progress.lastReviewedAt = Date()
+            try modelContext.save()
+        } catch {
+            print("Failed to save review progress: \(error)")
+        }
     }
 }
 

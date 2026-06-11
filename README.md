@@ -16,7 +16,7 @@
 - Lesson completion is awarded at `70%` or higher.
 - Lesson-level and all-lessons flashcard review is implemented with a reusable stacked deck, vertical flip gestures, and horizontal deck cycling.
 - A top-level `Flashcards` tab is live alongside `Lessons`, `Progress`, and `Settings`.
-- Progress and settings screens still need their remaining milestone work.
+- Progress dashboard, prioritized review mode, and settings reset-progress flow are fully implemented.
 
 ## Project References
 
@@ -35,12 +35,6 @@
 - `Hermosa/Views/QuizView.swift`: quiz flow and result persistence
 - `Hermosa/Views/FlashcardDeckView.swift`: reusable stacked flashcard deck
 - `Hermosa/Views/FlashcardsView.swift`: all-lessons flashcard hub
-- `Hermosa/Views/ProgressView.swift`: interim progress summary
-- `Hermosa/Views/SettingsView.swift`: version metadata with reset still pending
+- `Hermosa/Views/ProgressView.swift`: progress dashboard and review recommendations queue
+- `Hermosa/Views/SettingsView.swift`: version metadata, app info, and progress reset functionality
 
-## Remaining Milestones
-
-- Finish the full `P07` progress dashboard
-- Implement `P08` review mode
-- Add reset-progress behavior in settings
-- Complete final accessibility and UI polish

@@ -57,9 +57,11 @@ private enum HermosaCardSurfaceStyle: Equatable {
 }
 
 struct HermosaScreenScrollView<Content: View>: View {
+    let isScrollDisabled: Bool
     let content: Content
 
-    init(@ViewBuilder content: () -> Content) {
+    init(isScrollDisabled: Bool = false, @ViewBuilder content: () -> Content) {
+        self.isScrollDisabled = isScrollDisabled
         self.content = content()
     }
 
@@ -71,6 +73,7 @@ struct HermosaScreenScrollView<Content: View>: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(HermosaMetrics.screenPadding)
         }
+        .scrollDisabled(isScrollDisabled)
         .scrollIndicators(.hidden)
         .background(HermosaColors.backgroundBase)
     }

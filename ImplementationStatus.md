@@ -8,9 +8,13 @@
 - Milestone `P04` SwiftData progress models implemented and wired into app state.
 - Milestone `P05` lesson reading experience implemented.
 - Milestone `P06` tap-only quiz engine implemented.
-- Milestone `P11` reusable flashcard deck implemented.
-- Milestone `P12` vocabulary flashcards implemented.
-- Milestone `P13` short phrase flashcards implemented.
+- Milestone `P07` full progress dashboard completed with quiz attempt history.
+- Milestone `P08` spaced-review mode completed with prioritized recommendations and flashcard deck completion triggers.
+- Milestone `P09` settings and progress reset behavior implemented with confirmation dialogs.
+- Milestone `P10` final UI and accessibility polish pass completed, including Dynamic Type ranges, selectable texts, and button accessibility hints.
+- Milestone `P11` reusable stacked 3D/gesture-based flashcard deck view implemented.
+- Milestone `P12` lesson-linked vocabulary flashcards deck implemented with dynamic completion tracking.
+- Milestone `P13` lesson-linked phrase flashcards deck implemented.
 - `Hermosa.xcodeproj` added to the repo.
 - SwiftData container configured in `HermosaApp`.
 - Bundled `lesson_plan.xml` resource wired into the target.
@@ -36,14 +40,9 @@
 
 ## In Progress
 
-- Milestone `P07` progress dashboard is partially implemented.
-- `ProgressView` still uses interim summary content instead of the full milestone dashboard.
-- Milestone `P10` polish/accessibility is partially implemented through the shared design system and preview coverage.
-- `SettingsView` still needs reset-progress behavior.
+- None (Version 1 is fully complete!)
 
 ## Not Started Yet
 
-- Finish the full progress dashboard.
-- Add review mode.
-- Add reset-progress behavior in settings.
-- Complete the remaining final UI and accessibility polish pass.
+- None
+

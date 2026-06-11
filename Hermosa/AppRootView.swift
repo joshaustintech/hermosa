@@ -34,7 +34,7 @@ struct AppRootView: View {
                         }
 
                         appTab("Settings", systemImage: "gearshape") {
-                            SettingsView()
+                            SettingsView(curriculum: curriculum)
                         }
                     }
                 }

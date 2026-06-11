@@ -3,9 +3,12 @@ import SwiftUI
 struct HermosaFlashcardStudyView: View {
     let title: String
     let cards: [HermosaFlashcard]
+    var onComplete: (() -> Void)? = nil
+
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        HermosaScreenScrollView {
+        HermosaScreenScrollView(isScrollDisabled: true) {
             HermosaScreenHeader(title: title)
 
             if cards.isEmpty {
@@ -17,6 +20,18 @@ struct HermosaFlashcardStudyView: View {
                 )
             } else {
                 HermosaFlashcardDeck(cards: cards)
+
+                if let onComplete {
+                    Button(action: {
+                        onComplete()
+                        dismiss()
+                    }) {
+                        Label("Finish Review", systemImage: "checkmark.circle.fill")
+                    }
+                    .buttonStyle(HermosaPrimaryButtonStyle())
+                    .padding(.top, HermosaMetrics.space16)
+                    .accessibilityHint("Saves your review progress and returns to the previous screen.")
+                }
             }
         }
         .background(HermosaColors.backgroundBase)
